@@ -1,0 +1,148 @@
+this is text, which is ignored by bibtex.
+
+@phdthesis{Nacho,
+    author  = "Morales, Juan Ignacio",
+    title   = "Diseño de sistemas microelectrónicos basados en alta resolución temporal",
+    school  = "Universidad del Sur",
+    address = "Bahía Blanca",
+    year    = 2020
+}
+
+@manual{artix,
+    title        = "7 Series FPGAs Configurable Logic Block",
+    author       = "Xilinx",
+    organization = "AMD",
+    year         = 2016
+}
+
+@misc{carry4,
+    title        = "Carry4",
+    author       = "AMD",
+    howpublished = "\url{https://docs.amd.com/r/en-US/ug953-vivado-7series-libraries/CARRY4}",
+    year         = 2024,
+    note         = "Accedido: 25-03-2024"
+}
+
+@ARTICLE{Machado,
+    author={Machado, Rui and Cabral, Jorge and Alves, Filipe Serra},
+    journal={IEEE Transactions on Instrumentation and Measurement}, 
+    title={Recent Developments and Challenges in FPGA-Based Time-to-Digital Converters}, 
+    year={2019},
+    volume={68},
+    number={11},
+    pages={4205-4221},
+    keywords={Field programmable gate arrays;Clocks;Delay lines;Taxonomy;Bibliographies;Signal resolution;Propagation delay;Field-programmable gate arrays (FPGAs);survey;time-interval measurement;time-to-digital converter (TDC)},
+    doi={10.1109/TIM.2019.2938436}
+}
+
+@book{libro,
+    author    = "Stephan Henzler",
+    title     = "Time-to-Digital Converters",
+    publisher = "Springer",
+    year      = 2010
+}
+
+@article{kalisz_field-programmable-gate-array-based_1997,
+	title = {Field-programmable-gate-array-based time-to-digital converter with 200-ps resolution},
+	volume = {46},
+	issn = {1557-9662},
+	url = {https://ieeexplore.ieee.org/document/552156/citations#citations},
+	doi = {10.1109/19.552156},
+	abstract = {A new design of a time-to-digital converter (TDC) implemented on an FPGA chip with amorphous antifuse structures is presented. Time coding with 200-ps resolution (LSB), 10-ns range, and very short conversion time is realized by two tapped delay lines working in-a differential mode. Thanks to the local feedback loops, the output from the delay line is obtained directly in "1-out-of-N" code and then converted to 6-bit natural binary. Within the temperature range from 0/spl deg/C to 45/spl deg/C, the time offset at the output is constant, the resolution changes by /spl plusmn/0.02 LSB, and the offset-corrected integral linearity error is less than 1 LSB.},
+	number = {1},
+	urldate = {2024-07-16},
+	journal = {IEEE Transactions on Instrumentation and Measurement},
+	author = {Kalisz, J. and Szplet, R. and Pasierbinski, J. and Poniecki, A.},
+	month = feb,
+	year = {1997},
+	note = {Conference Name: IEEE Transactions on Instrumentation and Measurement},
+	keywords = {Amorphous materials, Circuit testing, CMOS technology, Costs, Delay lines, Field programmable gate arrays, Integrated circuit manufacture, Integrated circuit technology, Latches, Manufacturing processes},
+	pages = {51--55},
+	file = {IEEE Xplore Abstract Record:C\:\\Users\\mique\\Zotero\\storage\\HAS82JH6\\citations.html:text/html},
+}
+
+
+@inproceedings{favi_17ps_2009,
+	address = {New York, NY, USA},
+	series = {{FPGA} '09},
+	title = {A 17ps time-to-digital converter implemented in 65nm {FPGA} technology},
+	isbn = {978-1-60558-410-2},
+	url = {https://doi.org/10.1145/1508128.1508145},
+	doi = {10.1145/1508128.1508145},
+	abstract = {This paper presents a new architecture for time-to-digital conversion enabling a time resolution of 17ps over a range of 50ns with a conversion rate of 20MS/s. The proposed architecture, implemented in a 65nm FPGA system, consists of a pipelined interpolating time-to-digital converter (TDC). The TDC comprises a coarse time discriminator and a fine delay line, capable of sustained operation at a clock frequency of 300MHz. A Turbo version of the circuit implements a pipelined interpolating TDC with suppressed dead time to reach a conversion rate of 300MS/s at the expense of a systematic asymmetry that requires fast error correction. The TDCs proposed in this paper can be compensated for process, voltage, and temperature (PVT) variations using a conventional charge pump based feedback or a digital calibration technique. Results demonstrate the suitability of the approach for a variety of applications involving high-precision ultra-fast time discrimination, such as optical lifetime sensing, time-of-flight cameras, high throughput comlinks, RADARs, etc.},
+	urldate = {2024-07-15},
+	booktitle = {Proceedings of the {ACM}/{SIGDA} international symposium on {Field} programmable gate arrays},
+	publisher = {Association for Computing Machinery},
+	author = {Favi, Claudio and Charbon, Edoardo},
+	month = feb,
+	year = {2009},
+	pages = {113--120},
+	file = {Texto completo:C\:\\Users\\mique\\Zotero\\storage\\IDY8D553\\Favi y Charbon - 2009 - A 17ps time-to-digital converter implemented in 65.pdf:application/pdf},
+}
+
+
+@inproceedings{machado_novel_2018,
+	title = {A novel synchronizer for a 17.9ps {Nutt} {Time}-to-{Digital} {Converter} implemented on {FPGA}},
+	url = {https://ieeexplore.ieee.org/document/8577365},
+	doi = {10.23919/AEIT.2018.8577365},
+	abstract = {The evolution of Field-Programmable Gate Array (FPGA) technology triggered the appearance of FPGAs with higher operating frequencies and large number of resources. Simultaneously, the evolution of the FPGAs design tools has simplified the development process, reducing the time to market. These factors made FPGA platforms attractive for several applications, including time-of-flight applications that require the implementation of Time-to-Digital Converters (TDC). This work presents a Nutt TDC, based on a coarse counter and a Tapped Delay Line, with 17.9 picoseconds resolution and 5.4 LSB differential nonlinearity (DNL), implemented in a Xilinx Zynq-7000 FPGA, to be used on LiDAR applications and pull-in time measuring in MEMS accelerometers systems.},
+	urldate = {2024-07-16},
+	booktitle = {2018 {AEIT} {International} {Annual} {Conference}},
+	author = {Machado, Rui and Rocha, Luis A. and Cabral, Jorge},
+	month = oct,
+	year = {2018},
+	keywords = {Clocks, Computer architecture, Counters Synchronization, Delay lines, Delays, Field Programmable Gate Array (FPGA), Field programmable gate arrays, Synchronization, Time Measurement, Time-to-Digital Converter (TDC)},
+	pages = {1--6},
+	file = {IEEE Xplore Abstract Record:C\:\\Users\\mique\\Zotero\\storage\\3LFS8DKK\\8577365.html:text/html;Texto completo:C\:\\Users\\mique\\Zotero\\storage\\FZ77BNI6\\Machado et al. - 2018 - A novel synchronizer for a 17.9ps Nutt Time-to-Dig.pdf:application/pdf},
+}
+
+
+@article{wang_39-ps_2017,
+	title = {A 3.9-ps {RMS} {Precision} {Time}-to-{Digital} {Converter} {Using} {Ones}-{Counter} {Encoding} {Scheme} in a {Kintex}-7 {FPGA}},
+	volume = {64},
+	issn = {1558-1578},
+	url = {https://ieeexplore.ieee.org/document/8022888},
+	doi = {10.1109/TNS.2017.2746626},
+	abstract = {A 3.9-ps time-interval rms precision and 277-M events/second measurement throughput time-to-digital converter (TDC) is implemented in a Xilinx Kintex-7 field programmable gate array (FPGA). Unlike previous work, the TDC is achieved with a multichain tapped-delay line (TDL) followed by an ones-counter encoder. The four normal TDLs merged together make the TDC bins very small, so that the time precision can be significantly improved. The ones-counter encoder naturally applies global bubble error correction to the output of TDL, thus the TDC design is relatively simple even when using FPGAs made with current advanced process technology. The TDC implementation is a generally applicable method that can simultaneously achieve high time precision and high measurement throughput.},
+	number = {10},
+	urldate = {2024-07-25},
+	journal = {IEEE Transactions on Nuclear Science},
+	author = {Wang, Yonggang and Kuang, Jie and Liu, Chong and Cao, Qiang},
+	month = oct,
+	year = {2017},
+	note = {Conference Name: IEEE Transactions on Nuclear Science},
+	keywords = {Calibration, Clocks, Delays, Field programmable gate array (FPGA), Field programmable gate arrays, measurement throughput, ones-counter encoder, Radiation detectors, Throughput, time precision, time-to-digital converter (TDC)},
+	pages = {2713--2718},
+	file = {IEEE Xplore Abstract Record:C\:\\Users\\mique\\Zotero\\storage\\6UJDPSHT\\8022888.html:text/html},
+}
+
+
+@article{Liu2015,
+  title = {A 128-Channel,  710 M Samples/Second,  and Less Than 10 ps RMS Resolution Time-to-Digital Converter Implemented in a Kintex-7 FPGA},
+  volume = {62},
+  ISSN = {1558-1578},
+  url = {http://dx.doi.org/10.1109/TNS.2015.2421319},
+  DOI = {10.1109/tns.2015.2421319},
+  number = {3},
+  journal = {IEEE Transactions on Nuclear Science},
+  publisher = {Institute of Electrical and Electronics Engineers (IEEE)},
+  author = {Liu,  Chong and Wang,  Yonggang},
+  year = {2015},
+  month = jun,
+  pages = {773–783}
+}
+
+@article{Wu2010,
+  title = {Several Key Issues on Implementing Delay Line Based TDCs Using FPGAs},
+  volume = {57},
+  ISSN = {1558-1578},
+  url = {http://dx.doi.org/10.1109/TNS.2010.2045901},
+  DOI = {10.1109/tns.2010.2045901},
+  number = {3},
+  journal = {IEEE Transactions on Nuclear Science},
+  publisher = {Institute of Electrical and Electronics Engineers (IEEE)},
+  author = {Wu,  Jinyuan},
+  year = {2010},
+  month = jun,
+  pages = {1543–1548}
+}

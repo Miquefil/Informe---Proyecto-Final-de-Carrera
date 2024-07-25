@@ -1,0 +1,490 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\datalist[entry]{none/global//global/global}
+  \entry{Machado}{article}{}
+    \name{author}{3}{}{%
+      {{hash=MR}{%
+         family={Machado},
+         familyi={M\bibinitperiod},
+         given={Rui},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=CJ}{%
+         family={Cabral},
+         familyi={C\bibinitperiod},
+         given={Jorge},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=AFS}{%
+         family={Alves},
+         familyi={A\bibinitperiod},
+         given={Filipe\bibnamedelima Serra},
+         giveni={F\bibinitperiod\bibinitdelim S\bibinitperiod},
+      }}%
+    }
+    \keyw{Field programmable gate arrays;Clocks;Delay
+  lines;Taxonomy;Bibliographies;Signal resolution;Propagation
+  delay;Field-programmable gate arrays (FPGAs);survey;time-interval
+  measurement;time-to-digital converter (TDC)}
+    \strng{namehash}{MRCJAFS1}
+    \strng{fullhash}{MRCJAFS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.1109/TIM.2019.2938436
+    \endverb
+    \field{number}{11}
+    \field{pages}{4205\bibrangedash 4221}
+    \field{title}{Recent Developments and Challenges in FPGA-Based
+  Time-to-Digital Converters}
+    \field{volume}{68}
+    \field{journaltitle}{IEEE Transactions on Instrumentation and Measurement}
+    \field{year}{2019}
+  \endentry
+
+  \entry{Nacho}{thesis}{}
+    \name{author}{1}{}{%
+      {{hash=MJI}{%
+         family={Morales},
+         familyi={M\bibinitperiod},
+         given={Juan\bibnamedelima Ignacio},
+         giveni={J\bibinitperiod\bibinitdelim I\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{MJI1}
+    \strng{fullhash}{MJI1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Diseño de sistemas microelectrónicos basados en alta
+  resolución temporal}
+    \list{location}{1}{%
+      {Bahía Blanca}%
+    }
+    \list{institution}{1}{%
+      {Universidad del Sur}%
+    }
+    \field{type}{phdthesis}
+    \field{year}{2020}
+  \endentry
+
+  \entry{artix}{manual}{}
+    \name{author}{1}{}{%
+      {{hash=X}{%
+         family={Xilinx},
+         familyi={X\bibinitperiod},
+      }}%
+    }
+    \list{organization}{1}{%
+      {AMD}%
+    }
+    \strng{namehash}{X1}
+    \strng{fullhash}{X1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{7 Series FPGAs Configurable Logic Block}
+    \field{year}{2016}
+  \endentry
+
+  \entry{carry4}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=A}{%
+         family={AMD},
+         familyi={A\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{A1}
+    \strng{fullhash}{A1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+  \field{howpublished}{\url{https://docs.amd.com/r/en-US/ug953-vivado-7series-libraries/CARRY4}}
+    \field{note}{Accedido: 25-03-2024}
+    \field{title}{Carry4}
+    \field{year}{2024}
+  \endentry
+
+  \entry{libro}{book}{}
+    \name{author}{1}{}{%
+      {{hash=HS}{%
+         family={Henzler},
+         familyi={H\bibinitperiod},
+         given={Stephan},
+         giveni={S\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer}%
+    }
+    \strng{namehash}{HS1}
+    \strng{fullhash}{HS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Time-to-Digital Converters}
+    \field{year}{2010}
+  \endentry
+
+  \entry{kalisz_field-programmable-gate-array-based_1997}{article}{}
+    \name{author}{4}{}{%
+      {{hash=KJ}{%
+         family={Kalisz},
+         familyi={K\bibinitperiod},
+         given={J.},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=SR}{%
+         family={Szplet},
+         familyi={S\bibinitperiod},
+         given={R.},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=PJ}{%
+         family={Pasierbinski},
+         familyi={P\bibinitperiod},
+         given={J.},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=PA}{%
+         family={Poniecki},
+         familyi={P\bibinitperiod},
+         given={A.},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \keyw{Amorphous materials, Circuit testing, CMOS technology, Costs, Delay
+  lines, Field programmable gate arrays, Integrated circuit manufacture,
+  Integrated circuit technology, Latches, Manufacturing processes}
+    \strng{namehash}{KJ+1}
+    \strng{fullhash}{KJSRPJPA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{abstract}{%
+    A new design of a time-to-digital converter (TDC) implemented on an FPGA
+  chip with amorphous antifuse structures is presented. Time coding with 200-ps
+  resolution (LSB), 10-ns range, and very short conversion time is realized by
+  two tapped delay lines working in-a differential mode. Thanks to the local
+  feedback loops, the output from the delay line is obtained directly in
+  "1-out-of-N" code and then converted to 6-bit natural binary. Within the
+  temperature range from 0/spl deg/C to 45/spl deg/C, the time offset at the
+  output is constant, the resolution changes by /spl plusmn/0.02 LSB, and the
+  offset-corrected integral linearity error is less than 1 LSB.%
+    }
+    \verb{doi}
+    \verb 10.1109/19.552156
+    \endverb
+    \field{issn}{1557-9662}
+    \field{note}{Conference Name: IEEE Transactions on Instrumentation and
+  Measurement}
+    \field{number}{1}
+    \field{pages}{51\bibrangedash 55}
+    \field{title}{Field-programmable-gate-array-based time-to-digital converter
+  with 200-ps resolution}
+    \verb{url}
+    \verb https://ieeexplore.ieee.org/document/552156/citations#citations
+    \endverb
+    \field{volume}{46}
+    \verb{file}
+    \verb IEEE Xplore Abstract Record:C\:\\Users\\mique\\Zotero\\storage\\HAS82
+    \verb JH6\\citations.html:text/html
+    \endverb
+    \field{journaltitle}{IEEE Transactions on Instrumentation and Measurement}
+    \field{month}{02}
+    \field{year}{1997}
+    \field{urlday}{16}
+    \field{urlmonth}{07}
+    \field{urlyear}{2024}
+  \endentry
+
+  \entry{favi_17ps_2009}{inproceedings}{}
+    \name{author}{2}{}{%
+      {{hash=FC}{%
+         family={Favi},
+         familyi={F\bibinitperiod},
+         given={Claudio},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=CE}{%
+         family={Charbon},
+         familyi={C\bibinitperiod},
+         given={Edoardo},
+         giveni={E\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Association for Computing Machinery}%
+    }
+    \strng{namehash}{FCCE1}
+    \strng{fullhash}{FCCE1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{abstract}{%
+    This paper presents a new architecture for time-to-digital conversion
+  enabling a time resolution of 17ps over a range of 50ns with a conversion
+  rate of 20MS/s. The proposed architecture, implemented in a 65nm FPGA system,
+  consists of a pipelined interpolating time-to-digital converter (TDC). The
+  TDC comprises a coarse time discriminator and a fine delay line, capable of
+  sustained operation at a clock frequency of 300MHz. A Turbo version of the
+  circuit implements a pipelined interpolating TDC with suppressed dead time to
+  reach a conversion rate of 300MS/s at the expense of a systematic asymmetry
+  that requires fast error correction. The TDCs proposed in this paper can be
+  compensated for process, voltage, and temperature (PVT) variations using a
+  conventional charge pump based feedback or a digital calibration technique.
+  Results demonstrate the suitability of the approach for a variety of
+  applications involving high-precision ultra-fast time discrimination, such as
+  optical lifetime sensing, time-of-flight cameras, high throughput comlinks,
+  RADARs, etc.%
+    }
+    \field{booktitle}{Proceedings of the {ACM}/{SIGDA} international symposium
+  on {Field} programmable gate arrays}
+    \verb{doi}
+    \verb 10.1145/1508128.1508145
+    \endverb
+    \field{isbn}{978-1-60558-410-2}
+    \field{pages}{113\bibrangedash 120}
+    \field{series}{{FPGA} '09}
+    \field{title}{A 17ps time-to-digital converter implemented in 65nm {FPGA}
+  technology}
+    \verb{url}
+    \verb https://doi.org/10.1145/1508128.1508145
+    \endverb
+    \list{location}{1}{%
+      {New York, NY, USA}%
+    }
+    \verb{file}
+    \verb Texto completo:C\:\\Users\\mique\\Zotero\\storage\\IDY8D553\\Favi y C
+    \verb harbon - 2009 - A 17ps time-to-digital converter implemented in 65.pd
+    \verb f:application/pdf
+    \endverb
+    \field{month}{02}
+    \field{year}{2009}
+    \field{urlday}{15}
+    \field{urlmonth}{07}
+    \field{urlyear}{2024}
+  \endentry
+
+  \entry{machado_novel_2018}{inproceedings}{}
+    \name{author}{3}{}{%
+      {{hash=MR}{%
+         family={Machado},
+         familyi={M\bibinitperiod},
+         given={Rui},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=RLA}{%
+         family={Rocha},
+         familyi={R\bibinitperiod},
+         given={Luis\bibnamedelima A.},
+         giveni={L\bibinitperiod\bibinitdelim A\bibinitperiod},
+      }}%
+      {{hash=CJ}{%
+         family={Cabral},
+         familyi={C\bibinitperiod},
+         given={Jorge},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \keyw{Clocks, Computer architecture, Counters Synchronization, Delay lines,
+  Delays, Field Programmable Gate Array (FPGA), Field programmable gate arrays,
+  Synchronization, Time Measurement, Time-to-Digital Converter (TDC)}
+    \strng{namehash}{MRRLACJ1}
+    \strng{fullhash}{MRRLACJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{abstract}{%
+    The evolution of Field-Programmable Gate Array (FPGA) technology triggered
+  the appearance of FPGAs with higher operating frequencies and large number of
+  resources. Simultaneously, the evolution of the FPGAs design tools has
+  simplified the development process, reducing the time to market. These
+  factors made FPGA platforms attractive for several applications, including
+  time-of-flight applications that require the implementation of
+  Time-to-Digital Converters (TDC). This work presents a Nutt TDC, based on a
+  coarse counter and a Tapped Delay Line, with 17.9 picoseconds resolution and
+  5.4 LSB differential nonlinearity (DNL), implemented in a Xilinx Zynq-7000
+  FPGA, to be used on LiDAR applications and pull-in time measuring in MEMS
+  accelerometers systems.%
+    }
+    \field{booktitle}{2018 {AEIT} {International} {Annual} {Conference}}
+    \verb{doi}
+    \verb 10.23919/AEIT.2018.8577365
+    \endverb
+    \field{pages}{1\bibrangedash 6}
+    \field{title}{A novel synchronizer for a 17.9ps {Nutt} {Time}-to-{Digital}
+  {Converter} implemented on {FPGA}}
+    \verb{url}
+    \verb https://ieeexplore.ieee.org/document/8577365
+    \endverb
+    \verb{file}
+    \verb IEEE Xplore Abstract Record:C\:\\Users\\mique\\Zotero\\storage\\3LFS8
+    \verb DKK\\8577365.html:text/html;Texto completo:C\:\\Users\\mique\\Zotero\
+    \verb \storage\\FZ77BNI6\\Machado et al. - 2018 - A novel synchronizer for
+    \verb a 17.9ps Nutt Time-to-Dig.pdf:application/pdf
+    \endverb
+    \field{month}{10}
+    \field{year}{2018}
+    \field{urlday}{16}
+    \field{urlmonth}{07}
+    \field{urlyear}{2024}
+  \endentry
+
+  \entry{wang_39-ps_2017}{article}{}
+    \name{author}{4}{}{%
+      {{hash=WY}{%
+         family={Wang},
+         familyi={W\bibinitperiod},
+         given={Yonggang},
+         giveni={Y\bibinitperiod},
+      }}%
+      {{hash=KJ}{%
+         family={Kuang},
+         familyi={K\bibinitperiod},
+         given={Jie},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=LC}{%
+         family={Liu},
+         familyi={L\bibinitperiod},
+         given={Chong},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=CQ}{%
+         family={Cao},
+         familyi={C\bibinitperiod},
+         given={Qiang},
+         giveni={Q\bibinitperiod},
+      }}%
+    }
+    \keyw{Calibration, Clocks, Delays, Field programmable gate array (FPGA),
+  Field programmable gate arrays, measurement throughput, ones-counter encoder,
+  Radiation detectors, Throughput, time precision, time-to-digital converter
+  (TDC)}
+    \strng{namehash}{WY+1}
+    \strng{fullhash}{WYKJLCCQ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{abstract}{%
+    A 3.9-ps time-interval rms precision and 277-M events/second measurement
+  throughput time-to-digital converter (TDC) is implemented in a Xilinx
+  Kintex-7 field programmable gate array (FPGA). Unlike previous work, the TDC
+  is achieved with a multichain tapped-delay line (TDL) followed by an
+  ones-counter encoder. The four normal TDLs merged together make the TDC bins
+  very small, so that the time precision can be significantly improved. The
+  ones-counter encoder naturally applies global bubble error correction to the
+  output of TDL, thus the TDC design is relatively simple even when using FPGAs
+  made with current advanced process technology. The TDC implementation is a
+  generally applicable method that can simultaneously achieve high time
+  precision and high measurement throughput.%
+    }
+    \verb{doi}
+    \verb 10.1109/TNS.2017.2746626
+    \endverb
+    \field{issn}{1558-1578}
+    \field{note}{Conference Name: IEEE Transactions on Nuclear Science}
+    \field{number}{10}
+    \field{pages}{2713\bibrangedash 2718}
+    \field{title}{A 3.9-ps {RMS} {Precision} {Time}-to-{Digital} {Converter}
+  {Using} {Ones}-{Counter} {Encoding} {Scheme} in a {Kintex}-7 {FPGA}}
+    \verb{url}
+    \verb https://ieeexplore.ieee.org/document/8022888
+    \endverb
+    \field{volume}{64}
+    \verb{file}
+    \verb IEEE Xplore Abstract Record:C\:\\Users\\mique\\Zotero\\storage\\6UJDP
+    \verb SHT\\8022888.html:text/html
+    \endverb
+    \field{journaltitle}{IEEE Transactions on Nuclear Science}
+    \field{month}{10}
+    \field{year}{2017}
+    \field{urlday}{25}
+    \field{urlmonth}{07}
+    \field{urlyear}{2024}
+  \endentry
+
+  \entry{Wu2010}{article}{}
+    \name{author}{1}{}{%
+      {{hash=WJ}{%
+         family={Wu},
+         familyi={W\bibinitperiod},
+         given={Jinyuan},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{2}{%
+      {Institute of Electrical}%
+      {Electronics Engineers (IEEE)}%
+    }
+    \strng{namehash}{WJ1}
+    \strng{fullhash}{WJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.1109/tns.2010.2045901
+    \endverb
+    \field{issn}{1558-1578}
+    \field{number}{3}
+    \field{pages}{1543–1548}
+    \field{title}{Several Key Issues on Implementing Delay Line Based TDCs
+  Using FPGAs}
+    \verb{url}
+    \verb http://dx.doi.org/10.1109/TNS.2010.2045901
+    \endverb
+    \field{volume}{57}
+    \field{journaltitle}{IEEE Transactions on Nuclear Science}
+    \field{month}{06}
+    \field{year}{2010}
+  \endentry
+
+  \entry{Liu2015}{article}{}
+    \name{author}{2}{}{%
+      {{hash=LC}{%
+         family={Liu},
+         familyi={L\bibinitperiod},
+         given={Chong},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=WY}{%
+         family={Wang},
+         familyi={W\bibinitperiod},
+         given={Yonggang},
+         giveni={Y\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{2}{%
+      {Institute of Electrical}%
+      {Electronics Engineers (IEEE)}%
+    }
+    \strng{namehash}{LCWY1}
+    \strng{fullhash}{LCWY1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.1109/tns.2015.2421319
+    \endverb
+    \field{issn}{1558-1578}
+    \field{number}{3}
+    \field{pages}{773–783}
+    \field{title}{A 128-Channel, 710 M Samples/Second, and Less Than 10 ps RMS
+  Resolution Time-to-Digital Converter Implemented in a Kintex-7 FPGA}
+    \verb{url}
+    \verb http://dx.doi.org/10.1109/TNS.2015.2421319
+    \endverb
+    \field{volume}{62}
+    \field{journaltitle}{IEEE Transactions on Nuclear Science}
+    \field{month}{06}
+    \field{year}{2015}
+  \endentry
+\enddatalist
+\endinput

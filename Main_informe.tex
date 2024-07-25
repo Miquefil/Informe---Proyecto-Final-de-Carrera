@@ -1,0 +1,260 @@
+\documentclass[12pt, a4paper, twoside]{article}
+
+\usepackage{blindtext}
+\usepackage{geometry}
+    \geometry{
+        a4paper,
+        total={170mm,257mm},
+        left=20mm,
+        top=20mm,
+    }
+
+%Paquetes   
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[table,xcdraw]{xcolor}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{changepage}
+\usepackage{float}
+% \usepackage{cite}
+\usepackage{url}
+\usepackage{indentfirst}
+%%\usepackage{subfig}
+\usepackage{subcaption}
+\usepackage{enumerate}
+\usepackage{circuitikz}
+\usepackage{physics}
+\usepackage{caption}
+\usepackage{wrapfig}
+%\usepackage{hyperref}
+%\usepackage[colorlinks=true, linkcolor=Maroon, urlcolor=Maroon]{hyperref} %%SACAR BOXES ROJOS
+\usepackage{bookmark}
+
+\usepackage{amssymb} %simbolos matematicos especiales
+\usepackage{csquotes}
+\usepackage{bm}
+
+\usepackage{MnSymbol}
+
+%figuras EPS
+\usepackage{epsfig}
+
+%quotes
+\usepackage{csquotes}
+
+% %bibiliography
+\usepackage[backend=bibtex, style=numeric-comp, maxbibnames=5, sorting=none]{biblatex}%%bibliografía
+\addbibresource{./biblio.bib}
+
+
+%SVG images 
+\usepackage[inkscapearea=page]{svg}
+
+%Tikz
+\usepackage{pgfplots}
+\pgfplotsset{compat = newest}
+\usepackage{tikz}
+
+%simbolos Real e imaginario
+\usepackage{physics}
+% EJEMPLOS declaración de environment
+% 
+\newcounter{testexample}
+\usepackage[most]{tcolorbox}
+\usepackage{xparse}
+\def\exampletext{Teorema} % If English
+
+\NewDocumentEnvironment{example}{ O{} }
+{
+\colorlet{colexam}{white} % Global example color
+\newtcolorbox[use counter=testexample]{testexamplebox}{%
+    % Example Frame Start
+    empty,% Empty previously set parameters
+    skin=bicolor,   %ESTAS DOS LINEAS SON PARA EL COLOR DE FONDO
+    colback=blue!5!white,
+    sharp corners,
+        frame style={%ESTO ES PARA QUITARLE EL MARCO
+            color=blue!10!white,
+        },
+    title={\exampletext: #1},% use \thetcbcounter to access the testexample counter text
+    % Attaching a box requires an overlay
+    attach boxed title to top left,
+    % Ensures proper line breaking in longer titles
+    minipage boxed title,
+    % (boxed title style requires an overlay)
+    boxed title style={enhanced, colback = blue!60!white, size=minimal, toprule=0pt,top=4pt,left=5mm, right= 6mm,overlay={}},
+    coltitle=colexam,fonttitle=\bfseries,
+    before=\par\medskip\noindent,parbox=false, boxsep=0pt,left=5mm,right=5mm,top=2pt,breakable,pad at break=0mm,
+    before upper=\csname @totalleftmargin\endcsname0pt, % Use instead of parbox=true. This ensures parskip is inherited by box.
+    % Handles box when it exists on one page only
+    overlay unbroken={\draw[colexam,line width=2pt] ([xshift=-0pt]title.north west) -- ([xshift=-0pt]frame.south west); },
+    % Handles multipage box: first page
+    overlay first={\draw[colexam,line width=2pt] ([xshift=-0pt]title.north west) -- ([xshift=-0pt]frame.south west); },
+    % Handles multipage box: middle page
+    overlay middle={\draw[colexam,line width=2pt] ([xshift=-0pt]frame.north west) -- ([xshift=-0pt]frame.south west); },
+    % Handles multipage box: last page
+    overlay last={\draw[colexam,line width=2pt] ([xshift=-0pt]frame.north west) -- ([xshift=-0pt]frame.south west); },%
+    }
+\begin{testexamplebox}}
+{\end{testexamplebox}\endlist}
+
+
+%DEFINICIÓN - environment
+\usepackage{amsthm}
+\usepackage{thmtools}
+% \usepackage{tkz-fct} 
+
+\declaretheoremstyle[%
+spaceabove=6pt, spacebelow=6pt,
+headfont=\normalfont\bfseries\color{blue!60!black}, headindent=\parindent,
+notefont=\mdseries, notebraces={(}{)},
+bodyfont=\normalfont,
+postheadspace=0.5em]%
+{def}
+\declaretheorem[name=Definición, numbered=yes, style=def]{definition}
+
+%TEOREMA - environment
+\declaretheoremstyle[%
+spaceabove=6pt, spacebelow=6pt,
+headfont=\normalfont\bfseries\color{blue!60!black}, headindent=\parindent,
+notefont=\mdseries, notebraces={(}{)},
+bodyfont=\normalfont,
+postheadspace=0.5em]%
+{theo}
+\declaretheorem[name=Teorema, numbered=yes, style=theo]{teorema}
+
+%OBSERVACIÓN - environment
+\declaretheoremstyle[%
+    spaceabove=6pt, spacebelow=6pt,
+    headfont=\normalfont\bfseries\color{red!80!black}, headindent=\parindent,
+    notefont=\mdseries, notebraces={(}{)},
+    bodyfont=\normalfont,
+    postheadspace=0.5em
+    ]%
+    {obs}
+    \declaretheorem[name=\underline{\# Observación}, numbered=no, style=obs]{obs}
+
+
+%FORMATEO DE TITULOS Y SECCIONES
+\usepackage{titlesec}
+\titleformat{\section} %qué tipo de comando
+    [display]  %shape
+    {\Large\bfseries\itshape} %estilo
+    {} %algun texto o label
+    {-1.5em} %separación
+    {
+        \centering
+    }
+    [
+    \centering
+    \vspace{-0.75ex}%
+    \rule{\textwidth}{0.3pt}
+    ] % after-code
+
+
+    \titleformat{\subsection} %qué tipo de comando
+    %[display]  %shape
+    {\bfseries\itshape} %estilo
+    {\thesubsection} %algun texto o label
+    {0em} %separación
+    {
+    }
+    [
+        %\centering
+        \vspace{-0.5ex}%
+        \rule{\textwidth}{0.3pt}
+    ] % after-code
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%Listado Fancy
+\usepackage{xcolor,enumitem,amssymb}
+\let\svitem\item
+\let\thebang\relax
+\colorlet{bangcolor}{blue!30}
+\newenvironment{bangenumerate}
+{%
+  \fboxsep=3pt\relax%
+  \renewcommand\item[2][\relax]{%
+    \ifx!##2%
+      \def\thebang{\makebox[0pt][l]{\kern-1pt\textcolor{bangcolor}{%
+        \raisebox{1pt}{$\scriptstyle\blacktriangleright$}}}}%
+      \def\next{}%
+    \else%
+      \def\thebang{}%
+      \def\next{##2}%
+    \fi%
+    \ifx\relax##1\relax\svitem\else\svitem[##1]\fi\next%
+  }%
+  \begin{enumerate}[label={%
+    \smash{\colorbox{bangcolor}{\bfseries\sffamily\theenumi)}\thebang}}]%
+}{\end{enumerate}}
+
+
+\begin{document}
+    \thispagestyle{empty}
+        %encabezado
+        \pagestyle{plain}{
+        \pagestyle{empty}
+        \changepage{3cm}{1cm}{-0.5cm}{-0.5cm}{}{-2cm}{}{}{}
+        \noindent
+        {\small
+            \begin{center}
+            \begin{tabular}{c}
+                \includegraphics[width=7cm]{imagenes/uns_logo.jpg}
+            \end{tabular}
+            \end{center}
+        }
+        \vspace{0.5cm}
+        %-------------------Datos de la carátula
+        \begin{center}
+            \par %espacio antes del encabezado
+            {
+                \Huge{
+                   Universidad Nacional del Sur
+                }   
+            }
+            \par\vspace{0.1cm}
+            {
+                \large{}
+            }
+            \par\vspace{8cm}
+            {
+                \Large\textbf{Proyecto Final de Carrera}
+            }
+
+            \par\vspace{0.2cm}
+            {
+                \Large{Implementación de un TDC en FPGA basado en TDLs para la calibración de una línea digital de retardos.}
+            }
+            \par\vspace{0.4cm}
+            
+            %    \large\textbf{1° Cuatrimestre 2021}
+            
+            %%\par\vspace{10cm}
+        \end{center}
+        }
+        \begin{center}
+            
+            \par\hspace{1cm}
+            {
+            \large Filsinger Miqueas
+            }  
+        \end{center}
+            
+        \clearpage
+        
+    %\tableofcontents
+    \newpage
+    \include{Contenido.tex}
+
+    \clearpage
+    \printbibliography[heading=bibintoc, title={Referencias}]
+
+
+\end{document}
