@@ -113,11 +113,11 @@ de una parte gruesa, y puede calcularse como
           \draw[->] (0,0) -- (12,0) node[right] {Time};
 
           % START signal
-          \draw[signal] (0,5) -- ++(2.25, 0) -- ++(0, 0.5) -- (12,5.5);
+          \draw[signal] (0,5) -- ++(2.25, 0) -- ++(0, 0.5) -- ++(0.5, 0) -- ++(0, -0.5) -- (12,5);
           \node[left] at (0,5) {Start};
 
           % STOP signal
-          \draw[signal] (0,3.5) -- (10.25,3.5) -- (10.25,4) -- (12,4);
+          \draw[signal] (0,3.5) -- (10.25,3.5) -- (10.25,4) -- (10.75, 4) -- (10.75, 3.5) -- (12,3.5);
           \node[left] at (0,4) {Stop};
 
           %%Input signal
