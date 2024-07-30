@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2023.3.12)  30 JUL 2024 01:31
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2023.3.12)  30 JUL 2024 11:14
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -1379,14 +1379,6 @@ Package biblatex Info: ... file 'Main_informe.bbl' found.
  (./Main_informe.bbl)
 Package biblatex Info: Reference section=0 on input line 206.
 Package biblatex Info: Reference segment=0 on input line 206.
- (|'inkscape' -V )
-
-Package svg Warning: No version of Inkscape was detected by invoking
-(svg)                `inkscape -V'
-(svg)                so the Inkscape export will fail quite sure as the
-(svg)                command is probably unknown to your OS. You could set
-(svg)                `inkscapeversion=<version>' manually but this is very
-(svg)                unlikely to work on input line 206.
 
 Package pgfplots notification 'compat/show suggested version=true': document has been generated with the most recent feature set (\pgfplotsset{compat=1.18}).
 
@@ -1447,7 +1439,7 @@ Underfull \vbox (badness 1102) has occurred while \output is active []
  [4
 
 ] [5]
-Underfull \hbox (badness 10000) in paragraph at lines 186--194
+Underfull \hbox (badness 10000) in paragraph at lines 172--180
 
  []
 
@@ -1461,20 +1453,20 @@ File: imagenes/carry4.png Graphic file (type bmp)
  [8
 
 ]
-Invalid UTF-8 byte or sequence at line 260 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 260 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 260 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 260 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 260 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 260 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 246 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 246 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 246 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 246 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 246 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 246 replaced by U+FFFD.
 File: imagenes/fine.eps Graphic file (type eps)
 <imagenes/fine.eps>
-Invalid UTF-8 byte or sequence at line 298 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 298 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 298 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 298 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 298 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 298 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 284 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 284 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 284 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 284 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 284 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 284 replaced by U+FFFD.
 File: imagenes/problema_buffer.eps Graphic file (type eps)
 <imagenes/problema_buffer.eps>
  [9]
@@ -1487,7 +1479,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 File: imagenes/bubble.eps Graphic file (type eps)
 <imagenes/bubble.eps>
  [11]
-Underfull \hbox (badness 10000) in paragraph at lines 368--373
+Underfull \hbox (badness 10000) in paragraph at lines 354--359
 
  []
 
@@ -1497,7 +1489,7 @@ File: imagenes/arbiter.eps Graphic file (type eps)
 Underfull \vbox (badness 8056) has occurred while \output is active []
 
  [12]
-Underfull \hbox (badness 10000) in paragraph at lines 383--391
+Underfull \hbox (badness 10000) in paragraph at lines 369--377
 
  []
 
@@ -1525,10 +1517,10 @@ Package logreq Info: Writing requests to 'Main_informe.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 69751 strings out of 476684
- 1685812 string characters out of 5807583
- 2636726 words of memory out of 5000000
- 89031 multiletter control sequences out of 15000+600000
+ 69749 strings out of 476684
+ 1685777 string characters out of 5807583
+ 2637727 words of memory out of 5000000
+ 89032 multiletter control sequences out of 15000+600000
  537710 words of font info for 134 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  99i,9n,96p,1984b,4936s stack positions out of 10000i,1000n,20000p,200000b,200000s

@@ -98,10 +98,16 @@ de una parte gruesa, y puede calcularse como
           \tikzstyle{startstop} = [red, thick, dashed]
 
           % Dashed lines for START and STOP
-          \draw[startstop] (1.8,-1)     -- (1.8,6);
-          \draw[startstop] (2.25,-1)    -- (2.25,6);
-          \draw[startstop] (10,-1)      -- (10,6);
-          \draw[startstop] (10.25,-1)   -- (10.25,6);
+          \draw[startstop]    (1.8,0)   -- (1.8,6);
+          \draw[startstop]    (2.25,0)  -- (2.25,6);
+          \draw[startstop]    (10,0)    -- (10,6);
+          \draw[startstop]    (10.25,0) -- (10.25,6);
+
+          %Cotas
+          \draw[<->]          (1.8, 6)  -- (2.25, 6);
+          \node[right] at (1.5, 6.4) {$\tau_{start}$};
+          \draw[<->]          (10, 6)  -- (10.25, 6);
+          \node[right] at (9.5, 6.4) {$\tau_{stop}$};
 
           % Time axis
           \draw[->] (0,0) -- (12,0) node[right] {Time};
@@ -127,26 +133,6 @@ de una parte gruesa, y puede calcularse como
           %%Coarse signal
           \draw[signal] (0,0.5) -- ++(2.25,0) -- ++(0,0.5) -- (9.75,1) -- ++(0,-0.5) -- (12,0.5);
           \node[left] at (0,0.5) {Coarse};
-
-
-          % % Coarse Counting signal
-          % \draw[signal] (2,1.5) -- (3.5,1.5) -- (3.5,1) -- (10,1) -- (10,1.5) -- (12,1.5);
-          % \node[left] at (0,1.5) {Coarse Counting};
-
-          % % Fine Counting 1 signal
-          % \draw[signal] (2,0.5) -- (2.5,0.5) -- (2.5,0) -- (12,0);
-          % \node[left] at (0,0.5) {Fine Counting 1};
-
-          % % Fine Counting 2 signal
-          % \draw[signal] (2,-0.5) -- (10, -0.5) -- (10, -1) -- (12, -1);
-          % \node[left] at (0,-0.5) {Fine Counting 2};
-
-          % Labels
-          % \node at (6,5.2) {$T_m$};
-          % \node at (6,2.8) {$T_{\text{CLK}}$};
-          % \node at (6,1.7) {$T_{\text{coarse}}$};
-          % \node at (2.75,0.7) {$T_{\text{fine1}}$};
-          % \node at (10.5, -0.3) {$T_{\text{fine2}}$};
 
           % Extra line to mark the end
           \draw[<-] (0,6) -- (0, 0);
