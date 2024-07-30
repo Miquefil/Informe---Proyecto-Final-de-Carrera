@@ -1,7 +1,11 @@
 \babel@toc {english}{}\relax 
 \contentsline {section}{\numberline {1}Introducción}{3}{section.1}%
-\contentsline {section}{\numberline {2}Arquitectura}{4}{section.2}%
-\contentsline {subsection}{\numberline {2.1}short}{5}{subsection.2.1}%
-\contentsline {subsection}{\numberline {2.2}Decoder}{7}{subsection.2.2}%
-\contentsline {subsection}{\numberline {2.3}Medición gruesa y Árbitro}{9}{subsection.2.3}%
-\contentsline {section}{Referencias}{12}{figure.caption.13}%
+\contentsline {section}{\numberline {2}Estado del arte}{4}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Principios de la arquitectura tipo TDL}{5}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Tests, mediciones y resultados}{6}{subsection.2.2}%
+\contentsline {section}{\numberline {3}Arquitectura}{8}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Tapped Delay Line}{8}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Decoder}{10}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Medición gruesa y Árbitro}{12}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Implementación}{14}{subsection.3.4}%
+\contentsline {section}{Referencias}{15}{figure.caption.15}%

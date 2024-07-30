@@ -10,8 +10,8 @@
     }
 
 %Paquetes   
-\usepackage[english]{babel}
 \usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
 \usepackage[table,xcdraw]{xcolor}
 \usepackage{amsmath}
 \usepackage{amsfonts}
@@ -195,6 +195,13 @@ postheadspace=0.5em]%
     \smash{\colorbox{bangcolor}{\bfseries\sffamily\theenumi)}\thebang}}]%
 }{\end{enumerate}}
 
+%%Change table of contents title!!
+\renewcommand{\contentsname}{Contenidos}
+
+\renewcommand{\figurename}{Figura}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
     \thispagestyle{empty}
@@ -230,7 +237,7 @@ postheadspace=0.5em]%
 
             \par\vspace{0.2cm}
             {
-                \Large{Implementación de un TDC en FPGA basado en TDLs para la calibración de una línea digital de retardos.}
+                \Large{Implementación de un Nutt-TDC en FPGA.}
             }
             \par\vspace{0.4cm}
             
@@ -249,7 +256,7 @@ postheadspace=0.5em]%
             
         \clearpage
         
-    %\tableofcontents
+    \tableofcontents
     \newpage
     \include{Contenido.tex}
 

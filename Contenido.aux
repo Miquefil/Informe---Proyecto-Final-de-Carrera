@@ -1,37 +1,52 @@
 \relax 
 \providecommand\hyper@newdestlabel[2]{}
 \@writefile{toc}{\contentsline {section}{\numberline {1}Introducción}{3}{section.1}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Example of Tapped delay line\relax }}{3}{figure.caption.1}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Característica entrada-salida.\relax }}{4}{figure.caption.2}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Caption de prueba\relax }}{4}{figure.caption.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Esquemático circuital del elemento de retardo.\relax }}{3}{figure.caption.1}\protected@file@percent }
 \providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
-\newlabel{fig:prueba}{{3}{4}{Caption de prueba\relax }{figure.caption.3}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {2}Arquitectura}{4}{section.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}short}{5}{subsection.2.1}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Elementos disponibles dentro de una SLICE.\relax }}{5}{figure.caption.4}\protected@file@percent }
-\newlabel{SliceYCarry}{{4}{5}{Elementos disponibles dentro de una SLICE.\relax }{figure.caption.4}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Esquema de la cadena del módulo de interpolación fina.\relax }}{6}{figure.caption.5}\protected@file@percent }
-\newlabel{fig: fine}{{5}{6}{Esquema de la cadena del módulo de interpolación fina.\relax }{figure.caption.5}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Ejemplo de histograma conseguidos al excitar el TDC con una frecuencia pseudo-aleatoria modificando la posición relativa de la cadena de retardos respecto a los buffers de clock.\relax }}{7}{figure.caption.6}\protected@file@percent }
-\newlabel{fig: problema buffer}{{6}{7}{Ejemplo de histograma conseguidos al excitar el TDC con una frecuencia pseudo-aleatoria modificando la posición relativa de la cadena de retardos respecto a los buffers de clock.\relax }{figure.caption.6}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Decoder}{7}{subsection.2.2}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Registro de un pulso digital en el momento que ingresa a la línea, y en el momento que egresa de ella.\relax }}{8}{figure.caption.7}\protected@file@percent }
-\newlabel{fig: tdl_flancos}{{7}{8}{Registro de un pulso digital en el momento que ingresa a la línea, y en el momento que egresa de ella.\relax }{figure.caption.7}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Retardo virtual de propagación que se puede observar cuando existe \textit  {clock skew} entre dos flip-flops aledaños.\relax }}{8}{figure.caption.8}\protected@file@percent }
-\newlabel{fig: bubble}{{8}{8}{Retardo virtual de propagación que se puede observar cuando existe \textit {clock skew} entre dos flip-flops aledaños.\relax }{figure.caption.8}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.3}Medición gruesa y Árbitro}{9}{subsection.2.3}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Arbitro implementado.\relax }}{10}{figure.caption.9}\protected@file@percent }
-\newlabel{fig: arbitro}{{9}{10}{Arbitro implementado.\relax }{figure.caption.9}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Todos los casos posibles de arbitraje para el flanco Start\relax }}{10}{figure.caption.10}\protected@file@percent }
-\newlabel{fig: casos_arbitro}{{10}{10}{Todos los casos posibles de arbitraje para el flanco Start\relax }{figure.caption.10}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces Registro \textit  {Start} de la cadena de retardos para cada caso de arbitraje.\relax }}{11}{figure.caption.11}\protected@file@percent }
-\newlabel{fig: finos_casos_start}{{11}{11}{Registro \textit {Start} de la cadena de retardos para cada caso de arbitraje.\relax }{figure.caption.11}{}}
-\newlabel{tabla: arbitro}{{\caption@xref {tabla: arbitro}{ on input line 356}}{11}{Medición gruesa y Árbitro}{table.caption.12}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces Arquítectura del TDC.\relax }}{11}{figure.caption.13}\protected@file@percent }
-\newlabel{fig: TDC}{{12}{11}{Arquítectura del TDC.\relax }{figure.caption.13}{}}
+\newlabel{fig: nacho_delay}{{1}{3}{Esquemático circuital del elemento de retardo.\relax }{figure.caption.1}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {2}Estado del arte}{4}{section.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Clasificación de las distintas arquitecturas.\relax }}{4}{figure.caption.2}\protected@file@percent }
+\newlabel{fig: taxonomia}{{2}{4}{Clasificación de las distintas arquitecturas.\relax }{figure.caption.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Principios de la arquitectura tipo TDL}{5}{subsection.2.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Diferentes formas de aplicar el método Vernier.\relax }}{5}{figure.caption.3}\protected@file@percent }
+\newlabel{fig: various_tdl}{{3}{5}{Diferentes formas de aplicar el método Vernier.\relax }{figure.caption.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Esquema de medición fina del pulso de entrada.\relax }}{6}{figure.caption.4}\protected@file@percent }
+\newlabel{fig: arqui_tdl}{{4}{6}{Esquema de medición fina del pulso de entrada.\relax }{figure.caption.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Tests, mediciones y resultados}{6}{subsection.2.2}\protected@file@percent }
+\newlabel{eq: tau_i}{{1}{6}{Tests, mediciones y resultados}{equation.2.1}{}}
+\newlabel{eq: tau_medio}{{2}{6}{Tests, mediciones y resultados}{equation.2.2}{}}
+\newlabel{eq: DNL}{{3}{6}{Tests, mediciones y resultados}{equation.2.3}{}}
+\newlabel{eq: INL}{{4}{6}{Tests, mediciones y resultados}{equation.2.4}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Caption de prueba\relax }}{7}{figure.caption.5}\protected@file@percent }
+\newlabel{fig:prueba}{{5}{7}{Caption de prueba\relax }{figure.caption.5}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3}Arquitectura}{8}{section.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Tapped Delay Line}{8}{subsection.3.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Elementos disponibles dentro de una SLICE.\relax }}{8}{figure.caption.6}\protected@file@percent }
+\newlabel{SliceYCarry}{{6}{8}{Elementos disponibles dentro de una SLICE.\relax }{figure.caption.6}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Esquema de la cadena del módulo de interpolación fina.\relax }}{9}{figure.caption.7}\protected@file@percent }
+\newlabel{fig: fine}{{7}{9}{Esquema de la cadena del módulo de interpolación fina.\relax }{figure.caption.7}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Ejemplo de histograma conseguidos al excitar el TDC con una frecuencia pseudo-aleatoria modificando la posición relativa de la cadena de retardos respecto a los buffers de clock.\relax }}{10}{figure.caption.8}\protected@file@percent }
+\newlabel{fig: problema buffer}{{8}{10}{Ejemplo de histograma conseguidos al excitar el TDC con una frecuencia pseudo-aleatoria modificando la posición relativa de la cadena de retardos respecto a los buffers de clock.\relax }{figure.caption.8}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Decoder}{10}{subsection.3.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Registro de un pulso digital en el momento que ingresa a la línea, y en el momento que egresa de ella.\relax }}{11}{figure.caption.9}\protected@file@percent }
+\newlabel{fig: tdl_flancos}{{9}{11}{Registro de un pulso digital en el momento que ingresa a la línea, y en el momento que egresa de ella.\relax }{figure.caption.9}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Retardo virtual de propagación que se puede observar cuando existe \textit  {clock skew} entre dos flip-flops aledaños.\relax }}{11}{figure.caption.10}\protected@file@percent }
+\newlabel{fig: bubble}{{10}{11}{Retardo virtual de propagación que se puede observar cuando existe \textit {clock skew} entre dos flip-flops aledaños.\relax }{figure.caption.10}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Medición gruesa y Árbitro}{12}{subsection.3.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces Arbitro implementado.\relax }}{13}{figure.caption.11}\protected@file@percent }
+\newlabel{fig: arbitro}{{11}{13}{Arbitro implementado.\relax }{figure.caption.11}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces Todos los casos posibles de arbitraje para el flanco Start\relax }}{13}{figure.caption.12}\protected@file@percent }
+\newlabel{fig: casos_arbitro}{{12}{13}{Todos los casos posibles de arbitraje para el flanco Start\relax }{figure.caption.12}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces Registro \textit  {Start} de la cadena de retardos para cada caso de arbitraje.\relax }}{14}{figure.caption.13}\protected@file@percent }
+\newlabel{fig: finos_casos_start}{{13}{14}{Registro \textit {Start} de la cadena de retardos para cada caso de arbitraje.\relax }{figure.caption.13}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Cuenta gruesa del ejemplo presentado en la Figura \ref {fig: casos_arbitro}, según cada clock generado por el PLL.\relax }}{14}{table.caption.14}\protected@file@percent }
+\newlabel{tabla: arbitro}{{1}{14}{Cuenta gruesa del ejemplo presentado en la Figura \ref {fig: casos_arbitro}, según cada clock generado por el PLL.\relax }{table.caption.14}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4}Implementación}{14}{subsection.3.4}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces Arquitectura del TDC. Se ignora el routeo del clock.\relax }}{14}{figure.caption.15}\protected@file@percent }
+\newlabel{fig: TDC}{{14}{14}{Arquitectura del TDC. Se ignora el routeo del clock.\relax }{figure.caption.15}{}}
 \@setckpt{Contenido}{
-\setcounter{page}{12}
-\setcounter{equation}{0}
+\setcounter{page}{15}
+\setcounter{equation}{4}
 \setcounter{enumi}{3}
 \setcounter{enumii}{0}
 \setcounter{enumiii}{0}
@@ -39,13 +54,13 @@
 \setcounter{footnote}{1}
 \setcounter{mpfootnote}{0}
 \setcounter{part}{0}
-\setcounter{section}{2}
-\setcounter{subsection}{3}
+\setcounter{section}{3}
+\setcounter{subsection}{4}
 \setcounter{subsubsection}{0}
 \setcounter{paragraph}{0}
 \setcounter{subparagraph}{0}
-\setcounter{figure}{12}
-\setcounter{table}{0}
+\setcounter{figure}{14}
+\setcounter{table}{1}
 \setcounter{blindtext}{1}
 \setcounter{Blindtext}{5}
 \setcounter{blind@countparstart}{0}
@@ -79,7 +94,7 @@
 \setcounter{citetotal}{0}
 \setcounter{multicitecount}{0}
 \setcounter{multicitetotal}{0}
-\setcounter{instcount}{14}
+\setcounter{instcount}{17}
 \setcounter{maxnames}{3}
 \setcounter{minnames}{1}
 \setcounter{maxitems}{3}
@@ -185,7 +200,7 @@
 \setcounter{bbx:relatedcount}{0}
 \setcounter{bbx:relatedtotal}{0}
 \setcounter{cbx@tempcnta}{0}
-\setcounter{cbx@tempcntb}{8}
+\setcounter{cbx@tempcntb}{10}
 \setcounter{cbx@tempcntc}{0}
 \setcounter{cbx@tempcntd}{-1}
 \setcounter{svg@param@lastpage}{0}

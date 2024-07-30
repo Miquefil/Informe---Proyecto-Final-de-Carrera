@@ -17,6 +17,134 @@
 \endgroup
 
 \datalist[entry]{none/global//global/global}
+  \entry{Altruda2023}{article}{}
+    \name{author}{6}{}{%
+      {{hash=AS}{%
+         family={Altruda},
+         familyi={A\bibinitperiod},
+         given={Samuele},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=CJ}{%
+         family={Christiansen},
+         familyi={C\bibinitperiod},
+         given={Jorgen},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=HM}{%
+         family={Horstmann},
+         familyi={H\bibinitperiod},
+         given={Moritz},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=PL}{%
+         family={Perktold},
+         familyi={P\bibinitperiod},
+         given={Lukas},
+         giveni={L\bibinitperiod},
+      }}%
+      {{hash=PD}{%
+         family={Porret},
+         familyi={P\bibinitperiod},
+         given={David},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=PJ}{%
+         family={Prinzie},
+         familyi={P\bibinitperiod},
+         given={Jeffrey},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {IOP Publishing}%
+    }
+    \strng{namehash}{AS+1}
+    \strng{fullhash}{ASCJHMPLPDPJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.1088/1748-0221/18/07/p07012
+    \endverb
+    \field{issn}{1748-0221}
+    \field{number}{07}
+    \field{pages}{P07012}
+    \field{title}{PicoTDC: a flexible 64 channel TDC with picosecond
+  resolution}
+    \verb{url}
+    \verb http://dx.doi.org/10.1088/1748-0221/18/07/P07012
+    \endverb
+    \field{volume}{18}
+    \field{journaltitle}{Journal of Instrumentation}
+    \field{month}{07}
+    \field{year}{2023}
+  \endentry
+
+  \entry{Maatta1998}{article}{}
+    \name{author}{2}{}{%
+      {{hash=MK}{%
+         family={Maatta},
+         familyi={M\bibinitperiod},
+         given={K.},
+         giveni={K\bibinitperiod},
+      }}%
+      {{hash=KJ}{%
+         family={Kostamovaara},
+         familyi={K\bibinitperiod},
+         given={J.},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{2}{%
+      {Institute of Electrical}%
+      {Electronics Engineers (IEEE)}%
+    }
+    \strng{namehash}{MKKJ1}
+    \strng{fullhash}{MKKJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.1109/19.744201
+    \endverb
+    \field{issn}{0018-9456}
+    \field{number}{2}
+    \field{pages}{521–536}
+    \field{title}{A high-precision time-to-digital converter for pulsed
+  time-of-flight laser radar applications}
+    \verb{url}
+    \verb http://dx.doi.org/10.1109/19.744201
+    \endverb
+    \field{volume}{47}
+    \field{journaltitle}{IEEE Transactions on Instrumentation and Measurement}
+    \field{month}{04}
+    \field{year}{1998}
+  \endentry
+
+  \entry{Nacho}{thesis}{}
+    \name{author}{1}{}{%
+      {{hash=MJI}{%
+         family={Morales},
+         familyi={M\bibinitperiod},
+         given={Juan\bibnamedelima Ignacio},
+         giveni={J\bibinitperiod\bibinitdelim I\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{MJI1}
+    \strng{fullhash}{MJI1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Diseño de sistemas microelectrónicos basados en alta
+  resolución temporal}
+    \list{location}{1}{%
+      {Bahía Blanca}%
+    }
+    \list{institution}{1}{%
+      {Universidad del Sur}%
+    }
+    \field{type}{phdthesis}
+    \field{year}{2020}
+  \endentry
+
   \entry{Machado}{article}{}
     \name{author}{3}{}{%
       {{hash=MR}{%
@@ -58,84 +186,158 @@
     \field{year}{2019}
   \endentry
 
-  \entry{Nacho}{thesis}{}
-    \name{author}{1}{}{%
-      {{hash=MJI}{%
-         family={Morales},
+  \entry{Liu2015}{article}{}
+    \name{author}{2}{}{%
+      {{hash=LC}{%
+         family={Liu},
+         familyi={L\bibinitperiod},
+         given={Chong},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=WY}{%
+         family={Wang},
+         familyi={W\bibinitperiod},
+         given={Yonggang},
+         giveni={Y\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{2}{%
+      {Institute of Electrical}%
+      {Electronics Engineers (IEEE)}%
+    }
+    \strng{namehash}{LCWY1}
+    \strng{fullhash}{LCWY1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.1109/tns.2015.2421319
+    \endverb
+    \field{issn}{1558-1578}
+    \field{number}{3}
+    \field{pages}{773–783}
+    \field{title}{A 128-Channel, 710 M Samples/Second, and Less Than 10 ps RMS
+  Resolution Time-to-Digital Converter Implemented in a Kintex-7 FPGA}
+    \verb{url}
+    \verb http://dx.doi.org/10.1109/TNS.2015.2421319
+    \endverb
+    \field{volume}{62}
+    \field{journaltitle}{IEEE Transactions on Nuclear Science}
+    \field{month}{06}
+    \field{year}{2015}
+  \endentry
+
+  \entry{Khaddour2023}{article}{}
+    \name{author}{5}{}{%
+      {{hash=KW}{%
+         family={Khaddour},
+         familyi={K\bibinitperiod},
+         given={Wassim},
+         giveni={W\bibinitperiod},
+      }}%
+      {{hash=UW}{%
+         family={Uhring},
+         familyi={U\bibinitperiod},
+         given={Wilfried},
+         giveni={W\bibinitperiod},
+      }}%
+      {{hash=DF}{%
+         family={Dadouche},
+         familyi={D\bibinitperiod},
+         given={Foudil},
+         giveni={F\bibinitperiod},
+      }}%
+      {{hash=DN}{%
+         family={Dumas},
+         familyi={D\bibinitperiod},
+         given={Norbert},
+         giveni={N\bibinitperiod},
+      }}%
+      {{hash=MM}{%
+         family={Madec},
          familyi={M\bibinitperiod},
-         given={Juan\bibnamedelima Ignacio},
-         giveni={J\bibinitperiod\bibinitdelim I\bibinitperiod},
-      }}%
-    }
-    \strng{namehash}{MJI1}
-    \strng{fullhash}{MJI1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{title}{Diseño de sistemas microelectrónicos basados en alta
-  resolución temporal}
-    \list{location}{1}{%
-      {Bahía Blanca}%
-    }
-    \list{institution}{1}{%
-      {Universidad del Sur}%
-    }
-    \field{type}{phdthesis}
-    \field{year}{2020}
-  \endentry
-
-  \entry{artix}{manual}{}
-    \name{author}{1}{}{%
-      {{hash=X}{%
-         family={Xilinx},
-         familyi={X\bibinitperiod},
-      }}%
-    }
-    \list{organization}{1}{%
-      {AMD}%
-    }
-    \strng{namehash}{X1}
-    \strng{fullhash}{X1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{title}{7 Series FPGAs Configurable Logic Block}
-    \field{year}{2016}
-  \endentry
-
-  \entry{carry4}{misc}{}
-    \name{author}{1}{}{%
-      {{hash=A}{%
-         family={AMD},
-         familyi={A\bibinitperiod},
-      }}%
-    }
-    \strng{namehash}{A1}
-    \strng{fullhash}{A1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-  \field{howpublished}{\url{https://docs.amd.com/r/en-US/ug953-vivado-7series-libraries/CARRY4}}
-    \field{note}{Accedido: 25-03-2024}
-    \field{title}{Carry4}
-    \field{year}{2024}
-  \endentry
-
-  \entry{libro}{book}{}
-    \name{author}{1}{}{%
-      {{hash=HS}{%
-         family={Henzler},
-         familyi={H\bibinitperiod},
-         given={Stephan},
-         giveni={S\bibinitperiod},
+         given={Morgan},
+         giveni={M\bibinitperiod},
       }}%
     }
     \list{publisher}{1}{%
-      {Springer}%
+      {MDPI AG}%
     }
-    \strng{namehash}{HS1}
-    \strng{fullhash}{HS1}
+    \strng{namehash}{KW+1}
+    \strng{fullhash}{KWUWDFDNMM1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{title}{Time-to-Digital Converters}
-    \field{year}{2010}
+    \verb{doi}
+    \verb 10.3390/s23052791
+    \endverb
+    \field{issn}{1424-8220}
+    \field{number}{5}
+    \field{pages}{2791}
+    \field{title}{Calibration Methods for Time-to-Digital Converters}
+    \verb{url}
+    \verb http://dx.doi.org/10.3390/s23052791
+    \endverb
+    \field{volume}{23}
+    \field{journaltitle}{Sensors}
+    \field{month}{03}
+    \field{year}{2023}
+  \endentry
+
+  \entry{Qin2017}{article}{}
+    \name{author}{6}{}{%
+      {{hash=QX}{%
+         family={Qin},
+         familyi={Q\bibinitperiod},
+         given={X.},
+         giveni={X\bibinitperiod},
+      }}%
+      {{hash=WL}{%
+         family={Wang},
+         familyi={W\bibinitperiod},
+         given={L.},
+         giveni={L\bibinitperiod},
+      }}%
+      {{hash=LD}{%
+         family={Liu},
+         familyi={L\bibinitperiod},
+         given={D.},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=ZY}{%
+         family={Zhao},
+         familyi={Z\bibinitperiod},
+         given={Y.},
+         giveni={Y\bibinitperiod},
+      }}%
+      {{hash=RX}{%
+         family={Rong},
+         familyi={R\bibinitperiod},
+         given={X.},
+         giveni={X\bibinitperiod},
+      }}%
+      {{hash=DJ}{%
+         family={Du},
+         familyi={D\bibinitperiod},
+         given={J.},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \keyw{Delays;Time measurement;Clocks;Field programmable gate
+  arrays;Temperature control;Carry chain;field-programmable gate arrays
+  (FPGA);offset correction;time-to-digital converter (TDC)}
+    \strng{namehash}{QX+1}
+    \strng{fullhash}{QXWLLDZYRXDJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.1109/TNS.2017.2768082
+    \endverb
+    \field{number}{12}
+    \field{pages}{2951\bibrangedash 2957}
+    \field{title}{A 1.15-ps Bin Size and 3.5-ps Single-Shot Precision
+  Time-to-Digital Converter With On-Board Offset Correction in an FPGA}
+    \field{volume}{64}
+    \field{journaltitle}{IEEE Transactions on Nuclear Science}
+    \field{year}{2017}
   \endentry
 
   \entry{kalisz_field-programmable-gate-array-based_1997}{article}{}
@@ -327,12 +529,6 @@
     \verb{url}
     \verb https://ieeexplore.ieee.org/document/8577365
     \endverb
-    \verb{file}
-    \verb IEEE Xplore Abstract Record:C\:\\Users\\mique\\Zotero\\storage\\3LFS8
-    \verb DKK\\8577365.html:text/html;Texto completo:C\:\\Users\\mique\\Zotero\
-    \verb \storage\\FZ77BNI6\\Machado et al. - 2018 - A novel synchronizer for
-    \verb a 17.9ps Nutt Time-to-Dig.pdf:application/pdf
-    \endverb
     \field{month}{10}
     \field{year}{2018}
     \field{urlday}{16}
@@ -445,46 +641,6 @@
     \field{journaltitle}{IEEE Transactions on Nuclear Science}
     \field{month}{06}
     \field{year}{2010}
-  \endentry
-
-  \entry{Liu2015}{article}{}
-    \name{author}{2}{}{%
-      {{hash=LC}{%
-         family={Liu},
-         familyi={L\bibinitperiod},
-         given={Chong},
-         giveni={C\bibinitperiod},
-      }}%
-      {{hash=WY}{%
-         family={Wang},
-         familyi={W\bibinitperiod},
-         given={Yonggang},
-         giveni={Y\bibinitperiod},
-      }}%
-    }
-    \list{publisher}{2}{%
-      {Institute of Electrical}%
-      {Electronics Engineers (IEEE)}%
-    }
-    \strng{namehash}{LCWY1}
-    \strng{fullhash}{LCWY1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \verb{doi}
-    \verb 10.1109/tns.2015.2421319
-    \endverb
-    \field{issn}{1558-1578}
-    \field{number}{3}
-    \field{pages}{773–783}
-    \field{title}{A 128-Channel, 710 M Samples/Second, and Less Than 10 ps RMS
-  Resolution Time-to-Digital Converter Implemented in a Kintex-7 FPGA}
-    \verb{url}
-    \verb http://dx.doi.org/10.1109/TNS.2015.2421319
-    \endverb
-    \field{volume}{62}
-    \field{journaltitle}{IEEE Transactions on Nuclear Science}
-    \field{month}{06}
-    \field{year}{2015}
   \endentry
 \enddatalist
 \endinput
