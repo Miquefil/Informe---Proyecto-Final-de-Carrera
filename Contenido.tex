@@ -42,7 +42,7 @@ permita al menos una ecualización aproximada de la cadena de retardos.
 En esta sección se explicarán algunos de los últimos avances propuestos en la bibliografía. Hasta ahora se ha hablado de
 aquellos aspectos esperables en un TDC, pero es importante tener en cuenta que existen distintos paradigmas en su diseño dependiendo
 de su destino: ASIC o FPGA. La libertad de colocación de componentes (placement \& routing) con 
-la que se cuenta en el diseño de ASICs permite minimizar retardos indeseados que en el diseño de FPGA no tienen remedio, por tal
+la que se cuenta en el diseño de ASICs permite minimizar retardos indeseados que en el diseño de FPGA no tienen remedio, por tal,
 esta sección será fuertemente basada en \cite{Machado} ya que propone un estudio, clasificación y análisis de las distintas 
 arquitecturas bajo el paradigma de la construcción en FPGA, algo que no se había hecho hasta el momento.\\
 
@@ -54,26 +54,25 @@ se muestra en la Figura \ref{fig: taxonomia}.
      \caption{Clasificación de las distintas arquitecturas.}
      \label{fig: taxonomia}
 \end{figure}
-Las arquitecturas de tipo ``Coarse Counter'' (contador grueso), son aquellas que utilizan un simple contador para estimar el
+Las arquitecturas de tipo \textit{Coarse Counter} (contador grueso), son aquellas que utilizan un simple contador para estimar el
 ancho de pulso de una señal, según la cantidad de clocks del sistema que entran en ella; su precisión es entonces el periodo de
-reloj. Las arquitecturas basadas en Clocks Desfasados son todas aquellas que utilizan más de un clock para estimar la medición:
-algunas de ellas decide la medición a partir de saber cuál de los clocks puede observar primero la llegada del pulso, mientras que
-otros utilizan otros elementos adicionales para la interpolación, utilizando componentes de otras arquitecturas tipificadas aquí, pero
-que siguen siendo parte de esta clasificación ya que siguen la premisa de utilizar más de un clock. Por otro lado está
+reloj. Las arquitecturas basadas en \textit{Clocks Desfasados} son todas aquellas que utilizan más de un clock para estimar la medición:
+algunas de ellas deciden la medición a partir de saber cuál de los clocks puede observar primero la llegada del pulso, mientras que
+otros utilizan elementos adicionales para la interpolación. Por otro lado está
 tal vez una de las arquitecturas más utilizadas, siendo la que se aplica en este trabajo, y es aquella que utiliza \textit{Tapped Delay Lines}
 (TDL: lineas de retardo registradas) para realizar la interpolación y generar la medición fina. Esto es, se ingresa el pulso 
 de entrada en una cadena de elementos que introducen un retardo uniforme; al muestrear el estado de la cadena entonces
-se infiere cuántos retardos la señal cruzó, con lo cuál se puede estimar la medición. Dentro de esta clasificación existen distintas formas
+se infiere cuántos retardos la señal cruzó, con lo que se estima una medición. Dentro de esta clasificación existen distintas formas
 de utilizar esta forma de interpolación, algunas arquitecturas extienden el rango de medición al combinar también un Coarse Counter, la
 topología Nutt, otras utilizan varias cadenas de retardo con el fin de mejorar la precisión realizando un promedio de ellas, y otras combinan
-además más de una cadena y más de un clock. De nuevo, en cualquiera de sus formas, se clasifican según su componente principal de interpolación:
-la cadena de retardos. Por último, las arquitecturas ``Diferenciales'' se basan en medir la diferencia de retardo entre dos elementos. En
+más de una cadena y más de un clock. En cualquiera de sus formas, se clasifican según su componente principal de interpolación:
+la cadena de retardos. Por último, las arquitecturas \textit{Diferenciales} se basan en medir la diferencia de retardo entre dos elementos. En
 estas existen principalmente dos tipos: cadenas de retardos compuestas de dos elementos de retardo distintos, y osciladores en anillo.
 Por otro lado si buscamos medir el intervalo temporal entre una señal y el clock entonces llamaremos al TDC 
 \textit{síncrono}, si el intervalo puede comenzar y terminar en cualquier momento entonces lo llamaremos 
 \textit{asíncrono}.\\
 
-\subsection{Principios de la arquitectura tipo TDL}
+\subsection{Principios de la arquitectura tipo Nutt}
 Las arquitecturas TDL pueden ser implementadas de distintas formas, como muestra la Figura \ref{fig: various_tdl}.
 \begin{figure}[H]
      \centering
@@ -86,7 +85,7 @@ Basicamente la señal alimenta una cadena de retardos, la cuál es registrada a 
 se detecta el pulso de Start, el valor de la cadena se guarda para luego procesarlo, y componer el
 resultado de parte fina, que idealmente es el espacio entre líneas rojas que muestra la Figura \ref{fig: arqui_tdl}. 
 Lo mismo se realiza cuando la señal egresa de la cadena de retardos. Finalmente el resultado se compone
-de una parte gruesa (en el caso Nutt), y puede calcularse como
+de una parte gruesa, y puede calcularse como
 \begin{equation*}
      T_{m} = (n_{coarse}+1) \; T + \tau_{start} - \tau_{stop} 
 \end{equation*}

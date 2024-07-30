@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2023.3.12)  30 JUL 2024 01:22
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2023.3.12)  30 JUL 2024 01:31
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -1435,16 +1435,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 42--48
 File: imagenes/taxonomia.eps Graphic file (type eps)
 <imagenes/taxonomia.eps>
 
-Underfull \hbox (badness 10000) in paragraph at lines 57--75
+Underfull \hbox (badness 10000) in paragraph at lines 57--74
 
  []
 
 File: imagenes/various_tdl.eps Graphic file (type eps)
 <imagenes/various_tdl.eps>
-[4
+
+Underfull \vbox (badness 1102) has occurred while \output is active []
+
+ [4
 
 ] [5]
-Underfull \hbox (badness 10000) in paragraph at lines 187--195
+Underfull \hbox (badness 10000) in paragraph at lines 186--194
 
  []
 
@@ -1458,20 +1461,20 @@ File: imagenes/carry4.png Graphic file (type bmp)
  [8
 
 ]
-Invalid UTF-8 byte or sequence at line 261 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 261 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 261 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 261 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 261 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 261 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 260 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 260 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 260 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 260 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 260 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 260 replaced by U+FFFD.
 File: imagenes/fine.eps Graphic file (type eps)
 <imagenes/fine.eps>
-Invalid UTF-8 byte or sequence at line 299 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 299 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 299 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 299 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 299 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 299 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 298 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 298 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 298 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 298 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 298 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 298 replaced by U+FFFD.
 File: imagenes/problema_buffer.eps Graphic file (type eps)
 <imagenes/problema_buffer.eps>
  [9]
@@ -1484,7 +1487,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 File: imagenes/bubble.eps Graphic file (type eps)
 <imagenes/bubble.eps>
  [11]
-Underfull \hbox (badness 10000) in paragraph at lines 369--374
+Underfull \hbox (badness 10000) in paragraph at lines 368--373
 
  []
 
@@ -1494,7 +1497,7 @@ File: imagenes/arbiter.eps Graphic file (type eps)
 Underfull \vbox (badness 8056) has occurred while \output is active []
 
  [12]
-Underfull \hbox (badness 10000) in paragraph at lines 384--392
+Underfull \hbox (badness 10000) in paragraph at lines 383--391
 
  []
 
