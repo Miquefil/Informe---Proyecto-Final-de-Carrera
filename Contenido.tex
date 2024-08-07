@@ -81,9 +81,9 @@ Las arquitecturas TDL pueden ser implementadas de distintas formas, como muestra
      \label{fig: various_tdl}
 \end{figure}
 
-Basicamente la señal alimenta una cadena de retardos, la cuál es registrada a cada clock. Cuando
+Basicamente la señal alimenta una cadena de retardos, la cuál es registrada en cada clock. Cuando
 se detecta el pulso de Start, el valor de la cadena se guarda para luego procesarlo, y componer el
-resultado de parte fina, que idealmente es el espacio entre líneas rojas que muestra la Figura \ref{fig: arqui_tdl}. 
+resultado de la parte fina, que idealmente es el espacio entre líneas rojas que muestra la Figura \ref{fig: arqui_tdl}. 
 Lo mismo se realiza cuando la señal egresa de la cadena de retardos. Finalmente el resultado se compone
 de una parte gruesa, y puede calcularse como
 \begin{equation*}
@@ -131,45 +131,64 @@ de una parte gruesa, y puede calcularse como
           \node[left] at (0,1.5) {Clock};
 
           %%Coarse signal
-          \draw[signal] (0,0.5) -- ++(2.25,0) -- ++(0,0.5) -- (9.75,1) -- ++(0,-0.5) -- (12,0.5);
+          \draw[signal] (0,0.5) -- ++(2.25,0) -- ++(0,0.5) -- (10.25,1) -- ++(0,-0.5) -- (12,0.5);
           \node[left] at (0,0.5) {Coarse};
 
           % Extra line to mark the end
           \draw[<-] (0,6) -- (0, 0);
 
      \end{tikzpicture}
-      \caption{Esquema de medición fina del pulso de entrada.}
+      \caption{Esquema de medición fina de un Nutt-TDC.}
       \label{fig: arqui_tdl}
 \end{figure}
 
 \subsection{Tests, mediciones y resultados}
 Particularmente en la arquitectura TDL, la opción predilecta en la bibliografía para calibrar el instrumento es mediante 
 un ``code-density test''. Esta prueba consiste en ingresar una señal decorrelacionada del reloj del sistema, de forma que 
-excite todos los elementos de retardo por igual y por lo tanto ``golpee'' a cada celda por igual, generando un
-histograma de hits (golpes) en función del número de celda. Si la cadena tiene
-$N_c$ elementos, mide un periodo de reloj $T$, y se realiza el test con $N$ muestreos,
-si la i-ésima celda captura $n_i$ mediciones entonces es claro que el 
+excite todos los elementos de retardo por igual y por lo tanto ``golpee'' a cada celda, generando un
+histograma de golpes (hits) en función del número de celda. Si la cadena tiene
+$N_c$ elementos, mide un periodo de reloj $T$, se realiza el test con $N$ muestreos,
+y la i-ésima celda captura $n_i$ mediciones entonces es claro que el 
 tamaño de cada retardo es
 \begin{equation}
      \tau_i = n_i \; \dfrac{T}{N} \; ,
      \label{eq: tau_i}
 \end{equation}
-luego el retardo medio es
+luego el retardo medio, es decir el retardo de cada celda si es equiprobable obtener un hit 
+en cada bin, es
 \begin{equation}
-     \bar{\tau} = \dfrac{T}{N} \; .
+     \bar{\tau} = \dfrac{T}{N_c} \; .
      \label{eq: tau_medio}
 \end{equation}
-Con esto es posible calcular la DNL (Differential Non-Linearity) como
+A medida que la cadena se acerca a una cadena ideal, la probabilidad de golpear cada
+elemento debe ser la misma para todos los elementos y es la cantidad de veces que se obtiene un hit
+sobre la cantidad de experimentos totales, esto es $n_i/N$. Para una cantidad de mediciones grande,
+esta probabilidad debe acercarse a $1/N_c$. Esto es igual al ejemplo de lanzar un dado justo; al ser
+equiprobable obtener cualquiera de sus seis caras entonces la ley de grandes números nos dice
+que para una cantidad suficientemente grande de experimentos, deberíamos obtener cada cara una misma cantidad
+de veces, esto es que cada cara salga $1/6$ de las veces que se arroja el dado.
+Volviendo al TDC debe ocurrir que 
+\begin{equation*}
+     \dfrac{n_i}{N} \longrightarrow \dfrac{1}{N_c},
+\end{equation*}
+que es equivalente a que $\tau_i \longrightarrow \bar{\tau}$, a medida que $N \rightarrow \infty$.
+Con esto es posible calcular las no-linealidades de cada bin tomando como referencia
+el tiempo ideal $\bar{\tau}$. La DNL (Differential Non-Linearity) 
+se puede calcular como
 \begin{equation}
      DNL_i = \tau_i - \bar{\tau} \; ,
      \label{eq: DNL}
 \end{equation}
-y con esto la INL (Integral Non-Linearity) como
+y con esto la INL (Integral Non-Linearity), es decir las no-linealidades acumuladas a medida que la 
+señal atraviesa la cadena, como
 \begin{equation}
      INL_i = \sum_{i=0}^{N-1} {\tau_i - \bar{\tau}} \; .
      \label{eq: INL}
 \end{equation}
 
+Para obtener la DNL en función del bit menos significativo (LSB), que de alguna manera
+pone en evidencia cuántos bits de incertidumbre representa cada no-linealidad, 
+se puede calcular $DNL_i[LSB] = DNL_i[seg] / \bar{\tau}$.\\
 Conociendo estas propiedades es posible generar una ``tabla de calibración''. Una vez la medición final
 se realiza en el TDC, se corrige mediante una tabla pre-cargada en memoria, entregando un resultado
 calibrado al instante de medición (on-line calibration \cite{Liu2015}). Se puede contemplar
@@ -180,14 +199,14 @@ se ve afectado por propiedades estadísticas, por lo tanto es posible corregir l
 hardware mediante una buena calibración.\\
 
 
-%%TODO: implementar esta imágen para explicar medición
-\begin{figure}[H]
-      \centering
-      \includegraphics[width=0.75\textwidth]{imagenes/Captura de pantalla 2024-07-25 103323.png}
-      \caption{Caption de prueba}
-      \label{fig:prueba}
-\end{figure}
-\clearpage
+% %%TODO: implementar esta imagen para explicar medición
+% \begin{figure}[H]
+%       \centering
+%       \includegraphics[width=0.75\textwidth]{imagenes/Captura de pantalla 2024-07-25 103323.png}
+%       \caption{Caption de prueba}
+%       \label{fig:prueba}
+% \end{figure}
+% \clearpage
 
 
 
@@ -514,3 +533,156 @@ Finalmente se implementó la arquitectura presentada en \cite{machado_novel_2018
      \caption{Arquitectura del TDC. Se ignora el routeo del clock.}
      \label{fig: TDC}
 \end{figure}
+
+
+
+
+
+
+\section{Resultados}
+Haciendo uso de un generador de clock ``SRS CG635S'' se realizó el
+``code-density test'' con una frecuencia de $5.123456$Mhz, obteniendo histogramas
+distribuidos para el flanco de start y de stop como muestra la Figura \ref{fig: histogramas_magic}.
+\begin{figure}[H]
+     \centering
+     \begin{subfigure}{0.45\textwidth}
+           \centering
+           \resizebox{\linewidth}{!}{
+           \includegraphics[]{imagenes/histograma_start.eps}
+           }
+     \end{subfigure}%
+     \hspace{10pt}%
+     \begin{subfigure}{0.45\textwidth}
+           \centering
+           \resizebox{\linewidth}{!}{
+           \includegraphics[]{imagenes/histograma_stop.eps}
+           }
+     \end{subfigure}
+     \caption{Histogramas del flanco de subida y flanco de bajada, para 10240 mediciones
+     utilizando una frecuencia de $5.123456$Mhz .}
+     \label{fig: histogramas_magic}
+\end{figure}%
+
+Es posible ver que los flancos de subida y bajada no se propagan con el mismo tiempo... 
+(justificación esquema de compuerta inversora, y ver relación con mux)\\
+
+Para el flanco stop se utiliza desde el bin número $35$, hasta el bin número $353$, lo que nos
+da una cantidad de bines utilizados $N_c^{\text{stop}} = 318$, mientras que el flanco start
+ocupa desde el bin número $27$, hasta el bin $335$, utilizando un total de $N_c^{\text{start}} = 308$
+elementos de retardo. Con esto se puede calcular que el retardo de cada celda es:
+\begin{align}
+     \tau_{\text{stop}} = 15.72pseg \; , && \tau_{\text{start}} = 16.23pseg
+\end{align}
+Con esto se pueden construir los histogramas de linealidad, tal como muestran las Figuras \ref{fig: linealidad_start},\ref{fig: linealidad_stop}
+
+\begin{figure}[H]
+      \centering
+      \includegraphics[width=0.75\textwidth]{imagenes/linealidad_stop.eps}
+      \caption{Histogramas de linealidad obtenidos en el code-density test para el flanco de stop.}
+      \label{fig: linealidad_stop}
+\end{figure}
+
+\begin{figure}[H]
+      \centering
+      \includegraphics[width=0.75\textwidth]{imagenes/linealidad_start.eps}
+      \caption{Histogramas de linealidad obtenidos en el code-density test para el flanco de start.}
+      \label{fig: linealidad_start}
+\end{figure}
+
+
+\begin{figure}[H]
+     \centering
+     \includegraphics[width=0.75\textwidth]{imagenes/transferencia_stop.eps}
+     \caption{Curva de transferencia del flanco stop. En rojo la curva de transferencia
+     lineal.}
+     \label{fig: transferencia_stop}
+\end{figure}
+
+\begin{figure}[H]
+     \centering
+     \includegraphics[width=0.75\textwidth]{imagenes/transferencia_start.eps}
+     \caption{Curva de transferencia del flanco start. En rojo la curva de transferencia
+     lineal.}
+     \label{fig: transferencia_start}
+\end{figure}
+
+
+\begin{figure}[H]
+      \centering
+      \includegraphics[width=0.75\textwidth]{imagenes/histograma_66k.eps}
+      \caption{Histograma de 10240 mediciones finas para los distintos resultados gruesos, 
+      utilizando una frecuencia de $f=66k$Hz, $t_{\text{on}}=7.57 \; \mu$seg. 
+      Con asterisco aquellas mediciones cuyo contador grueso debe ser corregido.}
+      \label{fig: histograma_66}
+\end{figure}
+
+\begin{figure}[H]
+     \centering
+     \includegraphics[width=0.75\textwidth]{imagenes/histograma_100k.eps}
+     \caption{Histograma de 10240 mediciones finas para los distintos resultados gruesos, 
+      utilizando una frecuencia de $f=100k$Hz, $t_{\text{on}}=5 \; \mu$seg. 
+      Con asterisco aquellas mediciones cuyo contador grueso debe ser corregido.}
+     \label{fig: histograma_100}
+\end{figure}
+
+\begin{figure}[H]
+     \centering
+     \includegraphics[width=0.75\textwidth]{imagenes/histograma_500k.eps}
+     \caption{Histograma de 10240 mediciones finas para los distintos resultados gruesos, 
+      utilizando una frecuencia de $f=500k$Hz, $t_{\text{on}}=1 \; \mu$seg. 
+      Con asterisco aquellas mediciones cuyo contador grueso debe ser corregido.}
+     \label{fig: histograma_500}
+\end{figure}
+
+\begin{figure}[H]
+     \centering
+     \includegraphics[width=0.75\textwidth]{imagenes/histograma_1_225M.eps}
+     \caption{Histograma de 10240 mediciones finas para los distintos resultados gruesos, 
+      utilizando una frecuencia de $f=1.225M$Hz, $t_{\text{on}}=408.163$nseg. 
+      Con asterisco aquellas mediciones cuyo contador grueso debe ser corregido.}
+     \label{fig: histograma_1225M}
+\end{figure}
+
+\begin{figure}[H]
+     \centering
+     \includegraphics[width=0.75\textwidth]{imagenes/histograma_2M.eps}
+     \caption{Histograma de 10240 mediciones finas para los distintos resultados gruesos, 
+      utilizando una frecuencia de $f=2M$Hz, $t_{\text{on}}=250$nseg. 
+      Con asterisco aquellas mediciones cuyo contador grueso debe ser corregido.}
+     \label{fig: histograma_2M}
+\end{figure}
+
+\begin{figure}[H]
+     \centering
+     \includegraphics[width=0.75\textwidth]{imagenes/histograma_3M3.eps}
+     \caption{Histograma de 10240 mediciones finas para los distintos resultados gruesos, 
+      utilizando una frecuencia de $f=3.3M$Hz, $t_{\text{on}}=151.515$nseg. 
+      Con asterisco aquellas mediciones cuyo contador grueso debe ser corregido.}
+     \label{fig: histograma_3M}
+\end{figure}
+
+\begin{figure}[H]
+     \centering
+     \includegraphics[width=0.75\textwidth]{imagenes/histograma_5M.eps}
+     \caption{Histograma de 10240 mediciones finas para los distintos resultados gruesos, 
+      utilizando una frecuencia de $f=5M$Hz, $t_{\text{on}}=100$nseg. 
+      Con asterisco aquellas mediciones cuyo contador grueso debe ser corregido.}
+     \label{fig: histograma_3M}
+\end{figure}
+
+
+\begin{table}[H]
+     \centering
+     \begin{tabular}{cccc}
+     \hline
+     Frequency {[}Hz{]} & E{[}X{]} & $ \sigma[X]$ & Error   \\ \hline
+     66k                & 1.06nseg & 39.6pseg     & 303pseg \\ \hline
+     100k               & 323pseg  & 35pseg       & 323pseg \\ \hline
+     500k               & 450pseg  & 27.1pseg     & 450pseg \\ \hline
+     1.225M             & 3.43nseg & 29.8pseg     & 269pseg \\ \hline
+     2M                 & 383pseg  & 23.9pseg     & 383pseg \\ \hline
+     3.3M               & 1.89nseg & 26.7pseg     & 384pseg \\ \hline
+     5M                 & 286pseg  & 25.1pseg     & 286pseg \\ \hline
+     \end{tabular}
+     \caption{Parámetros extraídos de cada experimento, cada uno con 10240 mediciones.}
+\end{table}
