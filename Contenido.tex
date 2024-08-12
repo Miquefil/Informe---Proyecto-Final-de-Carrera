@@ -157,7 +157,7 @@ tamaño de cada retardo es
 luego el retardo medio, es decir el retardo de cada celda si es equiprobable obtener un hit 
 en cada bin, es
 \begin{equation}
-     \bar{\tau} = \dfrac{T}{N_c} \; .
+     \hat{\tau} = \dfrac{T}{N_c} \; .
      \label{eq: tau_medio}
 \end{equation}
 A medida que la cadena se acerca a una cadena ideal, la probabilidad de golpear cada
@@ -171,24 +171,24 @@ Volviendo al TDC debe ocurrir que
 \begin{equation*}
      \dfrac{n_i}{N} \longrightarrow \dfrac{1}{N_c},
 \end{equation*}
-que es equivalente a que $\tau_i \longrightarrow \bar{\tau}$, a medida que $N \rightarrow \infty$.
+que es equivalente a que $\tau_i \longrightarrow \hat{\tau}$, a medida que $N \rightarrow \infty$.
 Con esto es posible calcular las no-linealidades de cada bin tomando como referencia
-el tiempo ideal $\bar{\tau}$. La DNL (Differential Non-Linearity) 
+el tiempo ideal $\hat{\tau}$. La DNL (Differential Non-Linearity) 
 se puede calcular como
 \begin{equation}
-     DNL_i = \tau_i - \bar{\tau} \; ,
+     DNL_i = \tau_i - \hat{\tau} \; ,
      \label{eq: DNL}
 \end{equation}
 y con esto la INL (Integral Non-Linearity), es decir las no-linealidades acumuladas a medida que la 
 señal atraviesa la cadena, como
 \begin{equation}
-     INL_i = \sum_{i=0}^{N-1} {\tau_i - \bar{\tau}} \; .
+     INL_i = \sum_{i=0}^{N-1} {\tau_i - \hat{\tau}} \; .
      \label{eq: INL}
 \end{equation}
 
 Para obtener la DNL en función del bit menos significativo (LSB), que de alguna manera
 pone en evidencia cuántos bits de incertidumbre representa cada no-linealidad, 
-se puede calcular $DNL_i[LSB] = DNL_i[seg] / \bar{\tau}$.\\
+se puede calcular $DNL_i[LSB] = DNL_i[seg] / \hat{\tau}$.\\
 Conociendo estas propiedades es posible generar una ``tabla de calibración''. Una vez la medición final
 se realiza en el TDC, se corrige mediante una tabla pre-cargada en memoria, entregando un resultado
 calibrado al instante de medición (on-line calibration \cite{Liu2015}). Se puede contemplar
@@ -563,7 +563,13 @@ distribuidos para el flanco de start y de stop como muestra la Figura \ref{fig: 
      \label{fig: histogramas_magic}
 \end{figure}%
 
-Es posible ver que los flancos de subida y bajada no se propagan con el mismo tiempo... 
+Es posible ver que los flancos de subida y bajada no se propagan de igual forma, pues el tamaño
+del histograma no es el mismo para ambos. Podemos decir que el flanco stop se propaga de forma más
+rápida que el flanco start, pues alcanza un número de retardos mayor, 
+lo que quiere decir que las celdas de retardo son más cortas cuando propagan una transición ``1-0''.
+Además, prestando especial atención al histograma stop se puede observar que los bines pares no son alcanzados,
+lo que sugiere que una única celda de retardo es demasiado pequeña para la velocidad de propagación del flanco.
+
 (justificación esquema de compuerta inversora, y ver relación con mux)\\
 
 Para el flanco stop se utiliza desde el bin número $35$, hasta el bin número $353$, lo que nos
@@ -571,9 +577,9 @@ da una cantidad de bines utilizados $N_c^{\text{stop}} = 318$, mientras que el f
 ocupa desde el bin número $27$, hasta el bin $335$, utilizando un total de $N_c^{\text{start}} = 308$
 elementos de retardo. Con esto se puede calcular que el retardo de cada celda es:
 \begin{align}
-     \tau_{\text{stop}} = 15.72pseg \; , && \tau_{\text{start}} = 16.23pseg
+     \hat{\tau}_{\text{stop}} = 15.72pseg \; , && \hat{\tau}_{\text{start}} = 16.23pseg
 \end{align}
-Con esto se pueden construir los histogramas de linealidad, tal como muestran las Figuras \ref{fig: linealidad_start},\ref{fig: linealidad_stop}
+Con esto se pueden construir los histogramas de linealidad, tal como muestran las Figuras \ref{fig: linealidad_stop}, \ref{fig: linealidad_start}
 
 \begin{figure}[H]
       \centering
@@ -606,68 +612,158 @@ Con esto se pueden construir los histogramas de linealidad, tal como muestran la
      \label{fig: transferencia_start}
 \end{figure}
 
-
 \begin{figure}[H]
-      \centering
-      \includegraphics[width=0.75\textwidth]{imagenes/histograma_66k.eps}
-      \caption{Histograma de 10240 mediciones finas para los distintos resultados gruesos, 
-      utilizando una frecuencia de $f=66k$Hz, $t_{\text{on}}=7.57 \; \mu$seg. 
-      Con asterisco aquellas mediciones cuyo contador grueso debe ser corregido.}
-      \label{fig: histograma_66}
+     \centering
+     \begin{subfigure}[t]{0.45\textwidth} % [t] aligns the top of the subfigure
+           \centering
+           \resizebox{\linewidth}{!}{
+               \includegraphics[width=0.75\textwidth]{imagenes/histograma_66k.eps}
+           }
+           \caption{Histograma de mediciones finas.}
+           \label{fig: histograma_66}
+     \end{subfigure}%
+     \hspace{10pt}%
+     \begin{subfigure}[t]{0.4\textwidth} % [t] aligns the top of the subfigure
+           \centering
+           \resizebox{\linewidth}{!}{
+               \includegraphics[]{imagenes/histograma_coarse_66k.eps}
+           }
+           \caption{Histograma de mediciones gruesas.}
+     \end{subfigure}
+     \caption{Histograma de 10240 mediciones utilizando una frecuencia de $f=66k$Hz, $t_{\text{on}}=7.57 \; \mu$seg. 
+     Con asterisco aquellas mediciones cuyo contador grueso debió ser corregido.}
 \end{figure}
 
 \begin{figure}[H]
      \centering
-     \includegraphics[width=0.75\textwidth]{imagenes/histograma_100k.eps}
-     \caption{Histograma de 10240 mediciones finas para los distintos resultados gruesos, 
-      utilizando una frecuencia de $f=100k$Hz, $t_{\text{on}}=5 \; \mu$seg. 
-      Con asterisco aquellas mediciones cuyo contador grueso debe ser corregido.}
-     \label{fig: histograma_100}
+     \begin{subfigure}[t]{0.45\textwidth} % [t] aligns the top of the subfigure
+           \centering
+           \resizebox{\linewidth}{!}{
+               \includegraphics[width=0.75\textwidth]{imagenes/histograma_100k.eps}
+           }
+           \caption{Histograma de mediciones finas.}
+           \label{fig: histograma_66}
+     \end{subfigure}%
+     \hspace{10pt}%
+     \begin{subfigure}[t]{0.4\textwidth} % [t] aligns the top of the subfigure
+           \centering
+           \resizebox{\linewidth}{!}{
+               \includegraphics[]{imagenes/histograma_coarse_100k.eps}
+           }
+           \caption{Histograma de mediciones gruesas.}
+     \end{subfigure}
+     \caption{Histograma de 10240 mediciones utilizando una frecuencia de $f=100k$Hz, $t_{\text{on}}=5 \; \mu$seg. 
+     Con asterisco aquellas mediciones cuyo contador grueso debió ser corregido.}
 \end{figure}
 
 \begin{figure}[H]
      \centering
-     \includegraphics[width=0.75\textwidth]{imagenes/histograma_500k.eps}
-     \caption{Histograma de 10240 mediciones finas para los distintos resultados gruesos, 
-      utilizando una frecuencia de $f=500k$Hz, $t_{\text{on}}=1 \; \mu$seg. 
-      Con asterisco aquellas mediciones cuyo contador grueso debe ser corregido.}
-     \label{fig: histograma_500}
+     \begin{subfigure}[t]{0.45\textwidth} % [t] aligns the top of the subfigure
+           \centering
+           \resizebox{\linewidth}{!}{
+               \includegraphics[width=0.75\textwidth]{imagenes/histograma_500k.eps}
+           }
+           \caption{Histograma de mediciones finas.}
+           \label{fig: histograma_66}
+     \end{subfigure}%
+     \hspace{10pt}%
+     \begin{subfigure}[t]{0.4\textwidth} % [t] aligns the top of the subfigure
+           \centering
+           \resizebox{\linewidth}{!}{
+               \includegraphics[]{imagenes/histograma_coarse_500k.eps}
+           }
+           \caption{Histograma de mediciones gruesas.}
+     \end{subfigure}
+     \caption{Histograma de 10240 mediciones utilizando una frecuencia de $f=500k$Hz, $t_{\text{on}}=1 \; \mu$seg. 
+     Con asterisco aquellas mediciones cuyo contador grueso debió ser corregido.}
 \end{figure}
 
 \begin{figure}[H]
      \centering
-     \includegraphics[width=0.75\textwidth]{imagenes/histograma_1_225M.eps}
-     \caption{Histograma de 10240 mediciones finas para los distintos resultados gruesos, 
-      utilizando una frecuencia de $f=1.225M$Hz, $t_{\text{on}}=408.163$nseg. 
-      Con asterisco aquellas mediciones cuyo contador grueso debe ser corregido.}
-     \label{fig: histograma_1225M}
+     \begin{subfigure}[t]{0.45\textwidth} % [t] aligns the top of the subfigure
+           \centering
+           \resizebox{\linewidth}{!}{
+               \includegraphics[width=0.75\textwidth]{imagenes/histograma_1_225M.eps}
+           }
+           \caption{Histograma de mediciones finas.}
+           \label{fig: histograma_66}
+     \end{subfigure}%
+     \hspace{10pt}%
+     \begin{subfigure}[t]{0.4\textwidth} % [t] aligns the top of the subfigure
+           \centering
+           \resizebox{\linewidth}{!}{
+               \includegraphics[]{imagenes/histograma_coarse_1225M.eps}
+           }
+           \caption{Histograma de mediciones gruesas.}
+     \end{subfigure}
+     \caption{Histograma de 10240 mediciones utilizando una frecuencia de $f=1.225$MHz, $t_{\text{on}}=408.163 $nseg. 
+     Con asterisco aquellas mediciones cuyo contador grueso debió ser corregido.}
 \end{figure}
 
 \begin{figure}[H]
      \centering
-     \includegraphics[width=0.75\textwidth]{imagenes/histograma_2M.eps}
-     \caption{Histograma de 10240 mediciones finas para los distintos resultados gruesos, 
-      utilizando una frecuencia de $f=2M$Hz, $t_{\text{on}}=250$nseg. 
-      Con asterisco aquellas mediciones cuyo contador grueso debe ser corregido.}
-     \label{fig: histograma_2M}
+     \begin{subfigure}[t]{0.45\textwidth} % [t] aligns the top of the subfigure
+           \centering
+           \resizebox{\linewidth}{!}{
+               \includegraphics[width=0.75\textwidth]{imagenes/histograma_2M.eps}
+           }
+           \caption{Histograma de mediciones finas.}
+           \label{fig: histograma_66}
+     \end{subfigure}%
+     \hspace{10pt}%
+     \begin{subfigure}[t]{0.4\textwidth} % [t] aligns the top of the subfigure
+           \centering
+           \resizebox{\linewidth}{!}{
+               \includegraphics[]{imagenes/histograma_coarse_2M.eps}
+           }
+           \caption{Histograma de mediciones gruesas.}
+     \end{subfigure}
+     \caption{Histograma de 10240 mediciones utilizando una frecuencia de $f=2M$Hz, $t_{\text{on}}=250$nseg. 
+     Con asterisco aquellas mediciones cuyo contador grueso debió ser corregido.}
 \end{figure}
 
 \begin{figure}[H]
      \centering
-     \includegraphics[width=0.75\textwidth]{imagenes/histograma_3M3.eps}
-     \caption{Histograma de 10240 mediciones finas para los distintos resultados gruesos, 
-      utilizando una frecuencia de $f=3.3M$Hz, $t_{\text{on}}=151.515$nseg. 
-      Con asterisco aquellas mediciones cuyo contador grueso debe ser corregido.}
-     \label{fig: histograma_3M}
+     \begin{subfigure}[t]{0.45\textwidth} % [t] aligns the top of the subfigure
+           \centering
+           \resizebox{\linewidth}{!}{
+               \includegraphics[width=0.75\textwidth]{imagenes/histograma_3M3.eps}
+           }
+           \caption{Histograma de mediciones finas.}
+           \label{fig: histograma_66}
+     \end{subfigure}%
+     \hspace{10pt}%
+     \begin{subfigure}[t]{0.4\textwidth} % [t] aligns the top of the subfigure
+           \centering
+           \resizebox{\linewidth}{!}{
+               \includegraphics[]{imagenes/histograma_coarse_3M3.eps}
+           }
+           \caption{Histograma de mediciones gruesas.}
+     \end{subfigure}
+     \caption{Histograma de 10240 mediciones utilizando una frecuencia de $f=3.3M$Hz, $t_{\text{on}}=151.515$nseg. 
+     Con asterisco aquellas mediciones cuyo contador grueso debió ser corregido.}
 \end{figure}
 
 \begin{figure}[H]
      \centering
-     \includegraphics[width=0.75\textwidth]{imagenes/histograma_5M.eps}
-     \caption{Histograma de 10240 mediciones finas para los distintos resultados gruesos, 
-      utilizando una frecuencia de $f=5M$Hz, $t_{\text{on}}=100$nseg. 
-      Con asterisco aquellas mediciones cuyo contador grueso debe ser corregido.}
-     \label{fig: histograma_3M}
+     \begin{subfigure}[t]{0.45\textwidth} % [t] aligns the top of the subfigure
+           \centering
+           \resizebox{\linewidth}{!}{
+               \includegraphics[width=0.75\textwidth]{imagenes/histograma_5M.eps}
+           }
+           \caption{Histograma de mediciones finas.}
+           \label{fig: histograma_66}
+     \end{subfigure}%
+     \hspace{10pt}%
+     \begin{subfigure}[t]{0.4\textwidth} % [t] aligns the top of the subfigure
+           \centering
+           \resizebox{\linewidth}{!}{
+               \includegraphics[]{imagenes/histograma_coarse_5M.eps}
+           }
+           \caption{Histograma de mediciones gruesas.}
+     \end{subfigure}
+     \caption{Histograma de 10240 mediciones utilizando una frecuencia de $f=5M$Hz, $t_{\text{on}}=100$nseg. 
+     Con asterisco aquellas mediciones cuyo contador grueso debió ser corregido.}
 \end{figure}
 
 
@@ -675,14 +771,77 @@ Con esto se pueden construir los histogramas de linealidad, tal como muestran la
      \centering
      \begin{tabular}{cccc}
      \hline
-     Frequency {[}Hz{]} & E{[}X{]} & $ \sigma[X]$ & Error   \\ \hline
-     66k                & 1.17nseg & 39.6pseg     & 415pseg \\ \hline
-     100k               & 435pseg  & 35pseg       & 435pseg \\ \hline
-     500k               & 450pseg  & 27.1pseg     & 450pseg \\ \hline
-     1.225M             & 3.54nseg & 29.8pseg     & 381pseg \\ \hline
-     2M                 & 383pseg  & 23.9pseg     & 383pseg \\ \hline
-     3.3M               & 1.89nseg & 26.7pseg     & 384pseg \\ \hline
-     5M                 & 398pseg  & 25.1pseg     & 398pseg \\ \hline
+     Frequency {[}Hz{]} & $E[X]$   & $ \sigma[X]$ & Error {[}ps{]} \\ \hline
+     66k                & 1.06nseg & 39.6pseg     & 211            \\ \hline
+     100k               & 323pseg  & 35pseg       & 231            \\ \hline
+     500k               & 450pseg  & 27.1pseg     & 245            \\ \hline
+     1.225M             & 3.43nseg & 29.8pseg     & 178            \\ \hline
+     2M                 & 383pseg  & 23.9pseg     & 165            \\ \hline
+     3.3M               & 1.89nseg & pseg     & 180            \\ \hline
+     5M                 & 286pseg  & 32.8pseg     & 183            \\ \hline
      \end{tabular}
      \caption{Parámetros extraídos de cada experimento, cada uno con 10240 mediciones.}
 \end{table}
+
+\clearpage
+\begin{figure}[H]
+     \centering
+     \begin{minipage}{0.45\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{imagenes/start-stop_66k.eps} % Replace with your figure path
+         \caption{$f = 66k$Hz}
+     \end{minipage}\hfill
+     \begin{minipage}{0.45\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{imagenes/start-stop_100k.eps} % Replace with your figure path
+         \caption{$f = 100k$Hz}
+     \end{minipage}
+     
+     \vspace{0.5cm} % Space between rows
+     
+     \begin{minipage}{0.45\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{imagenes/start-stop_500k.eps} % Replace with your figure path
+         \caption{$f = 500k$Hz}
+     \end{minipage}\hfill
+     \begin{minipage}{0.45\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{imagenes/start-stop_1225M.eps} % Replace with your figure path
+         \caption{$f = 1.225M$Hz}
+     \end{minipage}
+     \caption{Histograma que muestra la diferencia elementos de retardo start-stop en función
+          de dónde se detectó el flanco de start dentro de la cadena, para cada experimento.}
+\end{figure}
+
+\begin{figure}[H]
+     \centering
+     \begin{minipage}{0.45\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{imagenes/start-stop_2M.eps} % Replace with your figure path
+         \caption{$f = 2M$Hz}
+     \end{minipage}\hfill
+     \begin{minipage}{0.45\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{imagenes/start-stop_3M3.eps} % Replace with your figure path
+         \caption{$f = 3.3M$Hz}
+     \end{minipage}
+     
+     \vspace{0.5cm} % Space between rows
+     
+     \begin{minipage}{0.45\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{imagenes/start-stop_5M.eps} % Replace with your figure path
+         \caption{$f = 5M$Hz}
+     \end{minipage}\hfill
+     \begin{minipage}{0.45\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{imagenes/start-stop_magic.eps} % Replace with your figure path
+         \caption{$f = 5.123456M$Hz}
+     \end{minipage}
+     \caption{Histograma que muestra la diferencia elementos de retardo start-stop en función
+          de dónde se detectó el flanco de start dentro de la cadena, para cada experimento.}
+ \end{figure}
+ 
+
+
+%%TODO: rise-fall entre el 10% y el 90%

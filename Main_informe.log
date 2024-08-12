@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2023.3.12)  7 AUG 2024 19:30
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2023.3.12)  11 AUG 2024 21:59
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -1293,7 +1293,40 @@ Package csquotes Info: Adjusting default style.
 Package csquotes Info: Redefining alias 'default' -> 'english'.
  (./Main_informe.aux (./Contenido.aux
 
-LaTeX Warning: Label `fig: histograma_3M' multiply defined.
+LaTeX Warning: Label `fig: histograma_66' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig: histograma_66' multiply defined.
+
+
+LaTeX Warning: Label `fig: histograma_66' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig: histograma_66' multiply defined.
+
+
+LaTeX Warning: Label `fig: histograma_66' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig: histograma_66' multiply defined.
+
+
+LaTeX Warning: Label `fig: histograma_66' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig: histograma_66' multiply defined.
+
+
+LaTeX Warning: Label `fig: histograma_66' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig: histograma_66' multiply defined.
+
+
+LaTeX Warning: Label `fig: histograma_66' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig: histograma_66' multiply defined.
 
 ))
 \openout1 = `Main_informe.aux'.
@@ -1510,7 +1543,7 @@ File: imagenes/histograma_stop.eps Graphic file (type eps)
 Underfull \vbox (badness 1609) has occurred while \output is active []
 
  [14]
-Underfull \hbox (badness 10000) in paragraph at lines 566--568
+Underfull \hbox (badness 10000) in paragraph at lines 573--574
 
  []
 
@@ -1532,29 +1565,64 @@ File: imagenes/transferencia_start.eps Graphic file (type eps)
 <imagenes/transferencia_start.eps>
 File: imagenes/histograma_66k.eps Graphic file (type eps)
 <imagenes/histograma_66k.eps>
+File: imagenes/histograma_coarse_66k.eps Graphic file (type eps)
+<imagenes/histograma_coarse_66k.eps>
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [17]
 File: imagenes/histograma_100k.eps Graphic file (type eps)
 <imagenes/histograma_100k.eps>
+File: imagenes/histograma_coarse_100k.eps Graphic file (type eps)
+<imagenes/histograma_coarse_100k.eps>
 File: imagenes/histograma_500k.eps Graphic file (type eps)
 <imagenes/histograma_500k.eps>
- [18]
+File: imagenes/histograma_coarse_500k.eps Graphic file (type eps)
+<imagenes/histograma_coarse_500k.eps>
 File: imagenes/histograma_1_225M.eps Graphic file (type eps)
 <imagenes/histograma_1_225M.eps>
+File: imagenes/histograma_coarse_1225M.eps Graphic file (type eps)
+<imagenes/histograma_coarse_1225M.eps>
+ [18]
 File: imagenes/histograma_2M.eps Graphic file (type eps)
 <imagenes/histograma_2M.eps>
- [19]
+File: imagenes/histograma_coarse_2M.eps Graphic file (type eps)
+<imagenes/histograma_coarse_2M.eps>
 File: imagenes/histograma_3M3.eps Graphic file (type eps)
 <imagenes/histograma_3M3.eps>
+File: imagenes/histograma_coarse_3M3.eps Graphic file (type eps)
+<imagenes/histograma_coarse_3M3.eps>
 File: imagenes/histograma_5M.eps Graphic file (type eps)
 <imagenes/histograma_5M.eps>
- [20]) [21] [22
+File: imagenes/histograma_coarse_5M.eps Graphic file (type eps)
+<imagenes/histograma_coarse_5M.eps>
+ [19] [20]
+File: imagenes/start-stop_66k.eps Graphic file (type eps)
+<imagenes/start-stop_66k.eps>
+File: imagenes/start-stop_100k.eps Graphic file (type eps)
+<imagenes/start-stop_100k.eps>
+File: imagenes/start-stop_500k.eps Graphic file (type eps)
+<imagenes/start-stop_500k.eps>
+File: imagenes/start-stop_1225M.eps Graphic file (type eps)
+<imagenes/start-stop_1225M.eps>
+File: imagenes/start-stop_2M.eps Graphic file (type eps)
+<imagenes/start-stop_2M.eps>
+File: imagenes/start-stop_3M3.eps Graphic file (type eps)
+<imagenes/start-stop_3M3.eps>
+File: imagenes/start-stop_5M.eps Graphic file (type eps)
+<imagenes/start-stop_5M.eps>
+File: imagenes/start-stop_magic.eps Graphic file (type eps)
+<imagenes/start-stop_magic.eps>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [21
+
+]) [22] [23
 
 
 
-] [23] (./Main_informe.aux (./Contenido.aux))
+] [24] (./Main_informe.aux (./Contenido.aux))
 
 LaTeX Warning: There were undefined references.
 
@@ -1571,12 +1639,12 @@ Package logreq Info: Writing requests to 'Main_informe.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 69820 strings out of 476684
- 1687727 string characters out of 5807583
- 2638812 words of memory out of 5000000
- 89089 multiletter control sequences out of 15000+600000
+ 69891 strings out of 476684
+ 1690186 string characters out of 5807583
+ 2637459 words of memory out of 5000000
+ 89145 multiletter control sequences out of 15000+600000
  537718 words of font info for 135 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 99i,11n,96p,1984b,4936s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 99i,11n,96p,1984b,4938s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on Main_informe.pdf (23 pages).
+Output written on Main_informe.pdf (24 pages).
