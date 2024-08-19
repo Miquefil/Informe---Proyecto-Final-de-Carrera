@@ -21,11 +21,246 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Tapped Delay Line}{7}{subsection.3.1}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Elementos disponibles dentro de una SLICE.\relax }}{8}{figure.caption.5}\protected@file@percent }
 \newlabel{SliceYCarry}{{5}{8}{Elementos disponibles dentro de una SLICE.\relax }{figure.caption.5}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Esquema de la cadena del módulo de interpolación fina.\relax }}{8}{figure.caption.6}\protected@file@percent }
-\newlabel{fig: fine}{{6}{8}{Esquema de la cadena del módulo de interpolación fina.\relax }{figure.caption.6}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Ejemplo de histograma conseguidos al excitar el TDC con una frecuencia pseudo-aleatoria modificando la posición relativa de la cadena de retardos respecto a los buffers de reloj.\relax }}{9}{figure.caption.7}\protected@file@percent }
-\newlabel{fig: problema buffer}{{7}{9}{Ejemplo de histograma conseguidos al excitar el TDC con una frecuencia pseudo-aleatoria modificando la posición relativa de la cadena de retardos respecto a los buffers de reloj.\relax }{figure.caption.7}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Esquema de la cadena del módulo de interpolación fina.\relax }}{9}{figure.caption.6}\protected@file@percent }
+\newlabel{fig: fine}{{6}{9}{Esquema de la cadena del módulo de interpolación fina.\relax }{figure.caption.6}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Ejemplo de histograma conseguidos al excitar el TDC con una frecuencia pseudo-aleatoria modificando la posición relativa de la cadena de retardos respecto a los buffers de reloj.\relax }}{10}{figure.caption.7}\protected@file@percent }
+\newlabel{fig: problema buffer}{{7}{10}{Ejemplo de histograma conseguidos al excitar el TDC con una frecuencia pseudo-aleatoria modificando la posición relativa de la cadena de retardos respecto a los buffers de reloj.\relax }{figure.caption.7}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Decodificador}{10}{subsection.3.2}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Registro de un pulso digital en el momento que ingresa a la línea, y en el momento que egresa de ella.\relax }}{10}{figure.caption.8}\protected@file@percent }
 \newlabel{fig: tdl_flancos}{{8}{10}{Registro de un pulso digital en el momento que ingresa a la línea, y en el momento que egresa de ella.\relax }{figure.caption.8}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Retardo virtual de propagación que se puede observar cuando existe \textit  {clock skew} entre dos flip 
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Retardo virtual de propagación que se puede observar cuando existe \textit  {clock skew} entre dos flip flops aledaños.\relax }}{11}{figure.caption.9}\protected@file@percent }
+\newlabel{fig: bubble}{{9}{11}{Retardo virtual de propagación que se puede observar cuando existe \textit {clock skew} entre dos flip flops aledaños.\relax }{figure.caption.9}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Medición gruesa y Árbitro}{12}{subsection.3.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Arbitro implementado.\relax }}{12}{figure.caption.10}\protected@file@percent }
+\newlabel{fig: arbitro}{{10}{12}{Arbitro implementado.\relax }{figure.caption.10}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces Todos los casos posibles de arbitraje para el flanco Start\relax }}{13}{figure.caption.11}\protected@file@percent }
+\newlabel{fig: casos_arbitro}{{11}{13}{Todos los casos posibles de arbitraje para el flanco Start\relax }{figure.caption.11}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces Registro \textit  {Start} de la cadena de retardos para cada caso de arbitraje.\relax }}{13}{figure.caption.12}\protected@file@percent }
+\newlabel{fig: finos_casos_start}{{12}{13}{Registro \textit {Start} de la cadena de retardos para cada caso de arbitraje.\relax }{figure.caption.12}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Cuenta gruesa del ejemplo presentado en la Figura \ref {fig: casos_arbitro}, según cada reloj generado por el PLL.\relax }}{13}{table.caption.13}\protected@file@percent }
+\newlabel{tabla: arbitro}{{1}{13}{Cuenta gruesa del ejemplo presentado en la Figura \ref {fig: casos_arbitro}, según cada reloj generado por el PLL.\relax }{table.caption.13}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4}Implementación}{14}{subsection.3.4}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces Arquitectura del TDC. Se ignora el ruteo del clock.\relax }}{14}{figure.caption.14}\protected@file@percent }
+\newlabel{fig: TDC}{{13}{14}{Arquitectura del TDC. Se ignora el ruteo del clock.\relax }{figure.caption.14}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces Esquema de medición\relax }}{14}{figure.caption.15}\protected@file@percent }
+\newlabel{fig: esquema}{{14}{14}{Esquema de medición\relax }{figure.caption.15}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Resultados}{15}{section.4}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {15}{\ignorespaces Histogramas del flanco de subida y flanco de bajada, para 10240 mediciones utilizando una frecuencia de $5.123456$MHz .\relax }}{15}{figure.caption.16}\protected@file@percent }
+\newlabel{fig: histogramas_magic}{{15}{15}{Histogramas del flanco de subida y flanco de bajada, para 10240 mediciones utilizando una frecuencia de $5.123456$MHz .\relax }{figure.caption.16}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {16}{\ignorespaces Circuito del buffer inversor.\relax }}{15}{figure.caption.17}\protected@file@percent }
+\newlabel{fig: buffer_inversor}{{16}{15}{Circuito del buffer inversor.\relax }{figure.caption.17}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {17}{\ignorespaces Histogramas de linealidad obtenidos en la prueba de densidad de código para el flanco de stop.\relax }}{16}{figure.caption.18}\protected@file@percent }
+\newlabel{fig: linealidad_stop}{{17}{16}{Histogramas de linealidad obtenidos en la prueba de densidad de código para el flanco de stop.\relax }{figure.caption.18}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {18}{\ignorespaces Histogramas de linealidad obtenidos en la prueba de densidad de código para el flanco de start.\relax }}{16}{figure.caption.19}\protected@file@percent }
+\newlabel{fig: linealidad_start}{{18}{16}{Histogramas de linealidad obtenidos en la prueba de densidad de código para el flanco de start.\relax }{figure.caption.19}{}}
+\newlabel{eq: t_fino}{{6}{17}{Resultados}{equation.4.6}{}}
+\newlabel{fig: histograma_66}{{19a}{17}{Histograma de mediciones finas.\relax }{figure.caption.20}{}}
+\newlabel{sub@fig: histograma_66}{{a}{17}{Histograma de mediciones finas.\relax }{figure.caption.20}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {19}{\ignorespaces Histograma de 10240 mediciones utilizando una frecuencia de $f=66$ kHz, $t_{\text  {on}}=7.57 \tmspace  +\thickmuskip {.2777em} \mu $s. Se indican con un asterisco aquellas mediciones cuyo contador grueso debió ser corregido.\relax }}{17}{figure.caption.20}\protected@file@percent }
+\newlabel{fig: histograma_66}{{20a}{17}{Histograma de mediciones finas.\relax }{figure.caption.21}{}}
+\newlabel{sub@fig: histograma_66}{{a}{17}{Histograma de mediciones finas.\relax }{figure.caption.21}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {20}{\ignorespaces Histograma de 10240 mediciones utilizando una frecuencia de $f=100$ kHz, $t_{\text  {on}}=5 \tmspace  +\thickmuskip {.2777em} \mu $s. Se indican con un asterisco aquellas mediciones cuyo contador grueso debió ser corregido.\relax }}{17}{figure.caption.21}\protected@file@percent }
+\newlabel{fig: histograma_500}{{21a}{18}{Histograma de mediciones finas.\relax }{figure.caption.22}{}}
+\newlabel{sub@fig: histograma_500}{{a}{18}{Histograma de mediciones finas.\relax }{figure.caption.22}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {21}{\ignorespaces Histograma de 10240 mediciones utilizando una frecuencia de $f=500$ kHz, $t_{\text  {on}}=1 \tmspace  +\thickmuskip {.2777em} \mu $s. Se indican con un asterisco aquellas mediciones cuyo contador grueso debió ser corregido.\relax }}{18}{figure.caption.22}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Parámetros de tiempo fino extraídos de cada experimento, cada uno con 10240 mediciones. Se indica como $E[X]$ a la media, y $\sigma [X]$ a la desviación estándar.\relax }}{18}{table.caption.23}\protected@file@percent }
+\newlabel{tabla: res_med_1}{{2}{18}{Parámetros de tiempo fino extraídos de cada experimento, cada uno con 10240 mediciones. Se indica como $E[X]$ a la media, y $\sigma [X]$ a la desviación estándar.\relax }{table.caption.23}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {22}{\ignorespaces $f = 100$ kHz\relax }}{19}{figure.caption.24}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {23}{\ignorespaces $f = 500$ kHz\relax }}{19}{figure.caption.24}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {24}{\ignorespaces $f = 1.225$ MHz\relax }}{19}{figure.caption.24}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {25}{\ignorespaces $f = 3.3$ MHz\relax }}{19}{figure.caption.24}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {26}{\ignorespaces Histograma que muestra la diferencia elementos de retardo start-stop en función de dónde se detectó el flanco de start dentro de la cadena, para cada experimento.\relax }}{19}{figure.caption.24}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {27}{\ignorespaces Explicación de la no linealidad observada en los histogramas.\relax }}{20}{figure.caption.25}\protected@file@percent }
+\newlabel{fig: no linealidades}{{27}{20}{Explicación de la no linealidad observada en los histogramas.\relax }{figure.caption.25}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Calibración}{20}{subsection.4.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {28}{\ignorespaces Implementación del TDC en la Artix-7.\relax }}{21}{figure.caption.26}\protected@file@percent }
+\newlabel{fig: floorplan_0}{{28}{21}{Implementación del TDC en la Artix-7.\relax }{figure.caption.26}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {29}{\ignorespaces A la izquierda el slice contiene cada Carry4 y su registro. Un Slice después se colocan los registros start, y dos slices después los registros stop, tal como en \blx@tocontentsinit {0}\cite {machado_novel_2018}.\relax }}{21}{figure.caption.27}\protected@file@percent }
+\newlabel{fig: floorplan_retardos}{{29}{21}{A la izquierda el slice contiene cada Carry4 y su registro. Un Slice después se colocan los registros start, y dos slices después los registros stop, tal como en \cite {machado_novel_2018}.\relax }{figure.caption.27}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {30}{\ignorespaces Ruteo desde los retardos hacia sus registros.\relax }}{22}{figure.caption.28}\protected@file@percent }
+\newlabel{fig: ruteo}{{30}{22}{Ruteo desde los retardos hacia sus registros.\relax }{figure.caption.28}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {31}{\ignorespaces Esquema de distribución final. El primer rectángulo corresponde al \textit  {P\_block} fino, y a su derecha el \textit  {P\_block} para los decoders.\relax }}{22}{figure.caption.29}\protected@file@percent }
+\newlabel{fig: floorplan_pblocks}{{31}{22}{Esquema de distribución final. El primer rectángulo corresponde al \textit {P\_block} fino, y a su derecha el \textit {P\_block} para los decoders.\relax }{figure.caption.29}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {32}{\ignorespaces Histogramas de linealidad para la última implementación. Flanco stop.\relax }}{23}{figure.caption.30}\protected@file@percent }
+\newlabel{fig: transferencia_stop_med5}{{32}{23}{Histogramas de linealidad para la última implementación. Flanco stop.\relax }{figure.caption.30}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {33}{\ignorespaces Histogramas de linealidad para la última implementación. Flanco start.\relax }}{23}{figure.caption.31}\protected@file@percent }
+\newlabel{fig: transferencia_start_med5}{{33}{23}{Histogramas de linealidad para la última implementación. Flanco start.\relax }{figure.caption.31}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Discusión}{24}{subsection.4.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {34}{\ignorespaces Error computado al realizar la diferencia de la media calculada y el semiperíodo teórico $t_\text  {on} = 15.15\tmspace  +\thickmuskip {.2777em}\mu $s, para 4096 mediciones con una señal de frecuencia $f=3.3M$Hz.\relax }}{24}{figure.caption.32}\protected@file@percent }
+\newlabel{fig: medicion_final}{{34}{24}{Error computado al realizar la diferencia de la media calculada y el semiperíodo teórico $t_\text {on} = 15.15\;\mu $s, para 4096 mediciones con una señal de frecuencia $f=3.3M$Hz.\relax }{figure.caption.32}{}}
+\@setckpt{Contenido}{
+\setcounter{page}{26}
+\setcounter{equation}{6}
+\setcounter{enumi}{3}
+\setcounter{enumii}{0}
+\setcounter{enumiii}{0}
+\setcounter{enumiv}{0}
+\setcounter{footnote}{1}
+\setcounter{mpfootnote}{0}
+\setcounter{part}{0}
+\setcounter{section}{4}
+\setcounter{subsection}{2}
+\setcounter{subsubsection}{0}
+\setcounter{paragraph}{0}
+\setcounter{subparagraph}{0}
+\setcounter{figure}{34}
+\setcounter{table}{2}
+\setcounter{blindtext}{1}
+\setcounter{Blindtext}{5}
+\setcounter{blind@countparstart}{0}
+\setcounter{blindlist}{0}
+\setcounter{blindlistlevel}{0}
+\setcounter{blindlist@level}{0}
+\setcounter{blind@listcount}{0}
+\setcounter{blind@levelcount}{0}
+\setcounter{blind@randomcount}{0}
+\setcounter{blind@randommax}{0}
+\setcounter{blind@pangramcount}{0}
+\setcounter{blind@pangrammax}{0}
+\setcounter{parentequation}{0}
+\setcounter{cp@cntr}{0}
+\setcounter{float@type}{16}
+\setcounter{caption@flags}{2}
+\setcounter{continuedfloat}{0}
+\setcounter{subfigure}{0}
+\setcounter{subtable}{0}
+\setcounter{section@level}{0}
+\setcounter{Item}{5}
+\setcounter{Hfootnote}{2}
+\setcounter{Hy@AnnotLevel}{0}
+\setcounter{bookmark@seq@number}{0}
+\setcounter{tabx@nest}{0}
+\setcounter{listtotal}{0}
+\setcounter{listcount}{0}
+\setcounter{liststart}{0}
+\setcounter{liststop}{0}
+\setcounter{citecount}{0}
+\setcounter{citetotal}{0}
+\setcounter{multicitecount}{0}
+\setcounter{multicitetotal}{0}
+\setcounter{instcount}{22}
+\setcounter{maxnames}{3}
+\setcounter{minnames}{1}
+\setcounter{maxitems}{3}
+\setcounter{minitems}{1}
+\setcounter{citecounter}{0}
+\setcounter{maxcitecounter}{0}
+\setcounter{savedcitecounter}{0}
+\setcounter{uniquelist}{0}
+\setcounter{uniquename}{0}
+\setcounter{refsection}{0}
+\setcounter{refsegment}{0}
+\setcounter{maxextratitle}{0}
+\setcounter{maxextratitleyear}{0}
+\setcounter{maxextraname}{0}
+\setcounter{maxextradate}{0}
+\setcounter{maxextraalpha}{0}
+\setcounter{abbrvpenalty}{50}
+\setcounter{highnamepenalty}{50}
+\setcounter{lownamepenalty}{25}
+\setcounter{maxparens}{3}
+\setcounter{parenlevel}{0}
+\setcounter{blx@maxsection}{0}
+\setcounter{mincomprange}{10}
+\setcounter{maxcomprange}{100000}
+\setcounter{mincompwidth}{1}
+\setcounter{afterword}{0}
+\setcounter{savedafterword}{0}
+\setcounter{annotator}{0}
+\setcounter{savedannotator}{0}
+\setcounter{author}{0}
+\setcounter{savedauthor}{0}
+\setcounter{bookauthor}{0}
+\setcounter{savedbookauthor}{0}
+\setcounter{commentator}{0}
+\setcounter{savedcommentator}{0}
+\setcounter{editor}{0}
+\setcounter{savededitor}{0}
+\setcounter{editora}{0}
+\setcounter{savededitora}{0}
+\setcounter{editorb}{0}
+\setcounter{savededitorb}{0}
+\setcounter{editorc}{0}
+\setcounter{savededitorc}{0}
+\setcounter{foreword}{0}
+\setcounter{savedforeword}{0}
+\setcounter{holder}{0}
+\setcounter{savedholder}{0}
+\setcounter{introduction}{0}
+\setcounter{savedintroduction}{0}
+\setcounter{namea}{0}
+\setcounter{savednamea}{0}
+\setcounter{nameb}{0}
+\setcounter{savednameb}{0}
+\setcounter{namec}{0}
+\setcounter{savednamec}{0}
+\setcounter{translator}{0}
+\setcounter{savedtranslator}{0}
+\setcounter{shortauthor}{0}
+\setcounter{savedshortauthor}{0}
+\setcounter{shorteditor}{0}
+\setcounter{savedshorteditor}{0}
+\setcounter{labelname}{0}
+\setcounter{savedlabelname}{0}
+\setcounter{institution}{0}
+\setcounter{savedinstitution}{0}
+\setcounter{lista}{0}
+\setcounter{savedlista}{0}
+\setcounter{listb}{0}
+\setcounter{savedlistb}{0}
+\setcounter{listc}{0}
+\setcounter{savedlistc}{0}
+\setcounter{listd}{0}
+\setcounter{savedlistd}{0}
+\setcounter{liste}{0}
+\setcounter{savedliste}{0}
+\setcounter{listf}{0}
+\setcounter{savedlistf}{0}
+\setcounter{location}{0}
+\setcounter{savedlocation}{0}
+\setcounter{organization}{0}
+\setcounter{savedorganization}{0}
+\setcounter{origlocation}{0}
+\setcounter{savedoriglocation}{0}
+\setcounter{origpublisher}{0}
+\setcounter{savedorigpublisher}{0}
+\setcounter{publisher}{0}
+\setcounter{savedpublisher}{0}
+\setcounter{language}{0}
+\setcounter{savedlanguage}{0}
+\setcounter{origlanguage}{0}
+\setcounter{savedoriglanguage}{0}
+\setcounter{pageref}{0}
+\setcounter{savedpageref}{0}
+\setcounter{textcitecount}{0}
+\setcounter{textcitetotal}{0}
+\setcounter{textcitemaxnames}{0}
+\setcounter{biburlbigbreakpenalty}{100}
+\setcounter{biburlbreakpenalty}{200}
+\setcounter{biburlnumpenalty}{0}
+\setcounter{biburlucpenalty}{0}
+\setcounter{biburllcpenalty}{0}
+\setcounter{smartand}{1}
+\setcounter{bbx:relatedcount}{0}
+\setcounter{bbx:relatedtotal}{0}
+\setcounter{cbx@tempcnta}{0}
+\setcounter{cbx@tempcntb}{13}
+\setcounter{cbx@tempcntc}{0}
+\setcounter{cbx@tempcntd}{-1}
+\setcounter{svg@param@lastpage}{0}
+\setcounter{svg@param@currpage}{-1}
+\setcounter{testexample}{0}
+\setcounter{tcbbreakpart}{0}
+\setcounter{tcblayer}{0}
+\setcounter{tcolorbox@number}{0}
+\setcounter{tcbrastercolumn}{1}
+\setcounter{tcbrasterrow}{1}
+\setcounter{tcbrasternum}{1}
+\setcounter{tcbraster}{0}
+\setcounter{lstnumber}{1}
+\setcounter{tcblisting}{0}
+\setcounter{thmt@dummyctr}{0}
+\setcounter{definition}{0}
+\setcounter{teorema}{0}
+\setcounter{lstlisting}{0}
+}
