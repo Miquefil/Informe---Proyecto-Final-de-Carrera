@@ -9,4 +9,6 @@
 \contentsline {subsection}{\numberline {3.3}Medición gruesa y Árbitro}{12}{subsection.3.3}%
 \contentsline {subsection}{\numberline {3.4}Implementación}{14}{subsection.3.4}%
 \contentsline {section}{\numberline {4}Resultados}{15}{section.4}%
-\contentsline {section}{Referencias}{23}{figure.caption.29}%
+\contentsline {subsection}{\numberline {4.1}Calibración}{20}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Discusión}{24}{subsection.4.2}%
+\contentsline {section}{Referencias}{26}{figure.caption.32}%

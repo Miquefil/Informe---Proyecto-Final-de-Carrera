@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2023.3.12)  11 AUG 2024 21:59
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2023.3.12)  19 AUG 2024 04:13
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -1123,8 +1123,16 @@ Package pgfplots: loading complementary utilities for your pgf version...
 File: tikzlibraryplotmarks.code.tex 2023-01-15 v3.1.10 (3.1.10)
  (c:/texlive/2022/texmf-dist/tex/generic/pgf/libraries/pgflibraryplotmarks.code.tex
 File: pgflibraryplotmarks.code.tex 2023-01-15 v3.1.10 (3.1.10)
-)))
-\c@testexample=\count501
+))) (c:/texlive/2022/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/circuits/tikzlibrarycircuits.logic.US.code.tex (c:/texlive/2022/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/circuits/tikzlibrarycircuits.logic.code.tex (c:/texlive/2022/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/circuits/tikzlibrarycircuits.code.tex (c:/texlive/2022/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.markings.code.tex (c:/texlive/2022/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrarydecorations.markings.code.tex))
+\tikz@lib@circ@count=\count501
+\tikzcircuitssizeunit=\dimen334
+)) (c:/texlive/2022/texmf-dist/tex/generic/pgf/libraries/shapes/circuits/pgflibraryshapes.gates.logic.US.code.tex (c:/texlive/2022/texmf-dist/tex/generic/pgf/libraries/shapes/circuits/pgflibraryshapes.gates.logic.code.tex))) (c:/texlive/2022/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/circuits/tikzlibrarycircuits.ee.IEC.code.tex (c:/texlive/2022/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryarrows.code.tex
+File: tikzlibraryarrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
+ (c:/texlive/2022/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.code.tex
+File: pgflibraryarrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\arrowsize=\dimen335
+)) (c:/texlive/2022/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/circuits/tikzlibrarycircuits.ee.code.tex (c:/texlive/2022/texmf-dist/tex/generic/pgf/libraries/shapes/circuits/pgflibraryshapes.gates.ee.code.tex)) (c:/texlive/2022/texmf-dist/tex/generic/pgf/libraries/shapes/circuits/pgflibraryshapes.gates.ee.IEC.code.tex))
+\c@testexample=\count502
  (c:/texlive/2022/texmf-dist/tex/latex/tcolorbox/tcolorbox.sty
 Package: tcolorbox 2023/02/12 version 6.0.1 text color boxes
  (c:/texlive/2022/texmf-dist/tex/latex/tools/verbatim.sty
@@ -1139,19 +1147,19 @@ Package: environ 2014/05/04 v0.3 A new way to define environments
 \tcb@upperbox=\box120
 \tcb@lowerbox=\box121
 \tcb@phantombox=\box122
-\c@tcbbreakpart=\count502
-\c@tcblayer=\count503
-\c@tcolorbox@number=\count504
+\c@tcbbreakpart=\count503
+\c@tcblayer=\count504
+\c@tcolorbox@number=\count505
 \tcb@temp=\box123
 \tcb@temp=\box124
 \tcb@temp=\box125
 \tcb@temp=\box126
  (c:/texlive/2022/texmf-dist/tex/latex/tcolorbox/tcbraster.code.tex
 Library (tcolorbox): 'tcbraster.code.tex' version '6.0.1'
-\c@tcbrastercolumn=\count505
-\c@tcbrasterrow=\count506
-\c@tcbrasternum=\count507
-\c@tcbraster=\count508
+\c@tcbrastercolumn=\count506
+\c@tcbrasterrow=\count507
+\c@tcbrasternum=\count508
+\c@tcbraster=\count509
 ) (c:/texlive/2022/texmf-dist/tex/latex/tcolorbox/tcbskins.code.tex
 Library (tcolorbox): 'tcbskins.code.tex' version '6.0.1'
 (c:/texlive/2022/texmf-dist/tex/latex/tikzfill/tikzfill.image.sty
@@ -1179,31 +1187,31 @@ Library (tcolorbox): 'tcbhooks.code.tex' version '6.0.1'
 Library (tcolorbox): 'tcbtheorems.code.tex' version '6.0.1'
 ) (c:/texlive/2022/texmf-dist/tex/latex/tcolorbox/tcbfitting.code.tex
 Library (tcolorbox): 'tcbfitting.code.tex' version '6.0.1'
-\tcbfitdim=\dimen334
-\tcb@lowerfitdim=\dimen335
-\tcb@upperfitdim=\dimen336
-\tcb@cur@hbadness=\count509
+\tcbfitdim=\dimen336
+\tcb@lowerfitdim=\dimen337
+\tcb@upperfitdim=\dimen338
+\tcb@cur@hbadness=\count510
 ) (c:/texlive/2022/texmf-dist/tex/latex/tcolorbox/tcblistingsutf8.code.tex
 Library (tcolorbox): 'tcblistingsutf8.code.tex' version '6.0.1'
 (c:/texlive/2022/texmf-dist/tex/latex/tcolorbox/tcblistings.code.tex
 Library (tcolorbox): 'tcblistings.code.tex' version '6.0.1'
 (c:/texlive/2022/texmf-dist/tex/latex/listings/listings.sty
-\lst@mode=\count510
+\lst@mode=\count511
 \lst@gtempboxa=\box131
 \lst@token=\toks53
-\lst@length=\count511
-\lst@currlwidth=\dimen337
-\lst@column=\count512
-\lst@pos=\count513
-\lst@lostspace=\dimen338
-\lst@width=\dimen339
-\lst@newlines=\count514
-\lst@lineno=\count515
-\lst@maxwidth=\dimen340
+\lst@length=\count512
+\lst@currlwidth=\dimen339
+\lst@column=\count513
+\lst@pos=\count514
+\lst@lostspace=\dimen340
+\lst@width=\dimen341
+\lst@newlines=\count515
+\lst@lineno=\count516
+\lst@maxwidth=\dimen342
  (c:/texlive/2022/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2023/02/27 1.9 (Carsten Heinz)
-\c@lstnumber=\count516
-\lst@skipnumbers=\count517
+\c@lstnumber=\count517
+\lst@skipnumbers=\count518
 \lst@framebox=\box132
 ) (c:/texlive/2022/texmf-dist/tex/latex/listings/listings.cfg
 File: listings.cfg 2023/02/27 1.9 listings configuration
@@ -1214,7 +1222,7 @@ Library (tcolorbox): 'tcblistingscore.code.tex' version '6.0.1'
 (c:/texlive/2022/texmf-dist/tex/latex/tcolorbox/tcbprocessing.code.tex
 Library (tcolorbox): 'tcbprocessing.code.tex' version '6.0.1'
 )
-\c@tcblisting=\count518
+\c@tcblisting=\count519
 ))
 Package tcolorbox Info: Library `listingsutf8' is compatible with pdftex only. Library `listings` is loaded instead. on input line 29.
 ) (c:/texlive/2022/texmf-dist/tex/latex/tcolorbox/tcbexternal.code.tex
@@ -1243,7 +1251,7 @@ Package: amsthm 2020/05/29 v2.20.6
 ) (c:/texlive/2022/texmf-dist/tex/latex/thmtools/thmtools.sty
 Package: thmtools 2023/02/17 v0.75
 \thmt@toks=\toks60
-\c@thmt@dummyctr=\count519
+\c@thmt@dummyctr=\count520
  (c:/texlive/2022/texmf-dist/tex/latex/thmtools/thm-patch.sty
 Package: thm-patch 2023/02/17 v0.75
  (c:/texlive/2022/texmf-dist/tex/latex/thmtools/parseargs.sty
@@ -1265,27 +1273,27 @@ Package: thm-restate 2023/02/17 v0.75
 Package: thm-amsthm 2023/02/17 v0.75
 \thmt@style@headstyle=\toks62
 ))
-\c@definition=\count520
-\c@teorema=\count521
+\c@definition=\count521
+\c@teorema=\count522
  (c:/texlive/2022/texmf-dist/tex/latex/titlesec/titlesec.sty
 Package: titlesec 2021/07/05 v2.14 Sectioning titles
 \ttl@box=\box133
 \beforetitleunit=\skip86
 \aftertitleunit=\skip87
-\ttl@plus=\dimen341
-\ttl@minus=\dimen342
+\ttl@plus=\dimen343
+\ttl@minus=\dimen344
 \ttl@toksa=\toks63
-\titlewidth=\dimen343
-\titlewidthlast=\dimen344
-\titlewidthfirst=\dimen345
+\titlewidth=\dimen345
+\titlewidthlast=\dimen346
+\titlewidthfirst=\dimen347
 ) (c:/texlive/2022/texmf-dist/tex/latex/enumitem/enumitem.sty
 Package: enumitem 2019/06/20 v3.9 Customized lists
 \labelindent=\skip88
-\enit@outerparindent=\dimen346
+\enit@outerparindent=\dimen348
 \enit@toks=\toks64
 \enit@inbox=\box134
-\enit@count@id=\count522
-\enitdp@description=\count523
+\enit@count@id=\count523
+\enitdp@description=\count524
 )
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
@@ -1304,57 +1312,33 @@ LaTeX Warning: Label `fig: histograma_66' multiply defined.
 
 LaTeX Warning: Label `sub@fig: histograma_66' multiply defined.
 
-
-LaTeX Warning: Label `fig: histograma_66' multiply defined.
-
-
-LaTeX Warning: Label `sub@fig: histograma_66' multiply defined.
-
-
-LaTeX Warning: Label `fig: histograma_66' multiply defined.
-
-
-LaTeX Warning: Label `sub@fig: histograma_66' multiply defined.
-
-
-LaTeX Warning: Label `fig: histograma_66' multiply defined.
-
-
-LaTeX Warning: Label `sub@fig: histograma_66' multiply defined.
-
-
-LaTeX Warning: Label `fig: histograma_66' multiply defined.
-
-
-LaTeX Warning: Label `sub@fig: histograma_66' multiply defined.
-
 ))
 \openout1 = `Main_informe.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 206.
-LaTeX Font Info:    ... okay on input line 206.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 206.
-LaTeX Font Info:    ... okay on input line 206.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 206.
-LaTeX Font Info:    ... okay on input line 206.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 206.
-LaTeX Font Info:    ... okay on input line 206.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 206.
-LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 206.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 216.
+LaTeX Font Info:    ... okay on input line 216.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 216.
+LaTeX Font Info:    ... okay on input line 216.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 216.
+LaTeX Font Info:    ... okay on input line 216.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 216.
+LaTeX Font Info:    ... okay on input line 216.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 216.
+LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 216.
  (c:/texlive/2022/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2022/07/10 v2.5l Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 206.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 206.
-LaTeX Font Info:    ... okay on input line 206.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 206.
-LaTeX Font Info:    ... okay on input line 206.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 206.
-LaTeX Font Info:    ... okay on input line 206.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 206.
-LaTeX Font Info:    ... okay on input line 206.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 206.
-LaTeX Font Info:    ... okay on input line 206.
+LaTeX Font Info:    ... okay on input line 216.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 216.
+LaTeX Font Info:    ... okay on input line 216.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 216.
+LaTeX Font Info:    ... okay on input line 216.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 216.
+LaTeX Font Info:    ... okay on input line 216.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 216.
+LaTeX Font Info:    ... okay on input line 216.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 216.
+LaTeX Font Info:    ... okay on input line 216.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
@@ -1395,7 +1379,7 @@ Package caption Info: hyperref package is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: wrapfig package is loaded.
 Package caption Info: End \AtBeginDocument code.
-Package hyperref Info: Link coloring OFF on input line 206.
+Package hyperref Info: Link coloring OFF on input line 216.
 Package biblatex Info: Trying to load language 'english'...
 Package biblatex Info: ... file 'english.lbx' found.
 (c:/texlive/2022/texmf-dist/tex/latex/biblatex/lbx/english.lbx
@@ -1414,17 +1398,25 @@ Package biblatex Info: Data encoding 'utf8' specified.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'Main_informe.bbl' found.
  (./Main_informe.bbl)
-Package biblatex Info: Reference section=0 on input line 206.
-Package biblatex Info: Reference segment=0 on input line 206.
+Package biblatex Info: Reference section=0 on input line 216.
+Package biblatex Info: Reference segment=0 on input line 216.
+ (|'inkscape' -V )
+
+Package svg Warning: No version of Inkscape was detected by invoking
+(svg)                `inkscape -V'
+(svg)                so the Inkscape export will fail quite sure as the
+(svg)                command is probably unknown to your OS. You could set
+(svg)                `inkscapeversion=<version>' manually but this is very
+(svg)                unlikely to work on input line 216.
 
 Package pgfplots notification 'compat/show suggested version=true': document has been generated with the most recent feature set (\pgfplotsset{compat=1.18}).
 
-\c@lstlisting=\count524
-LaTeX Font Info:    Trying to load font information for U+msa on input line 215.
+\c@lstlisting=\count525
+LaTeX Font Info:    Trying to load font information for U+msa on input line 225.
 (c:/texlive/2022/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 215.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 225.
  (c:/texlive/2022/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
@@ -1446,13 +1438,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 4--10
 
  []
 
+File: imagenes/nacho_delay.png Graphic file (type bmp)
+<imagenes/nacho_delay.png>
 
-Underfull \hbox (badness 10000) in paragraph at lines 11--16
+Underfull \hbox (badness 10000) in paragraph at lines 28--34
 
  []
 
-File: imagenes/nacho_delay.png Graphic file (type bmp)
-<imagenes/nacho_delay.png>
 [3
 
 
@@ -1464,19 +1456,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 42--48
 File: imagenes/taxonomia.eps Graphic file (type eps)
 <imagenes/taxonomia.eps>
 
-Underfull \hbox (badness 10000) in paragraph at lines 57--74
+Underfull \hbox (badness 10000) in paragraph at lines 57--78
 
  []
 
 File: imagenes/various_tdl.eps Graphic file (type eps)
 <imagenes/various_tdl.eps>
 
-Underfull \vbox (badness 1102) has occurred while \output is active []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [4
 
 ] [5] [6]
-Underfull \hbox (badness 10000) in paragraph at lines 189--200
+Underfull \hbox (badness 10000) in paragraph at lines 193--202
 
  []
 
@@ -1485,144 +1477,145 @@ File: imagenes/slice.png Graphic file (type bmp)
 File: imagenes/carry4.png Graphic file (type bmp)
 <imagenes/carry4.png>
 [7]
-Invalid UTF-8 byte or sequence at line 266 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 266 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 266 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 266 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 266 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 266 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 255 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 255 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 255 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 255 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 255 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 255 replaced by U+FFFD.
 File: imagenes/fine.eps Graphic file (type eps)
 <imagenes/fine.eps>
  [8]
-Invalid UTF-8 byte or sequence at line 304 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 304 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 304 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 304 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 304 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 304 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 293 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 293 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 293 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 293 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 293 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 293 replaced by U+FFFD.
 File: imagenes/problema_buffer.eps Graphic file (type eps)
 <imagenes/problema_buffer.eps>
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
  [9]
 File: imagenes/tdl_flancos.eps Graphic file (type eps)
 <imagenes/tdl_flancos.eps>
+File: imagenes/bubble.eps Graphic file (type eps)
+<imagenes/bubble.eps>
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [10]
-File: imagenes/bubble.eps Graphic file (type eps)
-<imagenes/bubble.eps>
- [11]
-Underfull \hbox (badness 10000) in paragraph at lines 374--379
+Underfull \hbox (badness 10000) in paragraph at lines 355--361
 
  []
 
+[11]
 File: imagenes/arbiter.eps Graphic file (type eps)
 <imagenes/arbiter.eps>
 
-Underfull \vbox (badness 8056) has occurred while \output is active []
-
- [12]
-Underfull \hbox (badness 10000) in paragraph at lines 389--397
+Underfull \hbox (badness 10000) in paragraph at lines 371--379
 
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [13]
+ [12]
 File: imagenes/arq_tdc.eps Graphic file (type eps)
 <imagenes/arq_tdc.eps>
+ [13]
+File: imagenes/TDC-functional-blocks.eps Graphic file (type eps)
+<imagenes/TDC-functional-blocks.eps>
+
+Underfull \hbox (badness 10000) in paragraph at lines 526--535
+
+ []
+
+[14]
 File: imagenes/histograma_start.eps Graphic file (type eps)
 <imagenes/histograma_start.eps>
 File: imagenes/histograma_stop.eps Graphic file (type eps)
 <imagenes/histograma_stop.eps>
 
-Underfull \vbox (badness 1609) has occurred while \output is active []
-
- [14]
-Underfull \hbox (badness 10000) in paragraph at lines 573--574
+Underfull \hbox (badness 10000) in paragraph at lines 565--571
 
  []
 
+File: imagenes/buffer_inversor.png Graphic file (type bmp)
+<imagenes/buffer_inversor.png>
 File: imagenes/linealidad_stop.eps Graphic file (type eps)
 <imagenes/linealidad_stop.eps>
+[15
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [15]
+]
 File: imagenes/linealidad_start.eps Graphic file (type eps)
 <imagenes/linealidad_start.eps>
-File: imagenes/transferencia_stop.eps Graphic file (type eps)
-<imagenes/transferencia_stop.eps>
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
  [16]
-File: imagenes/transferencia_start.eps Graphic file (type eps)
-<imagenes/transferencia_start.eps>
 File: imagenes/histograma_66k.eps Graphic file (type eps)
 <imagenes/histograma_66k.eps>
 File: imagenes/histograma_coarse_66k.eps Graphic file (type eps)
 <imagenes/histograma_coarse_66k.eps>
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [17]
 File: imagenes/histograma_100k.eps Graphic file (type eps)
 <imagenes/histograma_100k.eps>
 File: imagenes/histograma_coarse_100k.eps Graphic file (type eps)
 <imagenes/histograma_coarse_100k.eps>
+ [17
+
+]
 File: imagenes/histograma_500k.eps Graphic file (type eps)
 <imagenes/histograma_500k.eps>
 File: imagenes/histograma_coarse_500k.eps Graphic file (type eps)
 <imagenes/histograma_coarse_500k.eps>
-File: imagenes/histograma_1_225M.eps Graphic file (type eps)
-<imagenes/histograma_1_225M.eps>
-File: imagenes/histograma_coarse_1225M.eps Graphic file (type eps)
-<imagenes/histograma_coarse_1225M.eps>
- [18]
-File: imagenes/histograma_2M.eps Graphic file (type eps)
-<imagenes/histograma_2M.eps>
-File: imagenes/histograma_coarse_2M.eps Graphic file (type eps)
-<imagenes/histograma_coarse_2M.eps>
-File: imagenes/histograma_3M3.eps Graphic file (type eps)
-<imagenes/histograma_3M3.eps>
-File: imagenes/histograma_coarse_3M3.eps Graphic file (type eps)
-<imagenes/histograma_coarse_3M3.eps>
-File: imagenes/histograma_5M.eps Graphic file (type eps)
-<imagenes/histograma_5M.eps>
-File: imagenes/histograma_coarse_5M.eps Graphic file (type eps)
-<imagenes/histograma_coarse_5M.eps>
- [19] [20]
-File: imagenes/start-stop_66k.eps Graphic file (type eps)
-<imagenes/start-stop_66k.eps>
 File: imagenes/start-stop_100k.eps Graphic file (type eps)
 <imagenes/start-stop_100k.eps>
 File: imagenes/start-stop_500k.eps Graphic file (type eps)
 <imagenes/start-stop_500k.eps>
 File: imagenes/start-stop_1225M.eps Graphic file (type eps)
 <imagenes/start-stop_1225M.eps>
-File: imagenes/start-stop_2M.eps Graphic file (type eps)
-<imagenes/start-stop_2M.eps>
 File: imagenes/start-stop_3M3.eps Graphic file (type eps)
 <imagenes/start-stop_3M3.eps>
-File: imagenes/start-stop_5M.eps Graphic file (type eps)
-<imagenes/start-stop_5M.eps>
-File: imagenes/start-stop_magic.eps Graphic file (type eps)
-<imagenes/start-stop_magic.eps>
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [21
+ [18
 
-]) [22] [23
+]
+File: imagenes/no-linealidades.eps Graphic file (type eps)
+<imagenes/no-linealidades.eps>
+ [19]
+File: imagenes/floorplan_0.png Graphic file (type bmp)
+<imagenes/floorplan_0.png>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [20]
+File: imagenes/floorplan_carrys.png Graphic file (type bmp)
+<imagenes/floorplan_carrys.png>
+File: imagenes/floorplan_routeo.png Graphic file (type bmp)
+<imagenes/floorplan_routeo.png>
+File: imagenes/floorplan_pblocks.png Graphic file (type bmp)
+<imagenes/floorplan_pblocks.png>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [21]
+File: imagenes/linealidad_stop_med5.eps Graphic file (type eps)
+<imagenes/linealidad_stop_med5.eps>
+File: imagenes/linealidad_start_med5.eps Graphic file (type eps)
+<imagenes/linealidad_start_med5.eps>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [22] [23]
+Underfull \hbox (badness 10000) in paragraph at lines 861--865
+
+ []
+
+File: imagenes/Medicion_final.eps Graphic file (type eps)
+<imagenes/Medicion_final.eps>
+[24]) [25] [26
 
 
 
-] [24] (./Main_informe.aux (./Contenido.aux))
+] [27] (./Main_informe.aux (./Contenido.aux))
 
 LaTeX Warning: There were undefined references.
 
@@ -1639,12 +1632,12 @@ Package logreq Info: Writing requests to 'Main_informe.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 69891 strings out of 476684
- 1690186 string characters out of 5807583
- 2637459 words of memory out of 5000000
- 89145 multiletter control sequences out of 15000+600000
+ 71493 strings out of 476684
+ 1740709 string characters out of 5807583
+ 2699309 words of memory out of 5000000
+ 90707 multiletter control sequences out of 15000+600000
  537718 words of font info for 135 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  99i,11n,96p,1984b,4938s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on Main_informe.pdf (24 pages).
+Output written on Main_informe.pdf (27 pages).

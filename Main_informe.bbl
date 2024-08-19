@@ -642,5 +642,36 @@
     \field{month}{06}
     \field{year}{2010}
   \endentry
+
+  \entry{machado_readout_2020}{thesis}{}
+    \name{author}{1}{}{%
+      {{hash=MRPO}{%
+         family={Machado},
+         familyi={M\bibinitperiod},
+         given={Rui Pedro\bibnamedelima Oliveira},
+         giveni={R\bibinitperiod\bibinitdelim P\bibinitperiod\bibinitdelim
+  O\bibinitperiod},
+      }}%
+    }
+    \list{language}{1}{%
+      {por}%
+    }
+    \strng{namehash}{MRPO1}
+    \strng{fullhash}{MRPO1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{note}{Accepted: 2022-03-02T17:23:15Z Journal Abbreviation: Circuito
+  de leitura para sensores automóveis baseados em tempo de voo}
+    \field{title}{Readout circuit for time-based automotive sensors}
+    \verb{url}
+    \verb https://repositorium.sdum.uminho.pt/handle/1822/76359
+    \endverb
+    \field{type}{Tesis Doctoral}
+    \field{month}{07}
+    \field{year}{2020}
+    \field{urlday}{19}
+    \field{urlmonth}{08}
+    \field{urlyear}{2024}
+  \endentry
 \enddatalist
 \endinput
