@@ -84,11 +84,19 @@ Las arquitecturas TDL pueden ser implementadas de distintas formas, como muestra
      \caption{Diferentes formas de aplicar el método Vernier.}
      \label{fig: various_tdl}
 \end{figure}
-
-Específicamente se utilizó la primer opción, donde la señal alimenta una cadena de retardos, la cuál se 
-registra a cada clock. Cuando se detecta la entrada de un pulso, se genera una señal de \textit{Start}, y
+El último diseño presentada en la figura representa un TDC Diferencial, donde la
+idea principal es utilizar unidades de retardo distinto tal que se pueda calcular
+el tiempo fino como $t_\text{fino} = n \cdot (\tau_1 - \tau_2)$. A diferencia 
+del diseño en ASIC, en FPGA es difícil
+tener muchas celdas con distintos retardos, por lo que usualmente se implementa la misma celda
+y luego se agrega un retardo por ruteo, pero esto es tan poco uniforme y controlable que 
+hace que esta opción sea poco implementable. El segundo diseño es en esencia el mismo que el primero
+presentado en la figura, sin embargo los fabricantes ponen un esfuerzo enorme en poder generar ruteos
+de reloj precisos, con el mínimo desfase posible. Intentar intervenir el ruteo de reloj en una FPGA
+carece de sentido. Específicamente se utilizó la primer opción, donde la señal alimenta una cadena de retardos, la cuál se 
+registra a cada reloj. Cuando se detecta la entrada de un pulso, se genera una señal de \textit{Start}, y
 el valor de la cadena de flip flops se guarda para luego ser procesado, representando el valor entre líneas
-rojas en la Figura \ref{fig: arqui_tdl}. Cuando la señal egresa de la cadena de retardos, se genera la señal
+rojas en la Figura \ref{fig: ar    qui_tdl}. Cuando la señal egresa de la cadena de retardos, se genera la señal
  de \textit{Stop}, con la que se vuelve a registrar el valor de la cadena. Finalmente, tal como implementa la
 topología Nutt, el resultado se compone de una parte gruesa y una parte fina, y puede calcularse como:
 \begin{equation*}
@@ -707,11 +715,11 @@ transportaron las mediciones finas a su concentración positiva. Por ejemplo, si
 de $45.45$ relojes, entonces podríamos obtener dos resultados correctos: $45$ relojes de medición gruesa y $0.45 \; T$
 de medición fina, o $46$ relojes de medición gruesa y $-0.55 \; T$ de medición fina. Como el árbitro no fue
 implementado, un gran porcentaje de las muestras contienen errores de sincronización, y estas son indicadas
-con un asterisco en las figuras. En la Figura \ref{fig: histograma_500} se observa que gran parte de las mediciones
+con un asterisco. En la Figura \ref{fig: histograma_500} se observa que gran parte de las mediciones
 se realizan con una cantidad gruesa de $200$ relojes, cuyo período es de $5$ ns, conteniendo toda 
 la información necesaria ($200 \cdot T = 1 \; \mu$s), entonces la medición fina es un sesgo. Para el caso en que se mide
 $201$ períodos de reloj, la medición fina es una campana concentrada en $-4.68$ ns, pero que para la facilidad del lector
-se representa en su forma complementaria al sumarle un período.
+se representa en su forma complementaria positiva al sumarle un período.
 
 \begin{table}[!htpb]
      \centering
@@ -819,7 +827,7 @@ De estos resultados se realizaron dos conjeturas:
 
  \begin{figure}[H]
       \centering
-      \includegraphics[width=0.75\textwidth]{imagenes/floorplan_0.png}
+      \includegraphics[width=0.8\textwidth]{imagenes/floorplan_0.png}
       \caption{Implementación del TDC en la Artix-7.}
       \label{fig: floorplan_0}
  \end{figure}
@@ -864,12 +872,12 @@ De estos resultados se realizaron dos conjeturas:
 
 Por último es posible implementar una calibración en memoria, de forma tal que la respuesta del TDC
 tenga en cuenta las no linealidades obtenidas en la prueba de densidad de código. Con esto, la idea principal es
-en vez de utilizar la ecuación \ref{eq: t_fino}, guardar en una tabla la curva de transferencia obtenida
+en vez de utilizar la Ecuación \ref{eq: t_fino}, guardar en una tabla la curva de transferencia obtenida
 al realizar la calibración, de forma tal que el tiempo medido en el i-ésimo bin es,
 \begin{equation*}
      t_i = \dfrac{\tau_i}{2} + \sum_{k=0}^{i-1} \tau_k \; ,
 \end{equation*}
-donde la definición de $\tau_i$ proviene de la ecuación \ref{eq: tau_i}. \\
+donde la definición de $\tau_i$ proviene de la Ecuación \ref{eq: tau_i}. \\
 Tal como dice \textit{Wu} en \cite{Wu2010}, es muy fácil caer en sólo computar la sumatoria cuando
 la implementación se vuelve engorrosa, pero sería un error omitir $\tau_i/2$ ya que esto implica calibrar
 a la mitad del bin en vez de hacerlo a los bordes, lo que disminuye el error RMS al mínimo.
