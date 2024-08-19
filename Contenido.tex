@@ -84,20 +84,20 @@ Las arquitecturas TDL pueden ser implementadas de distintas formas, como muestra
      \caption{Diferentes formas de aplicar el método Vernier.}
      \label{fig: various_tdl}
 \end{figure}
-El último diseño presentado en la figura representa un TDC Diferencial, donde la
+El último diseño presentada en la figura representa un TDC Diferencial, donde la
 idea principal es utilizar unidades de retardo distinto tal que se pueda calcular
 el tiempo fino como $t_\text{fino} = n \cdot (\tau_1 - \tau_2)$. A diferencia 
 del diseño en ASIC, en FPGA es difícil
 tener muchas celdas con distintos retardos, por lo que usualmente se implementa la misma celda
 y luego se agrega un retardo por ruteo, pero esto es tan poco uniforme y controlable que 
-hace que esta opción sea poco implementable. Por otro lado, el segundo diseño es en esencia similar al primero, 
-sin embargo los fabricantes ponen un esfuerzo enorme en poder generar ruteos
+hace que esta opción sea poco implementable. El segundo diseño es en esencia el mismo que el primero
+presentado en la figura, sin embargo los fabricantes ponen un esfuerzo enorme en poder generar ruteos
 de reloj precisos, con el mínimo desfase posible. Intentar intervenir el ruteo de reloj en una FPGA
-carece de sentido. Por esto, específicamente se utilizó la primer opción, donde la señal alimenta una cadena de retardos, la cual se 
+carece de sentido. Específicamente se utilizó la primer opción, donde la señal alimenta una cadena de retardos, la cuál se 
 registra a cada reloj. Cuando se detecta la entrada de un pulso, se genera una señal de \textit{Start}, y
 el valor de la cadena de flip flops se guarda para luego ser procesado, representando el valor entre líneas
-rojas en la Figura \ref{fig: arqui_tdl}. Cuando la señal egresa de la cadena de retardos, se genera la señal
-de \textit{Stop}, con la que se vuelve a registrar el valor de la cadena. Finalmente, tal como implementa la
+rojas en la Figura \ref{fig: ar    qui_tdl}. Cuando la señal egresa de la cadena de retardos, se genera la señal
+ de \textit{Stop}, con la que se vuelve a registrar el valor de la cadena. Finalmente, tal como implementa la
 topología Nutt, el resultado se compone de una parte gruesa y una parte fina, y puede calcularse como:
 \begin{equation*}
      T_{m} = N_{coarse} \; T + \tau_{start} - \tau_{stop}
