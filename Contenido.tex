@@ -41,7 +41,7 @@ sin embargo se omitieron en este trabajo.\\
 \section{Estado del arte}
 En esta sección se explicarán algunos de los últimos avances propuestos en la bibliografía. Hasta ahora se ha hablado de
 aquellos aspectos esperables en un TDC, pero es importante tener en cuenta que existen distintos paradigmas en su diseño dependiendo
-de su destino: ASIC o FPGA. La libertad en la colocación de componentes (placement \& routing) con 
+de su destino: ASIC o FPGA. La libertad en la colocación de componentes (placement \& routing) 
 en el diseño de ASICs permite minimizar retardos indeseados, algo que resulta desafiante en el diseño de FPGAs. Por esta razón,
 se basa en gran medida en \cite{Machado} ya que propone un estudio, clasificación y análisis de las distintas 
 arquitecturas específicamente orientadas a FPGA, algo que no se había hecho hasta el momento.\\
@@ -56,12 +56,12 @@ se muestra en la Figura \ref{fig: taxonomia}.
 \end{figure}
 Las arquitecturas de tipo \textit{Coarse Counter} (contador grueso), son aquellas que utilizan 
 un simple contador para estimar el ancho de pulso de una señal, según la cantidad de clocks del 
-sistema que entran en ella; su precisión es entonces el periodo de reloj. Las arquitecturas basadas 
-en \textit{Clocks Desfasados} son todas aquellas que utilizan más de un clock para estimar la medición:
+sistema que entran en ella; su precisión es entonces el período de reloj. Las arquitecturas basadas 
+en \textit{Relojes Desfasados} son todas aquellas que utilizan más de un clock para estimar la medición:
 algunas de ellas deciden la medición a partir de saber cuál clock puede observar primero la llegada del pulso, 
 mientras que otros utilizan elementos adicionales para la interpolación. 
 Por otro lado está tal vez una de las arquitecturas más utilizadas, aplicada en este trabajo, y es aquella 
-que utiliza \textit{Tapped Delay Lines} (TDL: lineas de retardo registradas) para realizar la interpolación y 
+que utiliza \textit{Tapped Delay Lines} (TDL: lineas de retardo) para realizar la interpolación y 
 generar la medición fina. Esto es, se ingresa el pulso de entrada en una cadena de elementos que introducen un 
 retardo uniforme; al muestrear el estado de la cadena entonces se infiere cuántos retardos la señal cruzó, con lo 
 que se estima una medición. Dentro de esta clasificación existen distintas formas de utilizar esta forma de 
@@ -85,11 +85,12 @@ Las arquitecturas TDL pueden ser implementadas de distintas formas, como muestra
      \label{fig: various_tdl}
 \end{figure}
 
-Específicamente se utilizó la primer opción, donde la señal alimenta una cadena de retardos, la cuál es registrada en cada clock. 
-Cuando se detecta la entrada de un pulso, se genera una señal de \textit{Start}, y el valor de la cadena de flip-flops se guarda para luego ser procesado,
-representando el valor entre lineas rojas en la Figura \ref{fig: arqui_tdl}.
-Cuando la señal egresa de la cadena de retardos, se genera la señal de \textit{Stop}, con la que se vuelve a registrar el valor de la cadena. 
-Finalmente, tal como implementa la topología Nutt, el resultado se compone de una parte gruesa y una parte fina, y puede calcularse como:
+Específicamente se utilizó la primer opción, donde la señal alimenta una cadena de retardos, la cuál se 
+registra a cada clock. Cuando se detecta la entrada de un pulso, se genera una señal de \textit{Start}, y
+el valor de la cadena de flip flops se guarda para luego ser procesado, representando el valor entre líneas
+rojas en la Figura \ref{fig: arqui_tdl}. Cuando la señal egresa de la cadena de retardos, se genera la señal
+ de \textit{Stop}, con la que se vuelve a registrar el valor de la cadena. Finalmente, tal como implementa la
+topología Nutt, el resultado se compone de una parte gruesa y una parte fina, y puede calcularse como:
 \begin{equation*}
      T_{m} = N_{coarse} \; T + \tau_{start} - \tau_{stop}
 \end{equation*}
@@ -148,10 +149,10 @@ Finalmente, tal como implementa la topología Nutt, el resultado se compone de u
 
 \subsection{Tests, mediciones y resultados}
 Particularmente en la arquitectura TDL, la opción predilecta en la bibliografía para calibrar el instrumento es mediante 
-un ``code-density test''. Esta prueba consiste en ingresar una señal decorrelacionada del reloj del sistema, de forma que 
+un prueba de densidad de código o ``code-density test''. Esta prueba consiste en ingresar una señal decorrelacionada del reloj del sistema, de forma que 
 excite todos los elementos de retardo por igual y por lo tanto ``golpee'' a cada celda, generando un
 histograma de golpes (hits) en función del número de celda. Si la cadena tiene
-$N_c$ elementos, mide un periodo de reloj $T$, se realiza el test con $N$ muestras,
+$N_c$ elementos, mide un período de reloj $T$, se realiza el test con $N$ muestras,
 y la i-ésima celda captura $n_i$ mediciones entonces es claro que el 
 tamaño de cada retardo es
 \begin{equation}
@@ -167,7 +168,7 @@ en cada bin, es
 La explicación de esto es que a medida que la cadena se acerca a una cadena ideal, la probabilidad de golpear cada
 elemento debe ser la misma para todos los elementos y es la cantidad de veces que se obtiene un hit
 sobre la cantidad de experimentos totales, esto es $n_i/N$. Para una cantidad de mediciones grande,
-esta probabilidad debe acercarse a $1/N_c$. Al igual que lanzar un dado justo; como es
+esta probabilidad debe acercarse a $1/N_c$. Al igual que lanzar un dado no cargado, como es
 equiprobable obtener cualquiera de sus seis caras entonces la ley de grandes números nos dice
 que para una cantidad suficientemente grande de experimentos, deberíamos obtener cada cara una misma cantidad
 de veces, esto es que cada cara salga $1/6$ de las veces que se arroja el dado.
@@ -176,28 +177,28 @@ Entonces, en el TDC debe ocurrir que
      \dfrac{n_i}{N} \longrightarrow \dfrac{1}{N_c} \; ,
 \end{equation*}
 que es equivalente a que $\tau_i \longrightarrow \hat{\tau}$, a medida que $N \rightarrow \infty$.
-Con esto es posible calcular las no-linealidades de cada bin tomando como referencia
-el tiempo ideal $\hat{\tau}$. La DNL (Differential Non-Linearity) 
+Con esto es posible calcular las no linealidades de cada bin tomando como referencia
+el tiempo ideal $\hat{\tau}$. La no linealidad diferencial DNL (Differential Non-Linearity) 
 se puede calcular como
 \begin{equation}
      DNL_i = \tau_i - \hat{\tau} \; ,
      \label{eq: DNL}
 \end{equation}
-y con esto la INL (Integral Non-Linearity), es decir las no-linealidades acumuladas a medida que la 
+y con esto la no linealidad integral INL (Integral Non-Linearity), es decir las no linealidades acumuladas a medida que la 
 señal atraviesa la cadena, como
 \begin{equation}
-     INL_i = \sum_{i=0}^{N-1} {\tau_i - \hat{\tau}} \; .
+     INL_i = \sum_{j=0}^{i-1} {\tau_j - \hat{\tau}} \; .
      \label{eq: INL}
 \end{equation}
 
 Para obtener la DNL en función del bit menos significativo (LSB), poniendo 
-en evidencia cuántos bits de incertidumbre representa cada no-linealidad, 
-se puede calcular $DNL_i[LSB] = DNL_i[seg] / \hat{\tau}$.\\
-Conociendo estas propiedades es posible generar una ``tabla de calibración''. Una vez la medición final
-se realiza en el TDC, se corrige mediante una tabla pre-cargada en memoria, entregando un resultado
+en evidencia cuántos bits de incertidumbre representa cada no linealidad, 
+se puede normalizar la no linealidad en segundos por el retardo medio tal que $DNL_i[LSB] = DNL_i[\rm{s}] / \hat{\tau}$.\\
+Conociendo estas propiedades es posible generar una ``tabla de calibración''. Una vez que el TDC
+finaliza la medición del ancho de pulso, se corrige mediante una tabla pre-cargada en memoria, entregando un resultado
 calibrado al instante de medición (on-line calibration \cite{Liu2015}). Se puede contemplar
-una calibración exclusiva para el flanco \textit{Start} y el flanco \textit{Stop} (\cite{Khaddour2023}), y 
-corregir variaciones en las condiciones PVT (\cite{Qin2017}).
+una calibración exclusiva para el flanco \textit{Start} y otra para el flanco \textit{Stop} (\cite{Khaddour2023}), y 
+corregir variaciones en las condiciones PVT\footnote{Proceso, voltaje, y temperatura.} (\cite{Qin2017}).
 Con esto, es posible corregir limitaciones de diseño y hardware mediante una buena calibración.\\
 
 \section{Arquitectura}
@@ -209,15 +210,15 @@ y las técnicas implementadas son poco comunes para lo que es el mundo del dise�
 una explicación descriptiva de cada bloque fundamental que conforma la arquitectura del \textit{TDC}.
 
 \subsection{Tapped Delay Line}
-El bloque principal de este diseño, encargado de realizar la \textit{medición fina}, es una cadena de retardos registrados.
-Para implementar estos retardos existen distintas pero acotadas opciones en una implementación en FPGA. En sus
+El bloque principal de este diseño, encargado de realizar la \textit{medición fina}, es una cadena de retardos.
+Para implementar estos retardos existen opciones distintas pero acotadas para una implementación en FPGA. En sus
 inicios la solución predilecta era utilizar multiplexores en cadena \cite{kalisz_field-programmable-gate-array-based_1997},
 pero para aprovechar las ventajas propias de la estructura de una FPGA se evolucionó a utilizar
 \textit{Carry4s}, posiblemente utilizado por primera vez en \cite{favi_17ps_2009}. Estos elementos
-forman parte de la unidad mínima de trabajo en una FPGA, y su combinación con LUTs, flip-flops, y Multiplexores forman lo que 
+forman parte de la unidad mínima de trabajo en una FPGA, y su combinación con LUTs, flip flops, y Multiplexores forman lo que 
 se conoce como un \textit{SLICE}\footnote[1]{La Artix-7 cuenta con un total de 33650 slices.}. 
 Los \textit{Carry4s} en su concepción fueron destinados para implementar sumadores, y tienen la ventaja de estar optimizados
-para tener el mínimo retardo entre compuerta y compuerta. Además cada salida cuenta con un flip-flop routeado inmediatamente
+para tener el mínimo retardo entre compuerta y compuerta. Además cada salida cuenta con un flip flop routeado inmediatamente
 a continuación, como se muestra en la Figura \ref{SliceYCarry}.
 
 \begin{figure}[H]
@@ -245,9 +246,9 @@ Cada Carry4 cuenta con 4 salidas que pasan por una XOR, (O0-O3) y 4 salidas que 
 cada MUXCY (CO0-CO3), además cuenta con un puerto \textit{CIN} con el propósito de colocarlas
 en cadena y una entrada auxiliar \textit{CYINIT} desde donde ingresará el pulso externo.\\
 Como la implementación aquí presentada es asíncrona precisamos capturar la señal en su flanco de entrada y de
-salida de la cadena de retardos, por lo que luego de la colocación de la primer columna de flip flops (\textit{First} Flip Flops) 
-como se ve en \ref{SliceYCarry}, se utilizan otras dos columnas de flip-flops llamados \textit{Start} flip-flops y \textit{Stop} 
-flip-flops. Estos se encargan de registrar la primer columna solamente cuando un flanco de subida o de bajada es detectado,
+salida de la cadena de retardos, por lo que luego de la colocación de la primer columna de flip flops (\textit{First} flip flops) 
+como se ve en \ref{SliceYCarry}, se utilizan otras dos columnas de flip flops llamados \textit{Start} flip flops y \textit{Stop} 
+flip flops. Estos se encargan de registrar la primer columna solamente cuando se detecta un flanco de subida o de bajada,
 a través de su \textit{Clock Enable}. Así se genera la estructura que se ve a continuación en la Figura \ref{fig: fine}.
 
 \begin{figure}[H]
@@ -259,32 +260,32 @@ a través de su \textit{Clock Enable}. Así se genera la estructura que se ve a 
 
 De esta estructura surgen dos aspectos importantes:
 \begin{bangenumerate}
-     \item Es sabido que la transferencia de información analoga a digital puede producir metastabilidades si no se 
+     \item Es sabido que la transferencia de información análoga a digital puede producir metastabilidades si no se 
      realiza correctamente. La configuración de doble flip flop para registrar los elementos de retardo soluciona
      este problema introduciendo lo que se conoce como ``sincronizador''. \\
      Esto es, si el tiempo de establecimiento de la señal
-     externa es menor al tiempo de establecimiento requerido por un sólo flip-flop, este puede obtener
+     externa es menor al tiempo de establecimiento requerido por un sólo flip flop, este puede obtener
      un valor desconocido a la salida. Sin embargo introduciendo un segundo flip flop en serie, este no sufre
      de este problema, ya que en el próximo clock la señal es estable, y esta indeterminación se resuelve
      decantando hacia un estado. Además la técnica de doble registro reduce los problemas de burbujas
      en el resultado \cite{machado_novel_2018}.
 
-     \item Una propiedad intrínseca del diseño tipo Nutt es que el tiempo del pulso a medir
-     atraviese la cadena en un tiempo no menor al de un clock del sistema. Esta es una condición de diseño
+     \item Una propiedad intrínseca del diseño tipo Nutt es que el ancho de pulso a medir
+     debe ser al menos de un periodo de reloj. Esta es una condición de diseño
      y se aprovecha en múltiples bloques, pero en particular aquí
      se puede ver que el registro de \textit{Start} y \textit{Stop} dependen de un flanco de subida o bajada para
-     generar la señal de \textit{Clock Enable}, el cuál tiene una duración de un clock.
+     generar la señal de \textit{Clock Enable}, la cuál tiene una duración de un reloj.
 \end{bangenumerate}
 
 %%%%TODO: revisar lo siguiente!
-Por otro lado, es importante prestar especial atención al routeo y colocación de cada elemento en el bitstream final,
-pues es preponderante en la calidad de los resultados del TDC. Si los retardos introducidos por el routeo son 
+Por otro lado, es importante prestar especial atención al ruteo y colocación de cada elemento en la implementación final,
+pues es preponderante en la calidad de los resultados del TDC. Si los retardos introducidos por el ruteo son 
 uniformes para cada elemento de retardo entonces podemos asegurar que la calibración es capaz de corregir
 en gran parte estos errores. Según \cite{machado_novel_2018} es importante colocar la cadena de retardos en las Slices
-que quedan a continuación de los Clock Buffers, y que los flip flops sean colocados también cerca de la cadena. Esto
+que quedan a continuación de los buffers de reloj, y que los flip flops sean colocados también cerca de la cadena. Esto
 fue probado empíricamente y se obtuvieron mejores resultados cuando los extremos de la cadena de retardos quedaban simétricos
 respecto de los clock buffers.\\
-Experimentalmente se observó que cuando el extremo inferior de la cadena es lejana a los buffers, 
+Experimentalmente se observó que cuando el extremo inferior de la cadena es lejano a los buffers, 
 se pueden observar huecos en el histograma resultante, mientras que al colocarlo simétrico, este espacio
 se reparte al inicio y al final de la cadena, como se ilustra en la Figura \ref{fig: problema buffer}.
 
@@ -292,14 +293,15 @@ se reparte al inicio y al final de la cadena, como se ilustra en la Figura \ref{
      \centering
      \includegraphics[width=0.75\textwidth]{imagenes/problema_buffer.eps}
      \caption{Ejemplo de histograma conseguidos al excitar el TDC con una frecuencia pseudo-aleatoria 
-     modificando la posición relativa de la cadena de retardos respecto a los buffers de clock.}
+     modificando la posición relativa de la cadena de retardos respecto a los buffers de reloj.}
      \label{fig: problema buffer}
 \end{figure}
 
-\subsection{Decoder}
-La propagación de un pulso por la línea de retardos naturalmente genera un código unario sobre los registros. Esto
-es, a medida que el flanco descendente progresa sobre la línea de retardos deja a su paso un estado alto en cada Flip-Flop de la cadena, mientra que
-cuando egresa un flanco ascendente deja ceros a su paso, tal como muestra la Figura \ref{fig: tdl_flancos}.
+\subsection{Decodificador}
+La propagación de un pulso por la línea de retardos naturalmente genera un código unario sobre los 
+registros. Esto es, a medida que el flanco descendente progresa sobre la línea de retardos deja a 
+su paso un estado alto en cada flip flop de la cadena, mientra que cuando egresa un flanco ascendente 
+deja ceros a su paso, tal como muestra la Figura \ref{fig: tdl_flancos}.
 
 \begin{figure}[H]
      \centering
@@ -309,23 +311,24 @@ cuando egresa un flanco ascendente deja ceros a su paso, tal como muestra la Fig
      \label{fig: tdl_flancos}
 \end{figure}
 
-La misión principal del decoder es traducir estos valores leídos de los registros \textit{Start} y \textit{Stop} a datos procesables. 
-Aquí se presenta un gran inconveniente presente en todas las soluciones propuestas por bibliografía, pues debido a las variabilidades
+La misión principal del decodificador es traducir estos valores leídos de los registros \textit{Start} y \textit{Stop} a datos procesables. 
+Aquí se presenta un gran inconveniente en todas las soluciones propuestas por la bibliografía, pues debido a las variabilidades
 propias de la arquitectura de una FPGA y de los órdenes de precisión que se pretenden es muy frecuente encontrar burbujas en los registros
 resultantes, imposibilitando la utilización de decodificadores unarios convencionales. Esto significa que en los registros \textit{Start} o
 \textit{Stop} se pueden encontrar registros con errores del tipo ``11..111001000...'', donde no es posible distinguir una transición de
-estados clara. Según la bibliografía (\cite{Machado}) esto se debe principalmente al efecto de \textit{clock skew} cada vez más presente en los últimas tecnologías,
-gracias al decrecimiento abrupto de tamaño de fabricación. Es posible que la diferencia temporal del flanco de clock (el clock skew) 
-entre dos Flip Flops que registran elementos de retardo adyacentes sea mayor al tiempo de retardo de la celda a registrar, y por lo tanto 
-se produce una burbuja en el registro. Esto se ejemplifica en la Figura \ref{fig: bubble}. Si el flip-flop número uno
-captura la cadena en el momento $t_1$ y el flip-flop número dos lo hace un momento después en $t_2$, es posible entonces que el primero
+estados clara. Según la bibliografía (\cite{Machado}) esto se debe principalmente al efecto de desfase de reloj (\textit{clock skew})
+cada vez más presente en los últimas tecnologías, gracias al decrecimiento abrupto de tamaño de fabricación. Es posible que la diferencia 
+temporal del flanco de clock (debido al desfase) 
+entre dos flip flops que registran elementos de retardo adyacentes sea mayor al tiempo de retardo de la celda a registrar, y por lo tanto 
+se produce una burbuja en el registro. Esto se ejemplifica en la Figura \ref{fig: bubble}. Si el flip flop número uno
+captura la cadena en el momento $t_1$ y el flip flop número dos lo hace un momento después en $t_2$, es posible entonces que el primero
 decante su estado en un valor $0$, mientras que el segundo decante su estado en un valor $1$ si $\Delta = t_2 - t_1 \geq \tau$
-siendo $\tau$ el tiempo de una celda de retardo, y $\Delta$ el clock skew.
+siendo $\tau$ el tiempo de una celda de retardo, y $\Delta$ el desfase entre relojes.
 
 \begin{figure}[H]
       \centering
       \includegraphics[width=0.55\textwidth]{imagenes/bubble.eps}
-      \caption{Retardo virtual de propagación que se puede observar cuando existe \textit{clock skew} entre dos flip-flops aledaños.}
+      \caption{Retardo virtual de propagación que se puede observar cuando existe \textit{clock skew} entre dos flip flops aledaños.}
       \label{fig: bubble}
 \end{figure}
 
@@ -338,28 +341,28 @@ Para implementar un decodificador se han propuesto distintas soluciones, en este
      tiene la habilidad natural de corregir errores de burbuja.
 
      \item \textbf{Buscador de flancos:} Consiste en realizar un circuito combinacional que busque secuencialmente (look-for) transiciones de estados del tipo ``0-1'' o ``1-0'' en el
-     registro de entrada y devuelva la posición de este dentro la cadena. Por ejemplo, para un registro ``0001111111'' el decoder debe devolver tres, ya que es la
+     registro de entrada y devuelva la posición de este dentro la cadena. Por ejemplo, para un registro ``0001111111'' el decodificador debe devolver tres, ya que es la
      posición donde se detecta la transición. Para eliminar el problema de burbujas se recurre a aumentar el tamaño de la secuencia buscada,
-     es decir si se tiene un registro con burbujas del tipo ``0001001111'' podemos buscar la secuencia ``0001'' de forma que únicamente la primer transición es detectada
-     y la burbuja se ignora (\cite{Wu2010}). Rápidamente se hace evidente que a medida que el tamaño del filtro incrementa es capaz de corregir burbujas
+     es decir si se tiene un registro con burbujas del tipo ``0001001111'' podemos buscar la secuencia ``0001'' de forma que se detecta únicamente la primer transición
+     y la burbuja se ignora (\cite{Wu2010}). Rápidamente se hace evidente que a medida que se incrementa el tamaño del filtro se pueden corregir burbujas
      de mayor tamaño, a costa de descartar una mayor cantidad de muestras al principio y final de la cadena.
      
      
      \item \textbf{Realineamiento de taps:} Una vez detectados los lugares del registro donde se producen burbujas, se intercambia la posición de salida
-     de estos flip-flops con el de uno cercano (\cite{Liu2015}), luego se utiliza un decoder del tipo ``buscador de flancos''. Para su implementación primero
-     se debe hacer un ``code-density test'' que nos permita conocer cuáles son los bines de tamaño cero (burbujas), para luego realizar el reordenamiento de taps. Esta
-     implementación depende fuertemente de las condiciones PVT\footnote{Proceso, voltaje y temperatura.} en las que se utiliza la FPGA.
+     de estos flip flops con el de uno cercano (\cite{Liu2015}), luego se utiliza un decoder del tipo ``buscador de flancos''. Para su implementación primero
+     se debe hacer una prueba de densidad de código que nos permita conocer cuáles son los bines de tamaño cero (burbujas), para luego realizar el reordenamiento de taps. Esta
+     implementación depende fuertemente de las condiciones de proceso, voltaje, y temperatura, en las que se utiliza la FPGA.
 \end{bangenumerate}
 
 \subsection{Medición gruesa y Árbitro}
 Una de las ventajas de la implementación tipo Nutt es que nos permite mantener un buen rango de medición sin perder precisión. Esto se logra separando la implementación en dos tareas, 
-la medición gruesa y la medición fina, para esto se utiliza un contador grueso (coarse counter) con el que se mide la cantidad de periodos de clocks que tarda la señal en atravesar la cadena.
+la medición gruesa y la medición fina. Para esto se utiliza un contador grueso (coarse counter) con el que se mide la cantidad de períodos de reloj que tarda la señal en atravesar la cadena.
 Aunque esta propuesta parece sencilla precisa de una sincronización previo al procesamiento del resultado, ya que si la señal externa ingresa o egresa aproximadamente
-en sincronía con el clock del sistema es posible que el contador cuente o no un periodo de reloj menos, cometiendo un error de un periodo completo.
+en sincronía con el reloj del sistema es posible que el contador cuente o no un período de reloj menos, cometiendo un error de un período completo.
 En \cite{machado_novel_2018} se propone la utilización de más de un contador grueso como árbitros
 para decidir el resultado final del cálculo, el desarrollo es el siguiente:\\
 
-Esto consiste en implementar tres contadores gruesos, cada uno alimentado por un clock derivado del clock del sistema y ligeramente desfasado, como se muestra
+Esto consiste en implementar tres contadores gruesos, cada uno alimentado por un reloj derivado del reloj del sistema pero ligeramente desfasado, como se muestra
 en la Figura \ref{fig: arbitro}.
 \begin{figure}[H]
      \centering
@@ -368,13 +371,13 @@ en la Figura \ref{fig: arbitro}.
      \label{fig: arbitro}
 \end{figure}
 
-Estos tres clocks inducen cuatro casos a diferenciar, estos se plantearan
+Estos tres relojes inducen cuatro casos a diferenciar, estos se plantearan
 para el flanco de entrada pero
 puede hacerse de la misma forma para el flanco de salida.\\
-El caso base es suponer que el pulso llega antes del flanco de subida de todos los clocks,
+El caso base es suponer que el pulso llega antes del flanco de subida de todos los relojes,
 como muestra el Caso I de la Figura \ref{fig: casos_arbitro}, o también llegar entre cada par de flancos como muestran los Casos II, III y IV.
-Para el primer caso, la línea de retardos captura la señal al inicio de la cadena pues el clock ocurre cerca de la llegada del pulso, sin embargo
-para el resto de casos donde el flanco de clock ya ocurrió es necesario esperar un periodo al próximo flanco de clock, en consecuencia se captura el flanco de entrada
+Para el primer caso, la línea de retardos captura la señal al inicio de la cadena pues el reloj ocurre cerca de la llegada del pulso, sin embargo
+para el resto de casos donde el flanco de reloj ya ocurrió es necesario esperar un período al próximo flanco de reloj, en consecuencia se captura el flanco de entrada
 al borde de saturar la cadena de retardos, como muestra la Figura \ref{fig: finos_casos_start}.\\
 
 \begin{figure}[H]
@@ -486,10 +489,10 @@ al borde de saturar la cadena de retardos, como muestra la Figura \ref{fig: fino
       \label{fig: finos_casos_start}
 \end{figure}
 
-Si analizamos cada caso con su coarse counter entonces obtendríamos los resultados que se presentan en la Tabla \ref{tabla: arbitro}.
-Rápidamente nos podemos dar cuenta que si todos los Coarse Counters tienen la misma respuesta entonces el resultado de cualquiera de ellos es correcto,
-pero si no son iguales y el pulso es detectado en el extremo de la cadena, sabemos con certeza que la cuenta correcta es de tres periodos,
-pues el periodo incompleto está codificado en la respuesta fina. Es entonces posible conociendo las cuatro posibles condiciones de cuentas gruesas generar 
+Si analizamos cada caso con su contador grueso entonces obtendríamos los resultados que se presentan en la Tabla \ref{tabla: arbitro}.
+Rápidamente nos podemos dar cuenta que si todos los contadores gruesos tienen la misma respuesta entonces el resultado de cualquiera de ellos es correcto,
+pero si no son iguales y el pulso es detectado en el extremo de la cadena, sabemos con certeza que la cuenta correcta es de tres períodos,
+pues el período incompleto está codificado en la respuesta fina. Es entonces posible conociendo las cuatro posibles condiciones de cuentas gruesas generar 
 una respuesta apoyada en cuatro referencias: tres contadores y la respuesta fina.
 
 \begin{table}[H]
@@ -502,7 +505,7 @@ una respuesta apoyada en cuatro referencias: tres contadores y la respuesta fina
      Caso III              & 3    & 3    & 4    \\ \hline
      Caso IV               & 3    & 3    & 3    \\ \hline
      \end{tabular}
-     \caption{Cuenta gruesa del ejemplo presentado en la Figura \ref{fig: casos_arbitro}, según cada clock generado por el PLL.}
+     \caption{Cuenta gruesa del ejemplo presentado en la Figura \ref{fig: casos_arbitro}, según cada reloj generado por el PLL.}
      \label{tabla: arbitro}
 \end{table}
 
@@ -512,7 +515,7 @@ Finalmente se implementó la arquitectura presentada en \cite{machado_novel_2018
 \begin{figure}[H]
      \centering
      \includegraphics[width=0.9\textwidth]{imagenes/arq_tdc.eps}
-     \caption{Arquitectura del TDC. Se ignora el routeo del clock.}
+     \caption{Arquitectura del TDC. Se ignora el ruteo del clock.}
      \label{fig: TDC}
 \end{figure}
 
@@ -527,8 +530,8 @@ El generador de señales ingresa en diferencial a los conectores SMA de los puer
 placa de desarrollo AC701, que contiene una FPGA Xilinx Artix-7. Esta implementa el TDC que al ser activado
 realiza consecutivamente mediciones hasta llenar una memoria FIFO de 32 bits de largo, y 1024 palabras de profundidad.
 A su vez, cuando el usuario decide obtener los datos, se desactiva el TDC y la FPGA se conecta por puerte serie 
-para descargar la información, para lo cuál se ha confeccionado un script en \textit{python} que recibe los datos,
-separa cada palabra de 32bits en sus 10 bits de stop, 10 bits de start, y 12 bits de contador grueso, los
+para descargar la información, para lo cual se ha confeccionado un script en \textit{python} que recibe los datos,
+separa cada palabra de 32 bits en sus 10 bits de stop, 10 bits de start, y 12 bits de contador grueso, los
 transforma en el valor decimal correspondiente y los guarda en un archivo \textit{``.txt''}. Luego otro script se encarga
 de graficar una rápida visualización de los resultados. Tanto la conexión serie y la escritura/lectura de la memoria fueron
 probados en distintos casos para descartar errores.\\
@@ -539,9 +542,9 @@ siguiente \href{https://github.com/Miquefil/TDC-in-Artix-7}{repositorio de Githu
 
 \clearpage
 \section{Resultados}
-Haciendo uso de un generador de clock ``SRS CG635S'' se realizó el
-``code-density test'' con una frecuencia de $5.123456$Mhz, obteniendo histogramas
-distribuidos para el flanco de start y de stop como muestra la Figura \ref{fig: histogramas_magic}.
+Haciendo uso de un generador de reloj ``SRS CG635S'' se realizó la prueba de densidad de código
+con una frecuencia de $5.123456$ MHz, obteniendo histogramas los
+distribuidos para el flanco de start y de stop que se muestran en la Figura \ref{fig: histogramas_magic}.
 \begin{figure}[H]
      \centering
      \begin{subfigure}{0.45\textwidth}
@@ -558,12 +561,12 @@ distribuidos para el flanco de start y de stop como muestra la Figura \ref{fig: 
            }
      \end{subfigure}
      \caption{Histogramas del flanco de subida y flanco de bajada, para 10240 mediciones
-     utilizando una frecuencia de $5.123456$Mhz .}
+     utilizando una frecuencia de $5.123456$MHz .}
      \label{fig: histogramas_magic}
 \end{figure}%
 
-Es posible ver que los flancos de subida y bajada no se propagan de igual forma, pues no es la misma cantidad de bines
-para cada histograma. Podemos decir que el flanco stop se propaga de forma más
+Es posible ver que los flancos de subida y bajada no se propagan de igual forma, pues no se presenta
+la misma cantidad de bines para cada histograma. Podemos decir que el flanco stop se propaga de forma más
 rápida que el flanco start, pues alcanza un número de retardos mayor, 
 lo que quiere decir que las celdas de retardo son más cortas cuando propagan una transición ``1-0''.
 Además, prestando especial atención al histograma stop se puede observar que los bines pares no son alcanzados,
@@ -586,7 +589,7 @@ lo que sugiere que una única celda de retardo es demasiado pequeña para la vel
      \begin{minipage}{0.5\textwidth}
           Esto es completamente posible, ya que puede ocurrir que al implementar una compuerta los transistores complementarios
            no sean exactamente iguales. Tomemos como ejemplo la compuerta inversora \ref{fig: buffer_inversor}. Cuando la entrada está
-           en alto, el N-MOS entra en juego colocando un estado bajo a la salida. A la inversa, entra en juego el transistor PMOS. Esto
+           en alto, el NMOS entra en juego colocando un estado bajo a la salida. A la inversa, entra en juego el transistor PMOS. Esto
            pone en evidencia que si las características dinámicas de ambos transistores no son iguales, entonces la propagación de una transición
            alto-bajo/bajo-alto se dará de forma distinta.
       \end{minipage}%
@@ -603,29 +606,29 @@ da una cantidad de bines utilizados $N_c^{\text{stop}} = 318$, mientras que el f
 ocupa desde el bin número $27$, hasta el bin $335$, utilizando un total de $N_c^{\text{start}} = 308$
 elementos de retardo. Con esto se puede calcular que el retardo de cada celda es:
 \begin{align}
-     \hat{\tau}_{\text{stop}} = 15.72pseg \; , && \hat{\tau}_{\text{start}} = 16.23pseg
+     \hat{\tau}_{\text{stop}} = 15.72 \text{ ps} \; , && \hat{\tau}_{\text{start}} = 16.23 \text{ ps}
 \end{align}
 Con esto se pueden construir los histogramas de linealidad, tal como muestran las Figuras \ref{fig: linealidad_stop}, \ref{fig: linealidad_start}, 
-utilizando las ecuaciones \ref{eq: DNL}, \ref{eq: INL}, \ref{eq: tau_medio}.
+utilizando las ecuaciones \ref{eq: tau_medio}, \ref{eq: DNL}, \ref{eq: INL}.
 
 \begin{figure}[H]
       \centering
       \includegraphics[width=0.75\textwidth]{imagenes/linealidad_stop.eps}
-      \caption{Histogramas de linealidad obtenidos en el code-density test para el flanco de stop.}
+      \caption{Histogramas de linealidad obtenidos en la prueba de densidad de código para el flanco de stop.}
       \label{fig: linealidad_stop}
 \end{figure}
 
 \begin{figure}[H]
       \centering
       \includegraphics[width=0.75\textwidth]{imagenes/linealidad_start.eps}
-      \caption{Histogramas de linealidad obtenidos en el code-density test para el flanco de start.}
+      \caption{Histogramas de linealidad obtenidos en la prueba de densidad de código para el flanco de start.}
       \label{fig: linealidad_start}
 \end{figure}
 
 \clearpage
 
 Se procedió a realizar un experimento de 10240 mediciones para seis frecuencias distintas.
-Para cada experimento, el tiempo fino es calculado tal como muestra el esquema \ref{fig: arqui_tdl}, que induce:
+Para cada experimento, el tiempo fino es calculado tal como muestra el esquema de la Figura \ref{fig: arqui_tdl}, y lleva a:
 \begin{equation}
      t_\text{fino} = n_\text{start} \; \hat{\tau_\text{start}} - n_\text{stop} \; \hat{\tau_\text{stop}} \; .
      \label{eq: t_fino}
@@ -648,8 +651,8 @@ Para cada experimento, el tiempo fino es calculado tal como muestra el esquema \
            }
            \caption{Histograma de mediciones gruesas.}
      \end{subfigure}
-     \caption{Histograma de 10240 mediciones utilizando una frecuencia de $f=66k$Hz, $t_{\text{on}}=7.57 \; \mu$seg. 
-     Con asterisco aquellas mediciones cuyo contador grueso debió ser corregido.}
+     \caption{Histograma de 10240 mediciones utilizando una frecuencia de $f=66$ kHz, $t_{\text{on}}=7.57 \; \mu$s. 
+     Se indican con un asterisco aquellas mediciones cuyo contador grueso debió ser corregido.}
 \end{figure}
 
 \begin{figure}[H]
@@ -670,8 +673,8 @@ Para cada experimento, el tiempo fino es calculado tal como muestra el esquema \
            }
            \caption{Histograma de mediciones gruesas.}
      \end{subfigure}
-     \caption{Histograma de 10240 mediciones utilizando una frecuencia de $f=100k$Hz, $t_{\text{on}}=5 \; \mu$seg. 
-     Con asterisco aquellas mediciones cuyo contador grueso debió ser corregido.}
+     \caption{Histograma de 10240 mediciones utilizando una frecuencia de $f=100$ kHz, $t_{\text{on}}=5 \; \mu$s. 
+     Se indican con un asterisco aquellas mediciones cuyo contador grueso debió ser corregido.}
 \end{figure}
 
 \clearpage
@@ -684,7 +687,7 @@ Para cada experimento, el tiempo fino es calculado tal como muestra el esquema \
                \includegraphics[width=0.75\textwidth]{imagenes/histograma_500k.eps}
            }
            \caption{Histograma de mediciones finas.}
-           \label{fig: histograma_66}
+           \label{fig: histograma_500}
      \end{subfigure}%
      \hspace{10pt}%
      \begin{subfigure}[t]{0.45\textwidth} % [t] aligns the top of the subfigure
@@ -694,38 +697,51 @@ Para cada experimento, el tiempo fino es calculado tal como muestra el esquema \
            }
            \caption{Histograma de mediciones gruesas.}
      \end{subfigure}
-     \caption{Histograma de 10240 mediciones utilizando una frecuencia de $f=500k$Hz, $t_{\text{on}}=1 \; \mu$seg. 
-     Con asterisco aquellas mediciones cuyo contador grueso debió ser corregido.}
+     \caption{Histograma de 10240 mediciones utilizando una frecuencia de $f=500$ kHz, $t_{\text{on}}=1 \; \mu$s. 
+     Se indican con un asterisco aquellas mediciones cuyo contador grueso debió ser corregido.}
 \end{figure}
 
-En resumen, se obtuvieron los resultados que muestra la tabla \ref{tabla: res_med_1}:
+
+En resumen, se obtuvieron los resultados que muestra la Tabla \ref{tabla: res_med_1}. Para presentar los datos, se
+transportaron las mediciones finas a su concentración positiva. Por ejemplo, si se debe medir un ancho de pulso
+de $45.45$ relojes, entonces podríamos obtener dos resultados correctos: $45$ relojes de medición gruesa y $0.45 \; T$
+de medición fina, o $46$ relojes de medición gruesa y $-0.55 \; T$ de medición fina. Como el árbitro no fue
+implementado, un gran porcentaje de las muestras contienen errores de sincronización, y estas son indicadas
+con un asterisco en las figuras. En la Figura \ref{fig: histograma_500} se observa que gran parte de las mediciones
+se realizan con una cantidad gruesa de $200$ relojes, cuyo período es de $5$ ns, conteniendo toda 
+la información necesaria ($200 \cdot T = 1 \; \mu$s), entonces la medición fina es un sesgo. Para el caso en que se mide
+$201$ períodos de reloj, la medición fina es una campana concentrada en $-4.68$ ns, pero que para la facilidad del lector
+se representa en su forma complementaria al sumarle un período.
+
 \begin{table}[!htpb]
      \centering
      \begin{tabular}{cccc}
      \hline
-     Frecuencia $[$Hz$]$ & $E[X]$   & $ \sigma[X]$ & Error $[$ps$]$ \\ \hline
-     66k                & 1.06nseg & 39.6pseg     & 303            \\ \hline
-     100k               & 323pseg  & 35pseg       & 323            \\ \hline
-     500k               & 338pseg  & 27.1pseg     & 338            \\ \hline
-     1.225M             & 3.43nseg & 29.8pseg     & 269            \\ \hline
-     2M                 & 271pseg  & 23.9pseg     & 271            \\ \hline
-     3.3M               & 1.78nseg & 26.7pseg     & 272            \\ \hline
-     5M                 & 286pseg  & 25.1pseg     & 286            \\ \hline
+     Frecuencia         & $E[X]$   & $ \sigma[X]$ & Error $[$ps$]$ \\ \hline
+     66 kHz             & 1.06 ns  & 39.6 ps      & 303            \\ \hline
+     100 kHz            & 323 ps   & 35 ps        & 323            \\ \hline
+     500 kHz            & 338 ps   & 27.1 ps      & 338            \\ \hline
+     1.225 MHz          & 3.43 ns  & 29.8 ps      & 269            \\ \hline
+     2 MHz              & 271 ps   & 23.9 ps      & 271            \\ \hline
+     3.3 MHz            & 1.78 ns  & 26.7 ps      & 272            \\ \hline
+     5 MHz              & 286 ps   & 25.1 ps      & 286            \\ \hline
      \end{tabular}
-     \caption{Parámetros de tiempo fino extraídos de cada experimento, cada uno con 10240 mediciones.}
+     \caption{Parámetros de tiempo fino extraídos de cada experimento, cada uno con 10240 mediciones.
+     Se indica como $E[X]$ a la media, y $\sigma[X]$ a la desviación estándar.}
      \label{tabla: res_med_1}
 \end{table}
 
 
-Queda en evidencia que existe un offset para todos los experimentos,
-que se calcula como $E[X] - t_\text{on}$, y da al rededor de $300$ps. Aunque es difícil explicar este
-hecho, la primer conjetura es que este provenga del tiempo de \textit{rising/fall} del generador,
+Se calculó el error estimado como $E[X] - t_\text{on}$, donde $t_\text{on}$ es el semiperíodo de la frecuencia
+ingresada en el generador de señales, y $E[X]$ la media de las mediciones finas sincronizadas.
+Queda en evidencia que existe un sesgo para todos los experimentos de alrededor de $300$ ps. Aunque es difícil explicar este
+hecho, la primer conjetura es que este provenga del tiempo de crecimiento/caída del generador,
 sin embargo este es $\leq 80$ps para todo el rango de frecuencias, que se pudo constatar mediante un osciloscopio.
 No obstante es importante tener en cuenta la no linealidad de la cadena, que en particular afecta
-la forma de calcular el tiempo fino \ref{eq: t_fino}. Como no se utiliza el mismo tiempo de retardo ($\tau$) medio
+la forma de calcular el tiempo fino en la Ecuación \ref{eq: t_fino}. Como no se utiliza el mismo tiempo de retardo ($\tau$) medio
 para la propagación de subida y de bajada, entonces existe un error acumulado a medida que los flancos avanzan dentro
 de la cadena. Para verificar esto, a continuación se grafica un histograma de dos dimensiones para cada experimento, esto es:
-para cada valor $n_\text{start}$ del eje-x se grafica el histograma de diferencia $n_\text{start}-n_\text{stop}$ en el eje-y,
+para cada valor $n_\text{start}$ del eje $x$ se grafica el histograma de diferencia $n_\text{start}-n_\text{stop}$ en el eje $y$  ,
 en otras palabras se grafica la diferencia de bines en función de dónde se encontró el bin start. Esto nos permite independizarnos
 de la temporalidad de los experimentos realizados, y observar el comportamiento de los retardos en función de la posición
 dentro de la cadena. 
@@ -735,12 +751,12 @@ dentro de la cadena.
      \begin{minipage}{0.45\textwidth}
          \centering
          \includegraphics[width=\textwidth]{imagenes/start-stop_100k.eps} % Replace with your figure path
-         \caption{$f = 100k$Hz}
+         \caption{$f = 100$ kHz}
      \end{minipage}\hfill
      \begin{minipage}{0.45\textwidth}
          \centering
          \includegraphics[width=\textwidth]{imagenes/start-stop_500k.eps} % Replace with your figure path
-         \caption{$f = 500k$Hz}
+         \caption{$f = 500$ kHz}
      \end{minipage}
      
      \vspace{0.5cm} % Space between rows
@@ -748,12 +764,12 @@ dentro de la cadena.
      \begin{minipage}{0.45\textwidth}
          \centering
          \includegraphics[width=\textwidth]{imagenes/start-stop_1225M.eps} % Replace with your figure path
-         \caption{$f = 1.225M$Hz}
+         \caption{$f = 1.225$ MHz}
      \end{minipage}\hfill
      \begin{minipage}{0.45\textwidth}
          \centering
          \includegraphics[width=\textwidth]{imagenes/start-stop_3M3.eps} % Replace with your figure path
-         \caption{$f = 3.3M$Hz}
+         \caption{$f = 3.3$ MHz}
      \end{minipage}
      \caption{Histograma que muestra la diferencia elementos de retardo start-stop en función
           de dónde se detectó el flanco de start dentro de la cadena, para cada experimento.}
@@ -761,44 +777,45 @@ dentro de la cadena.
 
 De estos resultados se realizaron dos conjeturas:
  \begin{itemize}
-     \item Cuando la frecuencia es múltiplo de la frecuencia de clock ($500$kHz, $100$kHz, $2$MHz, $5$MHz),
-     se puede observar que la diferencias tienden a cero. Es posible entonces pensar que las no-linealidades
+     \item Cuando la frecuencia es múltiplo de la frecuencia de reloj ($500$ kHz, $100$ kHz, $2$ MHz, $5$ MHz),
+     se puede observar que la diferencias tienden a cero cuando se avanza en la cadena. Es posible entonces pensar que las no linealidades
      acumuladas a medida que se avanza en la cadena tienden a compensarse, de forma que la diferencia tiende a cero,
      tal como se espera de una frecuencia exacta donde el contador grueso contiene toda la información necesaria.
-     \item Cuando la frecuencia no es múltiplo del clock, y por lo tanto el tiempo fino a medir es distinto de cero,
+     \item Cuando la frecuencia no es múltiplo del reloj, y por lo tanto el tiempo fino a medir es distinto de cero,
      se pueden observar distintos patrones de dispersión. Si tomamos la tendencia de este histograma, se puede observar
      que la dispersión pico a pico es de al rededor de $10$ bines. El corte que se observa ocurre principalmente porque 
      dependiendo de la cantidad de tiempo fino que se debe medir, a medida que el pulso avanza en fase dentro
-     de la cadena $n_\text{stop}$ y $n_\text{start}$ también avanzan en fase y por lo tanto se van transfieriendo cantidad de bines.
+     de la cadena, $n_\text{stop}$ y $n_\text{start}$ también avanzan en fase y por lo tanto se van transfieriendo cantidad de bines.
      Es decir, si tuvieramos una cadea de $300$ elementos y el tiempo fino total a medir es de $200$ bines, en un primer momento podemos encontrar que $n_\text{start} = 80$
-     y $n_\text{stop} = 280$, pero si siguen avanzando en fase podemos llegar a encontrar $n_\text{start} = 200$ y $n_\text{stop} = 100$ (\ref{fig: no-linealidades}).
-     Cuando existe un cruce de este tipo, las no-linealidades acumuladas en los extremos opuestos de la cadena son tan distintos que
+     y $n_\text{stop} = 280$, pero si siguen avanzando en fase podemos llegar a encontrar $n_\text{start} = 200$ y $n_\text{stop} = 100$ (\ref{fig: no linealidades}).
+     Cuando existe un cruce de este tipo, las no linealidades acumuladas en los extremos opuestos de la cadena son tan distintos que
      producen un salto en el histograma.
  \end{itemize}
 
  \begin{figure}[H]
      \centering
      \includegraphics[width=0.75\textwidth]{imagenes/no-linealidades.eps}
-     \caption{Explicación de la no-linealidad observada en los histogramas.}
-     \label{fig: no-linealidades}
+     \caption{Explicación de la no linealidad observada en los histogramas.}
+     \label{fig: no linealidades}
  \end{figure}
 
 
  \subsection{Calibración}
- Para mejorar la performance del TDC, se procedió a realizar cambios de implementación en el bitstream final. Originalmente 
- el \textit{placement \& routing} realizado con la ayuda de la herramienta era el de la Figura \ref{fig: floorplan_0}. En principio se acortó la cadena y se la colocó a partir del slice $Y111$. Utilizando
- el parámetro de colocación fija \texttt{(* LOC = ``SLICE\_X84Y111'' *)} en el primer \textit{Carry4}, a continuación del buffer 
- de clock como indica \cite{machado_novel_2018}, la herramienta comprende que el el resto de elementos deben ser colocados en linea. 
- Luego para que el routeo desde 
+ Para mejorar la performance del TDC, se procedió a realizar cambios de implementación en el diseño final. Originalmente 
+ la ubicación y cableado realizado con la ayuda de la herramienta se presenta en la Figura \ref{fig: floorplan_0}. 
+ En principio se acortó la cadena y se la colocó a partir del slice $Y111$. Con la ayuda del
+ parámetro de colocación fija \texttt{(* LOC = ``SLICE\_X84Y111'' *)} en el primer \textit{Carry4}, a continuación del buffer 
+ de reloj como indica \cite{machado_novel_2018}, la herramienta comprende que el el resto de elementos deben ser colocados en línea. 
+ Luego para que el ruteo desde 
  los retardos hasta sus registros sean lo más uniformes posibles, se generó la instanciación de cada uno de estos mediante un script en
- \textit{python}, lo que permitió crear la columna de flip-flops de start y stop a continuación de estos, como muestra la Figura \ref{fig: floorplan_retardos}.
- Además utilizando constraints se logró excluir cualquier otro elemento dentro de la región donde se instanció la cadena de retardos,
- de forma tal que las conexiones no se vean intervenidas, obteniendo un routeo uniforme como muestra \ref{fig: routeo}. 
+ \textit{python}, lo que permitió crear la columna de flip flops de start y stop a continuación de estos, como muestra la Figura \ref{fig: floorplan_retardos}.
+ Además utilizando restricciones (constraints en el software \textit{Vivado}) se logró excluir cualquier otro elemento dentro de la región donde se instanció la cadena de retardos,
+ de forma tal que las conexiones no se vean intervenidas, obteniendo un ruteo uniforme como muestra la Figura \ref{fig: ruteo}. 
  Para lograrlo se muestran los \textit{P\_blocks} en la Figura \ref{fig: floorplan_pblocks}, donde cada
  rectángulo pertenece a un constraint distinto. En el \textit{Pblock\_fine} se colocaron
- unicamente la cadena de retardos y sus respectivos registros, y el \textit{Pblock\_decode} sólo permite la colocación de compuertas que 
- pertenezcan a los bloques de decodificación. Es así que los routeos desde \textit{Pblock\_fine} hacia \textit{Pblock\_decode} son lo más
- uniforme posibles sin recurrir a un routeo manual.
+ únicamente la cadena de retardos y sus respectivos registros, y el \textit{Pblock\_decode} sólo permite la colocación de compuertas que 
+ pertenezcan a los bloques de decodificación. Es así que los ruteos desde \textit{Pblock\_fine} hacia \textit{Pblock\_decode} son lo más
+ uniforme posibles sin recurrir a un ruteo manual.
 
  \begin{figure}[H]
       \centering
@@ -817,18 +834,18 @@ De estos resultados se realizaron dos conjeturas:
  \begin{figure}[H]
       \centering
       \includegraphics[width=0.75\textwidth]{imagenes/floorplan_routeo.png}
-      \caption{Routeo desde los retardos hacia sus registros.}
-      \label{fig: routeo}
+      \caption{Ruteo desde los retardos hacia sus registros.}
+      \label{fig: ruteo}
  \end{figure}%
  \begin{figure}[H]
       \centering
       \includegraphics[width=0.75\textwidth]{imagenes/floorplan_pblocks.png}
-      \caption{Floorplan del bitstream final. El primer rectángulo corresponde al \textit{P\_block} fino,
+      \caption{Esquema de distribución final. El primer rectángulo corresponde al \textit{P\_block} fino,
       y a su derecha el \textit{P\_block} para los decoders.}
       \label{fig: floorplan_pblocks}
  \end{figure}
 
- Con esta implementación, además se consiguió subir la frecuencia del sistema a $300M$Hz, de forma que se acortó 
+ Con esta implementación, además se consiguió subir la frecuencia del sistema a $300$ MHz, de forma que se acortó 
  aún más el largo de la cadena. Las curvas de transferencia obtenidas son las que se muestran a continuación 
  en las Figuras \ref{fig: transferencia_start_med5}, \ref{fig: transferencia_stop_med5}
 
@@ -846,7 +863,7 @@ De estos resultados se realizaron dos conjeturas:
 \end{figure}
 
 Por último es posible implementar una calibración en memoria, de forma tal que la respuesta del TDC
-tenga en cuenta las no-linealidades obtenidas en el ``code-density test''. Con esto, la idea principal es
+tenga en cuenta las no linealidades obtenidas en la prueba de densidad de código. Con esto, la idea principal es
 en vez de utilizar la ecuación \ref{eq: t_fino}, guardar en una tabla la curva de transferencia obtenida
 al realizar la calibración, de forma tal que el tiempo medido en el i-ésimo bin es,
 \begin{equation*}
@@ -859,14 +876,15 @@ a la mitad del bin en vez de hacerlo a los bordes, lo que disminuye el error RMS
 
 \subsection{Discusión}
 Se ha medido con la calibración final propuesta en este trabajo, con lo que se ha conseguido mejorar
-la precisión a valores de entre 19ps y 17ps (Figura \ref{fig: medicion_final}). Aún así no se ha logrado corregir el offset, que se ha mantenido
-en el mismo rango. Se han reportado offsets de alrededor de 500ps, utilizando la misma topología
-en \cite{machado_readout_2020}. \\
+la precisión a valores de entre 19 ps y 17 ps (Figura \ref{fig: medicion_final}). Aún así no se ha logrado 
+corregir el offset, que se ha mantenido en el mismo rango. Se han reportado sesgos de alrededor de 500ps,
+utilizando la misma topología en \cite{machado_readout_2020}. \\
 
 \begin{figure}[H]
       \centering
       \includegraphics[width=0.75\textwidth]{imagenes/Medicion_final.eps}
-      \caption{Error teórico al realizar 4096 mediciones con una señal de frecuencia $f=3.3M$Hz, $t_\text{on} = 15.15\mu$s.}
+      \caption{Error computado al realizar la diferencia de la media calculada y el semiperíodo 
+      teórico $t_\text{on} = 15.15\;\mu$s, para 4096 mediciones con una señal de frecuencia $f=3.3M$Hz.}
       \label{fig: medicion_final}
 \end{figure}
 
