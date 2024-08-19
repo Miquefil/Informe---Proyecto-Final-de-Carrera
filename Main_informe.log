@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2023.3.12)  19 AUG 2024 19:38
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2023.3.12)  19 AUG 2024 19:39
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -1526,4 +1526,158 @@ Invalid UTF-8 byte or sequence at line 264 replaced by U+FFFD.
 File: imagenes/fine.eps Graphic file (type eps)
 <imagenes/fine.eps>
 
-Underfull \vbox (badnes
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [8]
+Invalid UTF-8 byte or sequence at line 302 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 302 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 302 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 302 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 302 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 302 replaced by U+FFFD.
+File: imagenes/problema_buffer.eps Graphic file (type eps)
+<imagenes/problema_buffer.eps>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [9]
+File: imagenes/tdl_flancos.eps Graphic file (type eps)
+<imagenes/tdl_flancos.eps>
+ [10]
+File: imagenes/bubble.eps Graphic file (type eps)
+<imagenes/bubble.eps>
+ [11]
+Underfull \hbox (badness 10000) in paragraph at lines 366--372
+
+ []
+
+File: imagenes/arbiter.eps Graphic file (type eps)
+<imagenes/arbiter.eps>
+
+Underfull \hbox (badness 10000) in paragraph at lines 382--390
+
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [12]
+File: imagenes/arq_tdc.eps Graphic file (type eps)
+<imagenes/arq_tdc.eps>
+ [13]
+File: imagenes/TDC-functional-blocks.eps Graphic file (type eps)
+<imagenes/TDC-functional-blocks.eps>
+
+Underfull \hbox (badness 10000) in paragraph at lines 537--546
+
+ []
+
+[14]
+File: imagenes/histograma_start.eps Graphic file (type eps)
+<imagenes/histograma_start.eps>
+File: imagenes/histograma_stop.eps Graphic file (type eps)
+<imagenes/histograma_stop.eps>
+
+Underfull \hbox (badness 10000) in paragraph at lines 576--582
+
+ []
+
+File: imagenes/buffer_inversor.png Graphic file (type bmp)
+<imagenes/buffer_inversor.png>
+File: imagenes/linealidad_stop.eps Graphic file (type eps)
+<imagenes/linealidad_stop.eps>
+[15
+
+]
+File: imagenes/linealidad_start.eps Graphic file (type eps)
+<imagenes/linealidad_start.eps>
+ [16]
+File: imagenes/histograma_66k.eps Graphic file (type eps)
+<imagenes/histograma_66k.eps>
+File: imagenes/histograma_coarse_66k.eps Graphic file (type eps)
+<imagenes/histograma_coarse_66k.eps>
+File: imagenes/histograma_100k.eps Graphic file (type eps)
+<imagenes/histograma_100k.eps>
+File: imagenes/histograma_coarse_100k.eps Graphic file (type eps)
+<imagenes/histograma_coarse_100k.eps>
+ [17
+
+]
+File: imagenes/histograma_500k.eps Graphic file (type eps)
+<imagenes/histograma_500k.eps>
+File: imagenes/histograma_coarse_500k.eps Graphic file (type eps)
+<imagenes/histograma_coarse_500k.eps>
+ [18
+
+]
+File: imagenes/start-stop_100k.eps Graphic file (type eps)
+<imagenes/start-stop_100k.eps>
+File: imagenes/start-stop_500k.eps Graphic file (type eps)
+<imagenes/start-stop_500k.eps>
+File: imagenes/start-stop_1225M.eps Graphic file (type eps)
+<imagenes/start-stop_1225M.eps>
+File: imagenes/start-stop_3M3.eps Graphic file (type eps)
+<imagenes/start-stop_3M3.eps>
+ [19]
+File: imagenes/no-linealidades.eps Graphic file (type eps)
+<imagenes/no-linealidades.eps>
+File: imagenes/floorplan_0.png Graphic file (type bmp)
+<imagenes/floorplan_0.png>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [20]
+File: imagenes/floorplan_carrys.png Graphic file (type bmp)
+<imagenes/floorplan_carrys.png>
+File: imagenes/floorplan_routeo.png Graphic file (type bmp)
+<imagenes/floorplan_routeo.png>
+File: imagenes/floorplan_pblocks.png Graphic file (type bmp)
+<imagenes/floorplan_pblocks.png>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [21]
+File: imagenes/linealidad_stop_med5.eps Graphic file (type eps)
+<imagenes/linealidad_stop_med5.eps>
+File: imagenes/linealidad_start_med5.eps Graphic file (type eps)
+<imagenes/linealidad_start_med5.eps>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [22] [23]
+Underfull \hbox (badness 10000) in paragraph at lines 886--890
+
+ []
+
+File: imagenes/Medicion_final.eps Graphic file (type eps)
+<imagenes/Medicion_final.eps>
+[24]) [25] [26
+
+
+
+] [27] (./Main_informe.aux (./Contenido.aux))
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+
+Package biblatex Warning: Please (re)run BibTeX on the file(s):
+(biblatex)                Main_informe
+(biblatex)                and rerun LaTeX afterwards.
+
+Package logreq Info: Writing requests to 'Main_informe.run.xml'.
+\openout1 = `Main_informe.run.xml'.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 75012 strings out of 476684
+ 1851048 string characters out of 5807583
+ 2781796 words of memory out of 5000000
+ 94214 multiletter control sequences out of 15000+600000
+ 537718 words of font info for 135 fonts, out of 8000000 for 9000
+ 1348 hyphenation exceptions out of 8191
+ 99i,11n,96p,1984b,5388s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+Output written on Main_informe.pdf (27 pages).
