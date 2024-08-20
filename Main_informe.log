@@ -1406,4 +1406,278 @@ Package caption Info: wrapfig package is loaded.
 Package caption Info: End \AtBeginDocument code.
 Package hyperref Info: Link coloring OFF on input line 219.
 
-Package siunitx Warning: Detect
+Package siunitx Warning: Detected the "physics" package:
+(siunitx)                omitting definition of \qty.
+(siunitx)                
+(siunitx)                If you want to use \qty with the siunitx definition,
+(siunitx)                add 
+(siunitx)                
+(siunitx)                    \AtBeginDocument{\RenewCommandCopy\qty\SI}
+(siunitx)                
+(siunitx)                to your preamble.
+
+(c:/texlive/2022/texmf-dist/tex/latex/translations/translations-basic-dictionary-english.trsl
+File: translations-basic-dictionary-english.trsl (english translation file `translations-basic-dictionary')
+)
+Package translations Info: loading dictionary `translations-basic-dictionary' for `english'. on input line 219.
+Package biblatex Info: Trying to load language 'english'...
+Package biblatex Info: ... file 'english.lbx' found.
+ (c:/texlive/2022/texmf-dist/tex/latex/biblatex/lbx/english.lbx
+File: english.lbx 2023/03/05 v3.19 biblatex localization (PK/MW)
+)
+Package biblatex Info: XeTeX detected.
+(biblatex)             Assuming input encoding 'utf8'.
+Package biblatex Info: Automatic encoding selection.
+(biblatex)             Assuming data encoding 'utf8'.
+Package biblatex Info: XeTeX detected.
+(biblatex)             Assuming input encoding 'utf8'.
+Package biblatex Info: Data encoding 'utf8' specified.
+(biblatex)             No need to reencode data.
+\openout4 = `Main_informe-blx.bib'.
+
+Package biblatex Info: Trying to load bibliographic data...
+Package biblatex Info: ... file 'Main_informe.bbl' found.
+ (./Main_informe.bbl)
+Package biblatex Info: Reference section=0 on input line 219.
+Package biblatex Info: Reference segment=0 on input line 219.
+ (|'inkscape' -V )
+
+Package svg Warning: No version of Inkscape was detected by invoking
+(svg)                `inkscape -V'
+(svg)                so the Inkscape export will fail quite sure as the
+(svg)                command is probably unknown to your OS. You could set
+(svg)                `inkscapeversion=<version>' manually but this is very
+(svg)                unlikely to work on input line 219.
+
+Package pgfplots notification 'compat/show suggested version=true': document has been generated with the most recent feature set (\pgfplotsset{compat=1.18}).
+
+\c@lstlisting=\count538
+LaTeX Font Info:    Trying to load font information for U+msa on input line 228.
+(c:/texlive/2022/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 228.
+ (c:/texlive/2022/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+File: imagenes/uns_logo.jpg Graphic file (type bmp)
+<imagenes/uns_logo.jpg>
+ [1
+
+] (./Main_informe.toc)
+\tf@toc=\write5
+\openout5 = `Main_informe.toc'.
+
+ [2
+
+]
+\openout2 = `Contenido.aux'.
+
+ (./Contenido.tex
+Underfull \hbox (badness 10000) in paragraph at lines 4--10
+
+ []
+
+File: imagenes/nacho_delay.png Graphic file (type bmp)
+<imagenes/nacho_delay.png>
+
+Underfull \hbox (badness 10000) in paragraph at lines 28--34
+
+ []
+
+[3
+
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 42--48
+
+ []
+
+File: imagenes/taxonomia.eps Graphic file (type eps)
+<imagenes/taxonomia.eps>
+
+Underfull \hbox (badness 10000) in paragraph at lines 57--78
+
+ []
+
+File: imagenes/various_tdl.eps Graphic file (type eps)
+<imagenes/various_tdl.eps>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [4
+
+] [5] [6]
+Underfull \hbox (badness 10000) in paragraph at lines 202--211
+
+ []
+
+[7]
+File: imagenes/slice.png Graphic file (type bmp)
+<imagenes/slice.png>
+File: imagenes/carry4.png Graphic file (type bmp)
+<imagenes/carry4.png>
+Invalid UTF-8 byte or sequence at line 264 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 264 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 264 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 264 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 264 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 264 replaced by U+FFFD.
+File: imagenes/fine.eps Graphic file (type eps)
+<imagenes/fine.eps>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [8]
+Invalid UTF-8 byte or sequence at line 302 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 302 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 302 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 302 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 302 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 302 replaced by U+FFFD.
+File: imagenes/problema_buffer.eps Graphic file (type eps)
+<imagenes/problema_buffer.eps>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [9]
+File: imagenes/tdl_flancos.eps Graphic file (type eps)
+<imagenes/tdl_flancos.eps>
+ [10]
+File: imagenes/bubble.eps Graphic file (type eps)
+<imagenes/bubble.eps>
+ [11]
+Underfull \hbox (badness 10000) in paragraph at lines 366--372
+
+ []
+
+File: imagenes/arbiter.eps Graphic file (type eps)
+<imagenes/arbiter.eps>
+
+Underfull \hbox (badness 10000) in paragraph at lines 382--390
+
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [12]
+File: imagenes/arq_tdc.eps Graphic file (type eps)
+<imagenes/arq_tdc.eps>
+ [13]
+File: imagenes/TDC-functional-blocks.eps Graphic file (type eps)
+<imagenes/TDC-functional-blocks.eps>
+
+Underfull \hbox (badness 10000) in paragraph at lines 537--546
+
+ []
+
+[14]
+File: imagenes/histograma_start.eps Graphic file (type eps)
+<imagenes/histograma_start.eps>
+File: imagenes/histograma_stop.eps Graphic file (type eps)
+<imagenes/histograma_stop.eps>
+
+Underfull \hbox (badness 10000) in paragraph at lines 576--582
+
+ []
+
+File: imagenes/buffer_inversor.png Graphic file (type bmp)
+<imagenes/buffer_inversor.png>
+File: imagenes/linealidad_stop.eps Graphic file (type eps)
+<imagenes/linealidad_stop.eps>
+[15
+
+]
+File: imagenes/linealidad_start.eps Graphic file (type eps)
+<imagenes/linealidad_start.eps>
+ [16]
+File: imagenes/histograma_66k.eps Graphic file (type eps)
+<imagenes/histograma_66k.eps>
+File: imagenes/histograma_coarse_66k.eps Graphic file (type eps)
+<imagenes/histograma_coarse_66k.eps>
+File: imagenes/histograma_100k.eps Graphic file (type eps)
+<imagenes/histograma_100k.eps>
+File: imagenes/histograma_coarse_100k.eps Graphic file (type eps)
+<imagenes/histograma_coarse_100k.eps>
+ [17
+
+]
+File: imagenes/histograma_500k.eps Graphic file (type eps)
+<imagenes/histograma_500k.eps>
+File: imagenes/histograma_coarse_500k.eps Graphic file (type eps)
+<imagenes/histograma_coarse_500k.eps>
+ [18
+
+]
+File: imagenes/start-stop_100k.eps Graphic file (type eps)
+<imagenes/start-stop_100k.eps>
+File: imagenes/start-stop_500k.eps Graphic file (type eps)
+<imagenes/start-stop_500k.eps>
+File: imagenes/start-stop_1225M.eps Graphic file (type eps)
+<imagenes/start-stop_1225M.eps>
+File: imagenes/start-stop_3M3.eps Graphic file (type eps)
+<imagenes/start-stop_3M3.eps>
+ [19]
+File: imagenes/no-linealidades.eps Graphic file (type eps)
+<imagenes/no-linealidades.eps>
+File: imagenes/floorplan_0.png Graphic file (type bmp)
+<imagenes/floorplan_0.png>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [20]
+File: imagenes/floorplan_carrys.png Graphic file (type bmp)
+<imagenes/floorplan_carrys.png>
+File: imagenes/floorplan_routeo.png Graphic file (type bmp)
+<imagenes/floorplan_routeo.png>
+File: imagenes/floorplan_pblocks.png Graphic file (type bmp)
+<imagenes/floorplan_pblocks.png>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [21]
+File: imagenes/linealidad_stop_med5.eps Graphic file (type eps)
+<imagenes/linealidad_stop_med5.eps>
+File: imagenes/linealidad_start_med5.eps Graphic file (type eps)
+<imagenes/linealidad_start_med5.eps>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [22] [23]
+Underfull \hbox (badness 10000) in paragraph at lines 887--891
+
+ []
+
+File: imagenes/Medicion_final.eps Graphic file (type eps)
+<imagenes/Medicion_final.eps>
+[24]) [25] [26
+
+
+
+] [27] (./Main_informe.aux (./Contenido.aux))
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+
+Package biblatex Warning: Please (re)run BibTeX on the file(s):
+(biblatex)                Main_informe
+(biblatex)                and rerun LaTeX afterwards.
+
+Package logreq Info: Writing requests to 'Main_informe.run.xml'.
+\openout1 = `Main_informe.run.xml'.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 75012 strings out of 476684
+ 1851048 string characters out of 5807583
+ 2781796 words of memory out of 5000000
+ 94214 multiletter control sequences out of 15000+600000
+ 537718 words of font info for 135 fonts, out of 8000000 for 9000
+ 1348 hyphenation exceptions out of 8191
+ 99i,11n,96p,1984b,5388s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+Output written on Main_informe.pdf (27 pages).
