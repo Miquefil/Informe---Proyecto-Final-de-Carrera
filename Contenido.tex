@@ -84,16 +84,16 @@ Las arquitecturas TDL pueden ser implementadas de distintas formas, como muestra
      \caption{Diferentes formas de aplicar el método Vernier.}
      \label{fig: various_tdl}
 \end{figure}
-El último diseño presentada en la figura representa un TDC Diferencial, donde la
+El último diseño presentado en la figura representa un TDC Diferencial, donde la
 idea principal es utilizar unidades de retardo distinto tal que se pueda calcular
 el tiempo fino como $t_\text{fino} = n \cdot (\tau_1 - \tau_2)$. A diferencia 
 del diseño en ASIC, en FPGA es difícil
 tener muchas celdas con distintos retardos, por lo que usualmente se implementa la misma celda
 y luego se agrega un retardo por ruteo, pero esto es tan poco uniforme y controlable que 
-hace que esta opción sea poco implementable. Por otro lado, el segundo diseño es en esencia igual al primero,
-sin embargo los fabricantes ponen un esfuerzo enorme en poder generar ruteos
+imposibilita su implementación. Por otro lado, el segundo diseño es en esencia igual al primero,
+sin embargo hay que tener en cuenta que los fabricantes ponen un esfuerzo enorme en poder generar ruteos
 de reloj precisos, con el mínimo desfase posible. Intentar intervenir el ruteo de reloj en una FPGA
-carece de sentido. Específicamente se utilizó la primer opción, donde la señal alimenta una cadena de retardos, 
+carece de sentido. Por lo tanto, se utilizó específicamente la primer opción, donde la señal alimenta una cadena de retardos, 
 la cual se registra a cada reloj. Cuando se detecta la entrada de un pulso, se genera una señal de \textit{Start}, y
 el valor de la cadena de flip flops se guarda para luego ser procesado, representando el valor entre líneas
 rojas en la Figura \ref{fig: arqui_tdl}. Cuando la señal egresa de la cadena de retardos, se genera la señal
@@ -176,7 +176,7 @@ en cada bin, es
 La explicación de esto es que a medida que la cadena se acerca a una cadena ideal, la probabilidad de golpear cada
 elemento debe ser la misma para todos los elementos y es la cantidad de veces que se obtiene un hit
 sobre la cantidad de experimentos totales, esto es $n_i/N$. Para una cantidad de mediciones grande,
-esta probabilidad debe acercarse a $1/N_c$. Al igual que lanzar un dado no cargado, como es
+esta probabilidad debe acercarse a $1/N_c$. Al igual que al lanzar un dado no cargado, como es
 equiprobable obtener cualquiera de sus seis caras entonces la ley de grandes números nos dice
 que para una cantidad suficientemente grande de experimentos, deberíamos obtener cada cara una misma cantidad
 de veces, esto es que cada cara salga $1/6$ de las veces que se arroja el dado.
@@ -201,7 +201,7 @@ señal atraviesa la cadena, como
 
 Para obtener la DNL en función del bit menos significativo (LSB), poniendo 
 en evidencia cuántos bits de incertidumbre representa cada no linealidad, 
-se puede normalizar la no linealidad en segundos por el retardo medio tal que $DNL_i[LSB] = DNL_i[\rm{s}] / \hat{\tau}$.\\
+se puede normalizar la no linealidad en segundos por retardo medio tal que $DNL_i[LSB] = DNL_i[\rm{s}] / \hat{\tau}$.\\
 Conociendo estas propiedades es posible generar una ``tabla de calibración''. Una vez que el TDC
 finaliza la medición del ancho de pulso, se corrige mediante una tabla pre-cargada en memoria, entregando un resultado
 calibrado al instante de medición (on-line calibration \cite{Liu2015}). Se puede contemplar
@@ -534,7 +534,7 @@ Además para poder medir y procesar los datos se realizó el esquema de la Figur
       \caption{Esquema de medición}
       \label{fig: esquema}
 \end{figure}
-El generador de señales ingresa en diferencial a los conectores SMA de los puertos \textit{GPIO} J33 y J34, de la
+El generador de señales ingresa en forma diferencial a los conectores SMA de los puertos \textit{GPIO} J33 y J34, de la
 placa de desarrollo AC701, que contiene una FPGA Xilinx Artix-7. Esta implementa el TDC que al ser activado
 realiza consecutivamente mediciones hasta llenar una memoria FIFO de 32 bits de largo, y 1024 palabras de profundidad.
 A su vez, cuando el usuario decide obtener los datos, se desactiva el TDC y la FPGA se conecta por puerte serie 
@@ -551,8 +551,8 @@ siguiente \href{https://github.com/Miquefil/TDC-in-Artix-7}{repositorio de Githu
 \clearpage
 \section{Resultados}
 Haciendo uso de un generador de reloj ``SRS CG635S'' se realizó la prueba de densidad de código
-con una frecuencia de $5.123456$ MHz, obteniendo histogramas los
-distribuidos para el flanco de start y de stop que se muestran en la Figura \ref{fig: histogramas_magic}.
+con una frecuencia de $5.123456$ MHz, obteniendo los histogramas 
+del flanco start y del flanco stop que se muestran en la Figura \ref{fig: histogramas_magic}.
 \begin{figure}[H]
      \centering
      \begin{subfigure}{0.45\textwidth}
@@ -717,7 +717,7 @@ de medición fina, o $46$ relojes de medición gruesa y $-0.55 \; T$ de medició
 implementado, un gran porcentaje de las muestras contienen errores de sincronización, y estas son indicadas
 con un asterisco. En la Figura \ref{fig: histograma_500} se observa que gran parte de las mediciones
 se realizan con una cantidad gruesa de $200$ relojes, cuyo período es de $5$ ns, conteniendo toda 
-la información necesaria ($200 \cdot T = 1 \; \mu$s), entonces la medición fina es un sesgo. Para el caso en que se mide
+la información necesaria ($200 \cdot T = 1 \; \mu$s), entonces la medición fina resulta ser un sesgo. Para el caso en que se mide
 $201$ períodos de reloj, la medición fina es una campana concentrada en $-4.68$ ns, pero que para la facilidad del lector
 se representa en su forma complementaria positiva al sumarle un período.
 
@@ -810,18 +810,19 @@ De estos resultados se realizaron dos conjeturas:
 
  \subsection{Calibración}
  Para mejorar la performance del TDC, se procedió a realizar cambios de implementación en el diseño final. Originalmente 
- la ubicación y cableado realizado con la ayuda de la herramienta se presenta en la Figura \ref{fig: floorplan_0}. 
- En principio se acortó la cadena y se la colocó a partir del slice $Y111$. Con la ayuda del
- parámetro de colocación fija \texttt{(* LOC = ``SLICE\_X84Y111'' *)} en el primer \textit{Carry4}, a continuación del buffer 
- de reloj como indica \cite{machado_novel_2018}, la herramienta comprende que el el resto de elementos deben ser colocados en línea. 
- Luego para que el ruteo desde 
- los retardos hasta sus registros sean lo más uniformes posibles, se generó la instanciación de cada uno de estos mediante un script en
- \textit{python}, lo que permitió crear la columna de flip flops de start y stop a continuación de estos, como muestra la Figura \ref{fig: floorplan_retardos}.
- Además utilizando restricciones (constraints en el software \textit{Vivado}) se logró excluir cualquier otro elemento dentro de la región donde se instanció la cadena de retardos,
- de forma tal que las conexiones no se vean intervenidas, obteniendo un ruteo uniforme como muestra la Figura \ref{fig: ruteo}. 
+ el cableado y la ubicación de los elementos fue realizado con la ayuda de la herramienta, y se presenta en la Figura \ref{fig: floorplan_0}. 
+ Las mejoras comenzaron acortando la cadena, pudiendola colocar a partir del slice $Y111$. Con la ayuda del
+ parámetro de colocación fija \texttt{(* LOC = ``SLICE\_X84Y111'' *)} en el primer \textit{Carry4} (a continuación del buffer 
+ de reloj como indica \cite{machado_novel_2018}) la herramienta comprende que el el resto de elementos deben ser colocados en línea. 
+ Por otra parte, para que el ruteo desde 
+ los retardos hasta los registros sean lo más uniformes posibles, se generó la instanciación de cada uno de estos mediante un script en
+ \textit{python}, lo que permitió crear la columna de flip flops de start y stop inmediatamente a continuación de estos, como muestra la Figura \ref{fig: floorplan_retardos}.
+ Además utilizando restricciones (constraints en el software \textit{Vivado}) se logró excluir cualquier otro elemento dentro de la región que comprende
+ la colocación de la cadena de retardos,
+ de forma tal que las conexiones no se vean intervenidas y así obtener un ruteo uniforme, como muestra la Figura \ref{fig: ruteo}. 
  Para lograrlo se muestran los \textit{P\_blocks} en la Figura \ref{fig: floorplan_pblocks}, donde cada
  rectángulo pertenece a un constraint distinto. En el \textit{Pblock\_fine} se colocaron
- únicamente la cadena de retardos y sus respectivos registros, y el \textit{Pblock\_decode} sólo permite la colocación de compuertas que 
+ únicamente la cadena de retardos y sus respectivos registros, y en el \textit{Pblock\_decode} sólo se permite la colocación de compuertas que 
  pertenezcan a los bloques de decodificación. Es así que los ruteos desde \textit{Pblock\_fine} hacia \textit{Pblock\_decode} son lo más
  uniforme posibles sin recurrir a un ruteo manual.
 
@@ -853,7 +854,7 @@ De estos resultados se realizaron dos conjeturas:
       \label{fig: floorplan_pblocks}
  \end{figure}
 
- Con esta implementación, además se consiguió subir la frecuencia del sistema a $300$ MHz, de forma que se acortó 
+Por último, consiguió subir la frecuencia del sistema a $300$ MHz, de forma que se acortó 
  aún más el largo de la cadena. Las curvas de transferencia obtenidas son las que se muestran a continuación 
  en las Figuras \ref{fig: transferencia_start_med5}, \ref{fig: transferencia_stop_med5}
 
@@ -870,10 +871,10 @@ De estos resultados se realizaron dos conjeturas:
      \label{fig: transferencia_start_med5}
 \end{figure}
 
-Por último es posible implementar una calibración en memoria, de forma tal que la respuesta del TDC
+Además, es posible implementar una calibración en memoria, de forma tal que la respuesta del TDC
 tenga en cuenta las no linealidades obtenidas en la prueba de densidad de código. Con esto, la idea principal es
-en vez de utilizar la Ecuación \ref{eq: t_fino}, guardar en una tabla la curva de transferencia obtenida
-al realizar la calibración, de forma tal que el tiempo medido en el i-ésimo bin es,
+en vez de utilizar la Ecuación \ref{eq: t_fino}, computar el tiempo fino utilizando la curva de transferencia obtenida
+al realizar la calibración, de forma tal que el tiempo del i-ésimo bin es,
 \begin{equation*}
      t_i = \dfrac{\tau_i}{2} + \sum_{k=0}^{i-1} \tau_k \; ,
 \end{equation*}
@@ -883,10 +884,10 @@ la implementación se vuelve engorrosa, pero sería un error omitir $\tau_i/2$ y
 a la mitad del bin en vez de hacerlo a los bordes, lo que disminuye el error RMS al mínimo.
 
 \subsection{Discusión}
-Se ha medido con la calibración final propuesta en este trabajo, con lo que se ha conseguido mejorar
-la precisión a valores de entre 19 ps y 17 ps (Figura \ref{fig: medicion_final}). Aún así no se ha logrado 
-corregir el offset, que se ha mantenido en el mismo rango. Se han reportado sesgos de alrededor de 500ps,
-utilizando la misma topología en \cite{machado_readout_2020}. \\
+Se ha medido con la última implementación, utilizando la calibración en Matlab, con lo que se ha logrado mejorar
+la precisión a valores de entre 19 ps y 17 ps (Figura \ref{fig: medicion_final}). Aún así no se ha podido 
+corregir el sesgo, que se ha mantenido en el mismo rango. Se han reportado sesgos de alrededor de 500ps,
+utilizando la misma topología, en \cite{machado_readout_2020}. \\
 
 \begin{figure}[H]
       \centering
